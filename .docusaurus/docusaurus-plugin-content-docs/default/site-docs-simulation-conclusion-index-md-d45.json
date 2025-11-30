@@ -5,7 +5,7 @@
   "source": "@site/docs/simulation/conclusion/index.md",
   "sourceDirName": "simulation/conclusion",
   "slug": "/simulation/conclusion/",
-  "permalink": "/full-project/docs/simulation/conclusion/",
+  "permalink": "/docs/simulation/conclusion/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/simulation/conclusion/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Sensor Simulation",
-    "permalink": "/full-project/docs/simulation/sensor-simulation/"
+    "permalink": "/docs/simulation/sensor-simulation/"
   },
   "next": {
     "title": "5. Vision-Language-Action (VLA)",
-    "permalink": "/full-project/docs/category/5-vision-language-action-vla"
+    "permalink": "/docs/category/5-vision-language-action-vla"
   }
 }

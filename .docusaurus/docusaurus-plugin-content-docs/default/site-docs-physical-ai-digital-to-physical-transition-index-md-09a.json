@@ -5,7 +5,7 @@
   "source": "@site/docs/physical-ai/digital-to-physical-transition/index.md",
   "sourceDirName": "physical-ai/digital-to-physical-transition",
   "slug": "/physical-ai/digital-to-physical-transition/",
-  "permalink": "/full-project/docs/physical-ai/digital-to-physical-transition/",
+  "permalink": "/docs/physical-ai/digital-to-physical-transition/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/physical-ai/digital-to-physical-transition/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Core Principles of Embodied Intelligence",
-    "permalink": "/full-project/docs/physical-ai/core-principles/"
+    "permalink": "/docs/physical-ai/core-principles/"
   },
   "next": {
     "title": "Conclusion",
-    "permalink": "/full-project/docs/physical-ai/conclusion/"
+    "permalink": "/docs/physical-ai/conclusion/"
   }
 }

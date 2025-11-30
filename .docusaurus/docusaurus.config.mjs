@@ -34,8 +34,8 @@ export default {
       "async": true
     }
   ],
-  "url": "https://samade747.github.io",
-  "baseUrl": "/full-project/ur/",
+  "url": "https://full-project-kappa.vercel.app",
+  "baseUrl": "/",
   "organizationName": "samade747",
   "projectName": "full-project",
   "onBrokenLinks": "warn",

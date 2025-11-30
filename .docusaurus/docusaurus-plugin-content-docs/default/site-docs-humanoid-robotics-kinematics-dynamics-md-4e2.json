@@ -5,7 +5,7 @@
   "source": "@site/docs/humanoid-robotics/kinematics-dynamics.md",
   "sourceDirName": "humanoid-robotics",
   "slug": "/humanoid-robotics/kinematics-dynamics",
-  "permalink": "/full-project/docs/humanoid-robotics/kinematics-dynamics",
+  "permalink": "/docs/humanoid-robotics/kinematics-dynamics",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/humanoid-robotics/kinematics-dynamics.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "The Grand Challenge of Humanoid Robotics",
-    "permalink": "/full-project/docs/humanoid-robotics/introduction/"
+    "permalink": "/docs/humanoid-robotics/introduction/"
   },
   "next": {
     "title": "Bipedal Locomotion: The Art of Walking",
-    "permalink": "/full-project/docs/humanoid-robotics/bipedal-locomotion"
+    "permalink": "/docs/humanoid-robotics/bipedal-locomotion"
   }
 }

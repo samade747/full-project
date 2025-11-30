@@ -3,276 +3,276 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/full-project/ur/login',
-    component: ComponentCreator('/full-project/ur/login', 'a6f'),
+    path: '/login',
+    component: ComponentCreator('/login', 'f43'),
     exact: true
   },
   {
-    path: '/full-project/ur/signup',
-    component: ComponentCreator('/full-project/ur/signup', '502'),
+    path: '/signup',
+    component: ComponentCreator('/signup', '312'),
     exact: true
   },
   {
-    path: '/full-project/ur/docs',
-    component: ComponentCreator('/full-project/ur/docs', 'ff8'),
+    path: '/docs',
+    component: ComponentCreator('/docs', 'e8d'),
     routes: [
       {
-        path: '/full-project/ur/docs',
-        component: ComponentCreator('/full-project/ur/docs', '656'),
+        path: '/docs',
+        component: ComponentCreator('/docs', 'a89'),
         routes: [
           {
-            path: '/full-project/ur/docs',
-            component: ComponentCreator('/full-project/ur/docs', 'b18'),
+            path: '/docs',
+            component: ComponentCreator('/docs', 'b7b'),
             routes: [
               {
-                path: '/full-project/ur/docs/category/2-ros-2-robot-operating-system',
-                component: ComponentCreator('/full-project/ur/docs/category/2-ros-2-robot-operating-system', 'e4c'),
+                path: '/docs/category/2-ros-2-robot-operating-system',
+                component: ComponentCreator('/docs/category/2-ros-2-robot-operating-system', '3c8'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/category/3-robot-simulation',
-                component: ComponentCreator('/full-project/ur/docs/category/3-robot-simulation', '37d'),
+                path: '/docs/category/3-robot-simulation',
+                component: ComponentCreator('/docs/category/3-robot-simulation', 'f41'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/category/5-vision-language-action-vla',
-                component: ComponentCreator('/full-project/ur/docs/category/5-vision-language-action-vla', '056'),
+                path: '/docs/category/5-vision-language-action-vla',
+                component: ComponentCreator('/docs/category/5-vision-language-action-vla', '7ee'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/category/6-humanoid-robotics',
-                component: ComponentCreator('/full-project/ur/docs/category/6-humanoid-robotics', '33a'),
+                path: '/docs/category/6-humanoid-robotics',
+                component: ComponentCreator('/docs/category/6-humanoid-robotics', '28e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/category/7-hardware-setup',
-                component: ComponentCreator('/full-project/ur/docs/category/7-hardware-setup', 'f19'),
+                path: '/docs/category/7-hardware-setup',
+                component: ComponentCreator('/docs/category/7-hardware-setup', 'fa4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/category/physical-ai',
-                component: ComponentCreator('/full-project/ur/docs/category/physical-ai', 'f87'),
+                path: '/docs/category/physical-ai',
+                component: ComponentCreator('/docs/category/physical-ai', '963'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/',
-                component: ComponentCreator('/full-project/ur/docs/hardware/', 'ef7'),
+                path: '/docs/hardware/',
+                component: ComponentCreator('/docs/hardware/', 'f18'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/hardware/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/hardware/conclusion/', 'bff'),
+                path: '/docs/hardware/conclusion/',
+                component: ComponentCreator('/docs/hardware/conclusion/', 'c50'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/edge-computing-jetson',
-                component: ComponentCreator('/full-project/ur/docs/hardware/edge-computing-jetson', 'ae4'),
+                path: '/docs/hardware/edge-computing-jetson',
+                component: ComponentCreator('/docs/hardware/edge-computing-jetson', 'bd2'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/hardware/introduction/', '5cd'),
+                path: '/docs/hardware/introduction/',
+                component: ComponentCreator('/docs/hardware/introduction/', 'b35'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/lab-infrastructure',
-                component: ComponentCreator('/full-project/ur/docs/hardware/lab-infrastructure', '7fb'),
+                path: '/docs/hardware/lab-infrastructure',
+                component: ComponentCreator('/docs/hardware/lab-infrastructure', '0c4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/sensors-actuators',
-                component: ComponentCreator('/full-project/ur/docs/hardware/sensors-actuators', '55e'),
+                path: '/docs/hardware/sensors-actuators',
+                component: ComponentCreator('/docs/hardware/sensors-actuators', '853'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/hardware/workstation-requirements',
-                component: ComponentCreator('/full-project/ur/docs/hardware/workstation-requirements', '150'),
+                path: '/docs/hardware/workstation-requirements',
+                component: ComponentCreator('/docs/hardware/workstation-requirements', '345'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/', '4fa'),
+                path: '/docs/humanoid-robotics/',
+                component: ComponentCreator('/docs/humanoid-robotics/', 'cb9'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/bipedal-locomotion',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/bipedal-locomotion', '3a8'),
+                path: '/docs/humanoid-robotics/bipedal-locomotion',
+                component: ComponentCreator('/docs/humanoid-robotics/bipedal-locomotion', 'f07'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/conclusion/', 'ec1'),
+                path: '/docs/humanoid-robotics/conclusion/',
+                component: ComponentCreator('/docs/humanoid-robotics/conclusion/', 'ea5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/human-robot-interaction',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/human-robot-interaction', '977'),
+                path: '/docs/humanoid-robotics/human-robot-interaction',
+                component: ComponentCreator('/docs/humanoid-robotics/human-robot-interaction', '30b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/introduction/', 'ee9'),
+                path: '/docs/humanoid-robotics/introduction/',
+                component: ComponentCreator('/docs/humanoid-robotics/introduction/', '854'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/kinematics-dynamics',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/kinematics-dynamics', '119'),
+                path: '/docs/humanoid-robotics/kinematics-dynamics',
+                component: ComponentCreator('/docs/humanoid-robotics/kinematics-dynamics', '679'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/humanoid-robotics/manipulation-grasping',
-                component: ComponentCreator('/full-project/ur/docs/humanoid-robotics/manipulation-grasping', 'a68'),
+                path: '/docs/humanoid-robotics/manipulation-grasping',
+                component: ComponentCreator('/docs/humanoid-robotics/manipulation-grasping', '78d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/intro',
-                component: ComponentCreator('/full-project/ur/docs/intro', '353'),
+                path: '/docs/intro',
+                component: ComponentCreator('/docs/intro', '61d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/physical-ai/',
-                component: ComponentCreator('/full-project/ur/docs/physical-ai/', '5c8'),
+                path: '/docs/physical-ai/',
+                component: ComponentCreator('/docs/physical-ai/', '22b'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/physical-ai/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/physical-ai/conclusion/', '5ba'),
+                path: '/docs/physical-ai/conclusion/',
+                component: ComponentCreator('/docs/physical-ai/conclusion/', '6ea'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/physical-ai/core-principles/',
-                component: ComponentCreator('/full-project/ur/docs/physical-ai/core-principles/', 'e47'),
+                path: '/docs/physical-ai/core-principles/',
+                component: ComponentCreator('/docs/physical-ai/core-principles/', '44a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/physical-ai/digital-to-physical-transition/',
-                component: ComponentCreator('/full-project/ur/docs/physical-ai/digital-to-physical-transition/', 'c55'),
+                path: '/docs/physical-ai/digital-to-physical-transition/',
+                component: ComponentCreator('/docs/physical-ai/digital-to-physical-transition/', 'da4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/physical-ai/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/physical-ai/introduction/', '68d'),
+                path: '/docs/physical-ai/introduction/',
+                component: ComponentCreator('/docs/physical-ai/introduction/', 'd83'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/', '7a8'),
+                path: '/docs/ros2/',
+                component: ComponentCreator('/docs/ros2/', '735'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/ros2/communication-patterns/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/communication-patterns/', '353'),
+                path: '/docs/ros2/communication-patterns/',
+                component: ComponentCreator('/docs/ros2/communication-patterns/', '6f4'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/conclusion/', 'e93'),
+                path: '/docs/ros2/conclusion/',
+                component: ComponentCreator('/docs/ros2/conclusion/', '37c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/core-architecture/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/core-architecture/', 'f90'),
+                path: '/docs/ros2/core-architecture/',
+                component: ComponentCreator('/docs/ros2/core-architecture/', '75c'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/introduction/', '0ae'),
+                path: '/docs/ros2/introduction/',
+                component: ComponentCreator('/docs/ros2/introduction/', '609'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/python-integration-rclpy/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/python-integration-rclpy/', '873'),
+                path: '/docs/ros2/python-integration-rclpy/',
+                component: ComponentCreator('/docs/ros2/python-integration-rclpy/', 'a07'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/ros2/urdf/',
-                component: ComponentCreator('/full-project/ur/docs/ros2/urdf/', 'e61'),
+                path: '/docs/ros2/urdf/',
+                component: ComponentCreator('/docs/ros2/urdf/', 'e36'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/simulation/',
-                component: ComponentCreator('/full-project/ur/docs/simulation/', '9ee'),
+                path: '/docs/simulation/',
+                component: ComponentCreator('/docs/simulation/', '501'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/simulation/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/simulation/conclusion/', 'e03'),
+                path: '/docs/simulation/conclusion/',
+                component: ComponentCreator('/docs/simulation/conclusion/', 'ac5'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/simulation/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/simulation/introduction/', '8e8'),
+                path: '/docs/simulation/introduction/',
+                component: ComponentCreator('/docs/simulation/introduction/', 'fdb'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/simulation/platforms/',
-                component: ComponentCreator('/full-project/ur/docs/simulation/platforms/', '814'),
+                path: '/docs/simulation/platforms/',
+                component: ComponentCreator('/docs/simulation/platforms/', 'f95'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/simulation/sensor-simulation/',
-                component: ComponentCreator('/full-project/ur/docs/simulation/sensor-simulation/', 'eea'),
+                path: '/docs/simulation/sensor-simulation/',
+                component: ComponentCreator('/docs/simulation/sensor-simulation/', '88b'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/vla/',
-                component: ComponentCreator('/full-project/ur/docs/vla/', '9c4'),
+                path: '/docs/vla/',
+                component: ComponentCreator('/docs/vla/', '02b'),
                 exact: true
               },
               {
-                path: '/full-project/ur/docs/vla/conclusion/',
-                component: ComponentCreator('/full-project/ur/docs/vla/conclusion/', 'caf'),
+                path: '/docs/vla/conclusion/',
+                component: ComponentCreator('/docs/vla/conclusion/', '3e9'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/vla/introduction/',
-                component: ComponentCreator('/full-project/ur/docs/vla/introduction/', '58c'),
+                path: '/docs/vla/introduction/',
+                component: ComponentCreator('/docs/vla/introduction/', '642'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/vla/llm-role',
-                component: ComponentCreator('/full-project/ur/docs/vla/llm-role', 'b6a'),
+                path: '/docs/vla/llm-role',
+                component: ComponentCreator('/docs/vla/llm-role', '396'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/full-project/ur/docs/vla/pipeline',
-                component: ComponentCreator('/full-project/ur/docs/vla/pipeline', 'd49'),
+                path: '/docs/vla/pipeline',
+                component: ComponentCreator('/docs/vla/pipeline', '931'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }
@@ -283,8 +283,8 @@ export default [
     ]
   },
   {
-    path: '/full-project/ur/',
-    component: ComponentCreator('/full-project/ur/', 'aef'),
+    path: '/',
+    component: ComponentCreator('/', 'e5f'),
     exact: true
   },
   {

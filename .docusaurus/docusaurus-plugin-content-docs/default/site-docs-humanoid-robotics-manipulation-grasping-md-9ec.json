@@ -5,7 +5,7 @@
   "source": "@site/docs/humanoid-robotics/manipulation-grasping.md",
   "sourceDirName": "humanoid-robotics",
   "slug": "/humanoid-robotics/manipulation-grasping",
-  "permalink": "/full-project/docs/humanoid-robotics/manipulation-grasping",
+  "permalink": "/docs/humanoid-robotics/manipulation-grasping",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/humanoid-robotics/manipulation-grasping.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Bipedal Locomotion: The Art of Walking",
-    "permalink": "/full-project/docs/humanoid-robotics/bipedal-locomotion"
+    "permalink": "/docs/humanoid-robotics/bipedal-locomotion"
   },
   "next": {
     "title": "Human-Robot Interaction (HRI)",
-    "permalink": "/full-project/docs/humanoid-robotics/human-robot-interaction"
+    "permalink": "/docs/humanoid-robotics/human-robot-interaction"
   }
 }

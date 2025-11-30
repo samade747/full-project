@@ -5,7 +5,7 @@
   "source": "@site/docs/vla/introduction/index.md",
   "sourceDirName": "vla/introduction",
   "slug": "/vla/introduction/",
-  "permalink": "/full-project/docs/vla/introduction/",
+  "permalink": "/docs/vla/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "5. Vision-Language-Action (VLA)",
-    "permalink": "/full-project/docs/category/5-vision-language-action-vla"
+    "permalink": "/docs/category/5-vision-language-action-vla"
   },
   "next": {
     "title": "The VLA Pipeline",
-    "permalink": "/full-project/docs/vla/pipeline"
+    "permalink": "/docs/vla/pipeline"
   }
 }

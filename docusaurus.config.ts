@@ -20,8 +20,8 @@ const config: Config = {
     },
   ],
 
-  url: 'https://samade747.github.io', // Your GitHub Pages URL
-  baseUrl: '/full-project/', // Your repository name
+  url: 'https://full-project-kappa.vercel.app', // Your Vercel URL
+  baseUrl: '/', // Base URL for Vercel (root)
 
   organizationName: 'samade747', // Your GitHub username
   projectName: 'full-project', // Your repository name

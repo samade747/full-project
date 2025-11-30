@@ -5,7 +5,7 @@
   "source": "@site/docs/hardware/sensors-actuators.md",
   "sourceDirName": "hardware",
   "slug": "/hardware/sensors-actuators",
-  "permalink": "/full-project/docs/hardware/sensors-actuators",
+  "permalink": "/docs/hardware/sensors-actuators",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/sensors-actuators.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Edge Computing and the NVIDIA Jetson",
-    "permalink": "/full-project/docs/hardware/edge-computing-jetson"
+    "permalink": "/docs/hardware/edge-computing-jetson"
   },
   "next": {
     "title": "Lab Infrastructure",
-    "permalink": "/full-project/docs/hardware/lab-infrastructure"
+    "permalink": "/docs/hardware/lab-infrastructure"
   }
 }
