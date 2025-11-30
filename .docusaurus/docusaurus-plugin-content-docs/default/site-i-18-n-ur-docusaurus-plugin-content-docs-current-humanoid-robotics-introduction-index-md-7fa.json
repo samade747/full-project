@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/humanoid-robotics/introduction/index.md",
   "sourceDirName": "humanoid-robotics/introduction",
   "slug": "/humanoid-robotics/introduction/",
-  "permalink": "/full-project/ur/docs/humanoid-robotics/introduction/",
+  "permalink": "/ur/docs/humanoid-robotics/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/humanoid-robotics/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "6. Humanoid Robotics",
-    "permalink": "/full-project/ur/docs/category/6-humanoid-robotics"
+    "permalink": "/ur/docs/category/6-humanoid-robotics"
   },
   "next": {
     "title": "کائنیماٹکس اور ڈائنامکس",
-    "permalink": "/full-project/ur/docs/humanoid-robotics/kinematics-dynamics"
+    "permalink": "/ur/docs/humanoid-robotics/kinematics-dynamics"
   }
 }

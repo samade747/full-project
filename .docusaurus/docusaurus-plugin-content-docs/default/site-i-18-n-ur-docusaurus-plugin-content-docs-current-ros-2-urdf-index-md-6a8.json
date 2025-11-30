@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/ros2/urdf/index.md",
   "sourceDirName": "ros2/urdf",
   "slug": "/ros2/urdf/",
-  "permalink": "/full-project/ur/docs/ros2/urdf/",
+  "permalink": "/ur/docs/ros2/urdf/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ros2/urdf/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Python انٹیگریشن (rclpy)",
-    "permalink": "/full-project/ur/docs/ros2/python-integration-rclpy/"
+    "permalink": "/ur/docs/ros2/python-integration-rclpy/"
   },
   "next": {
     "title": "نتیجہ",
-    "permalink": "/full-project/ur/docs/ros2/conclusion/"
+    "permalink": "/ur/docs/ros2/conclusion/"
   }
 }

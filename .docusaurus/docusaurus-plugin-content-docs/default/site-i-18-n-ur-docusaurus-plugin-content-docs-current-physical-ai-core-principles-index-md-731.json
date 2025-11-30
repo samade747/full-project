@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/physical-ai/core-principles/index.md",
   "sourceDirName": "physical-ai/core-principles",
   "slug": "/physical-ai/core-principles/",
-  "permalink": "/full-project/ur/docs/physical-ai/core-principles/",
+  "permalink": "/ur/docs/physical-ai/core-principles/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/physical-ai/core-principles/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "فزیکل AI کا تعارف",
-    "permalink": "/full-project/ur/docs/physical-ai/introduction/"
+    "permalink": "/ur/docs/physical-ai/introduction/"
   },
   "next": {
     "title": "ڈیجیٹل سے فزیکل منتقلی",
-    "permalink": "/full-project/ur/docs/physical-ai/digital-to-physical-transition/"
+    "permalink": "/ur/docs/physical-ai/digital-to-physical-transition/"
   }
 }

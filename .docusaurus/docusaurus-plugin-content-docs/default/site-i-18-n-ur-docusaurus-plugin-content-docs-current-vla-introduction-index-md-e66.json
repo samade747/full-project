@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/vla/introduction/index.md",
   "sourceDirName": "vla/introduction",
   "slug": "/vla/introduction/",
-  "permalink": "/full-project/ur/docs/vla/introduction/",
+  "permalink": "/ur/docs/vla/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "5. Vision-Language-Action (VLA)",
-    "permalink": "/full-project/ur/docs/category/5-vision-language-action-vla"
+    "permalink": "/ur/docs/category/5-vision-language-action-vla"
   },
   "next": {
     "title": "VLA پائپ لائن",
-    "permalink": "/full-project/ur/docs/vla/pipeline"
+    "permalink": "/ur/docs/vla/pipeline"
   }
 }

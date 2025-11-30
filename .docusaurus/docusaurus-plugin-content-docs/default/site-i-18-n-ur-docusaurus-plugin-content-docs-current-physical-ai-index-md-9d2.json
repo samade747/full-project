@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/physical-ai/index.md",
   "sourceDirName": "physical-ai",
   "slug": "/physical-ai/",
-  "permalink": "/full-project/ur/docs/physical-ai/",
+  "permalink": "/ur/docs/physical-ai/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/physical-ai/index.md",

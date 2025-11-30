@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/hardware/sensors-actuators.md",
   "sourceDirName": "hardware",
   "slug": "/hardware/sensors-actuators",
-  "permalink": "/full-project/ur/docs/hardware/sensors-actuators",
+  "permalink": "/ur/docs/hardware/sensors-actuators",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/sensors-actuators.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "ایج کمپیوٹنگ اور اینویڈیا جیٹسَن",
-    "permalink": "/full-project/ur/docs/hardware/edge-computing-jetson"
+    "permalink": "/ur/docs/hardware/edge-computing-jetson"
   },
   "next": {
     "title": "لیب کا انفراسٹرکچر",
-    "permalink": "/full-project/ur/docs/hardware/lab-infrastructure"
+    "permalink": "/ur/docs/hardware/lab-infrastructure"
   }
 }

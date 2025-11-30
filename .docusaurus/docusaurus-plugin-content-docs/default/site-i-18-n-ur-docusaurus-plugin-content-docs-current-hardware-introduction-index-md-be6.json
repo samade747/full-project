@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/hardware/introduction/index.md",
   "sourceDirName": "hardware/introduction",
   "slug": "/hardware/introduction/",
-  "permalink": "/full-project/ur/docs/hardware/introduction/",
+  "permalink": "/ur/docs/hardware/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "7. Hardware Setup",
-    "permalink": "/full-project/ur/docs/category/7-hardware-setup"
+    "permalink": "/ur/docs/category/7-hardware-setup"
   },
   "next": {
     "title": "ورک اسٹیشن کی ضروریات",
-    "permalink": "/full-project/ur/docs/hardware/workstation-requirements"
+    "permalink": "/ur/docs/hardware/workstation-requirements"
   }
 }

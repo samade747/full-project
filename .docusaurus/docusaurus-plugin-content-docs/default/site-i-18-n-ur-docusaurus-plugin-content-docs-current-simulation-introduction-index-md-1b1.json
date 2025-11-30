@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/simulation/introduction/index.md",
   "sourceDirName": "simulation/introduction",
   "slug": "/simulation/introduction/",
-  "permalink": "/full-project/ur/docs/simulation/introduction/",
+  "permalink": "/ur/docs/simulation/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/simulation/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "3. Robot Simulation",
-    "permalink": "/full-project/ur/docs/category/3-robot-simulation"
+    "permalink": "/ur/docs/category/3-robot-simulation"
   },
   "next": {
     "title": "سیمولیشن پلیٹ فارمز: Gazebo بمقابلہ Unity",
-    "permalink": "/full-project/ur/docs/simulation/platforms/"
+    "permalink": "/ur/docs/simulation/platforms/"
   }
 }

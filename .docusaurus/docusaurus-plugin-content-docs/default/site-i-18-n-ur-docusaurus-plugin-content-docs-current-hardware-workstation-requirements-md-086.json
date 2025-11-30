@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/hardware/workstation-requirements.md",
   "sourceDirName": "hardware",
   "slug": "/hardware/workstation-requirements",
-  "permalink": "/full-project/ur/docs/hardware/workstation-requirements",
+  "permalink": "/ur/docs/hardware/workstation-requirements",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/workstation-requirements.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "اپنی روبوٹکس لیب بنانا",
-    "permalink": "/full-project/ur/docs/hardware/introduction/"
+    "permalink": "/ur/docs/hardware/introduction/"
   },
   "next": {
     "title": "ایج کمپیوٹنگ اور اینویڈیا جیٹسَن",
-    "permalink": "/full-project/ur/docs/hardware/edge-computing-jetson"
+    "permalink": "/ur/docs/hardware/edge-computing-jetson"
   }
 }

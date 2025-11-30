@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/simulation/sensor-simulation/index.md",
   "sourceDirName": "simulation/sensor-simulation",
   "slug": "/simulation/sensor-simulation/",
-  "permalink": "/full-project/ur/docs/simulation/sensor-simulation/",
+  "permalink": "/ur/docs/simulation/sensor-simulation/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/simulation/sensor-simulation/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "سیمولیشن پلیٹ فارمز: Gazebo بمقابلہ Unity",
-    "permalink": "/full-project/ur/docs/simulation/platforms/"
+    "permalink": "/ur/docs/simulation/platforms/"
   },
   "next": {
     "title": "نتیجہ",
-    "permalink": "/full-project/ur/docs/simulation/conclusion/"
+    "permalink": "/ur/docs/simulation/conclusion/"
   }
 }

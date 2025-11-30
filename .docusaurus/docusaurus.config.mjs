@@ -35,7 +35,7 @@ export default {
     }
   ],
   "url": "https://full-project-kappa.vercel.app",
-  "baseUrl": "/",
+  "baseUrl": "/ur/",
   "organizationName": "samade747",
   "projectName": "full-project",
   "onBrokenLinks": "warn",

@@ -5,7 +5,7 @@
   "source": "@site/i18n/ur/docusaurus-plugin-content-docs/current/vla/conclusion/index.md",
   "sourceDirName": "vla/conclusion",
   "slug": "/vla/conclusion/",
-  "permalink": "/full-project/ur/docs/vla/conclusion/",
+  "permalink": "/ur/docs/vla/conclusion/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/conclusion/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "روبوٹکس میں Large Language Models کا کردار",
-    "permalink": "/full-project/ur/docs/vla/llm-role"
+    "permalink": "/ur/docs/vla/llm-role"
   },
   "next": {
     "title": "6. Humanoid Robotics",
-    "permalink": "/full-project/ur/docs/category/6-humanoid-robotics"
+    "permalink": "/ur/docs/category/6-humanoid-robotics"
   }
 }

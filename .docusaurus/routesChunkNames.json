@@ -1,204 +1,204 @@
 {
-  "/login-f43": {
+  "/ur/login-52e": {
     "__comp": "34b338d8",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/signup-312": {
+  "/ur/signup-64a": {
     "__comp": "8d9bf57a",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/docs-e8d": {
+  "/ur/docs-851": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/docs-a89": {
+  "/ur/docs-0f4": {
     "__comp": "a7bd4aaa",
-    "__props": "0058b4c6"
+    "__props": "04f2558c"
   },
-  "/docs-b7b": {
+  "/ur/docs-e2c": {
     "__comp": "a94703ab"
   },
-  "/docs/category/2-ros-2-robot-operating-system-3c8": {
+  "/ur/docs/category/2-ros-2-robot-operating-system-8b8": {
     "__comp": "14eb3368",
-    "__props": "2a73f131"
+    "__props": "e39d52f8"
   },
-  "/docs/category/3-robot-simulation-f41": {
+  "/ur/docs/category/3-robot-simulation-81e": {
     "__comp": "14eb3368",
-    "__props": "0ee0f38f"
+    "__props": "ed669154"
   },
-  "/docs/category/5-vision-language-action-vla-7ee": {
+  "/ur/docs/category/5-vision-language-action-vla-9e7": {
     "__comp": "14eb3368",
-    "__props": "74977ccf"
+    "__props": "fc49a270"
   },
-  "/docs/category/6-humanoid-robotics-28e": {
+  "/ur/docs/category/6-humanoid-robotics-bda": {
     "__comp": "14eb3368",
-    "__props": "619f4e2e"
+    "__props": "2d8d23a3"
   },
-  "/docs/category/7-hardware-setup-fa4": {
+  "/ur/docs/category/7-hardware-setup-7b0": {
     "__comp": "14eb3368",
-    "__props": "ac713e11"
+    "__props": "14067ed3"
   },
-  "/docs/category/physical-ai-963": {
+  "/ur/docs/category/physical-ai-085": {
     "__comp": "14eb3368",
-    "__props": "d92a4e21"
+    "__props": "6a6c7be0"
   },
-  "/docs/hardware/-f18": {
+  "/ur/docs/hardware/-e2d": {
     "__comp": "17896441",
-    "content": "75439747"
+    "content": "47cf80b9"
   },
-  "/docs/hardware/conclusion/-c50": {
+  "/ur/docs/hardware/conclusion/-567": {
     "__comp": "17896441",
-    "content": "a4357137"
+    "content": "f9ac748f"
   },
-  "/docs/hardware/edge-computing-jetson-bd2": {
+  "/ur/docs/hardware/edge-computing-jetson-d1d": {
     "__comp": "17896441",
-    "content": "a7bab118"
+    "content": "00151718"
   },
-  "/docs/hardware/introduction/-b35": {
+  "/ur/docs/hardware/introduction/-8b2": {
     "__comp": "17896441",
-    "content": "2b8c0846"
+    "content": "be63a133"
   },
-  "/docs/hardware/lab-infrastructure-0c4": {
+  "/ur/docs/hardware/lab-infrastructure-97f": {
     "__comp": "17896441",
-    "content": "a3c2f0ff"
+    "content": "ad7a8022"
   },
-  "/docs/hardware/sensors-actuators-853": {
+  "/ur/docs/hardware/sensors-actuators-837": {
     "__comp": "17896441",
-    "content": "fd69d6bd"
+    "content": "56b4e1d0"
   },
-  "/docs/hardware/workstation-requirements-345": {
+  "/ur/docs/hardware/workstation-requirements-a63": {
     "__comp": "17896441",
-    "content": "a11d8b5c"
+    "content": "086b825d"
   },
-  "/docs/humanoid-robotics/-cb9": {
+  "/ur/docs/humanoid-robotics/-7dd": {
     "__comp": "17896441",
-    "content": "c7cb7f13"
+    "content": "08a9f6c3"
   },
-  "/docs/humanoid-robotics/bipedal-locomotion-f07": {
+  "/ur/docs/humanoid-robotics/bipedal-locomotion-b5f": {
     "__comp": "17896441",
-    "content": "a825b51d"
+    "content": "594e350c"
   },
-  "/docs/humanoid-robotics/conclusion/-ea5": {
+  "/ur/docs/humanoid-robotics/conclusion/-56a": {
     "__comp": "17896441",
-    "content": "0954a97b"
+    "content": "91169bf9"
   },
-  "/docs/humanoid-robotics/human-robot-interaction-30b": {
+  "/ur/docs/humanoid-robotics/human-robot-interaction-0b3": {
     "__comp": "17896441",
-    "content": "23e91f2b"
+    "content": "f5791644"
   },
-  "/docs/humanoid-robotics/introduction/-854": {
+  "/ur/docs/humanoid-robotics/introduction/-796": {
     "__comp": "17896441",
-    "content": "8a3f584b"
+    "content": "7fa02d57"
   },
-  "/docs/humanoid-robotics/kinematics-dynamics-679": {
+  "/ur/docs/humanoid-robotics/kinematics-dynamics-94b": {
     "__comp": "17896441",
-    "content": "4e201a90"
+    "content": "e69c10b5"
   },
-  "/docs/humanoid-robotics/manipulation-grasping-78d": {
+  "/ur/docs/humanoid-robotics/manipulation-grasping-05e": {
     "__comp": "17896441",
-    "content": "9ecec0db"
+    "content": "6b0fa37f"
   },
-  "/docs/intro-61d": {
+  "/ur/docs/intro-8a7": {
     "__comp": "17896441",
-    "content": "0e384e19"
+    "content": "9e1a014e"
   },
-  "/docs/physical-ai/-22b": {
+  "/ur/docs/physical-ai/-92a": {
     "__comp": "17896441",
-    "content": "6d764133"
+    "content": "9d212eec"
   },
-  "/docs/physical-ai/conclusion/-6ea": {
+  "/ur/docs/physical-ai/conclusion/-66f": {
     "__comp": "17896441",
-    "content": "5e10acaf"
+    "content": "fa4a0ef4"
   },
-  "/docs/physical-ai/core-principles/-44a": {
+  "/ur/docs/physical-ai/core-principles/-36f": {
     "__comp": "17896441",
-    "content": "ca5804ce"
+    "content": "731cbbbc"
   },
-  "/docs/physical-ai/digital-to-physical-transition/-da4": {
+  "/ur/docs/physical-ai/digital-to-physical-transition/-f09": {
     "__comp": "17896441",
-    "content": "09af73e7"
+    "content": "0310dc13"
   },
-  "/docs/physical-ai/introduction/-d83": {
+  "/ur/docs/physical-ai/introduction/-f98": {
     "__comp": "17896441",
-    "content": "ec268a43"
+    "content": "8b44f470"
   },
-  "/docs/ros2/-735": {
+  "/ur/docs/ros2/-5f3": {
     "__comp": "17896441",
-    "content": "a96b59cb"
+    "content": "65cb2722"
   },
-  "/docs/ros2/communication-patterns/-6f4": {
+  "/ur/docs/ros2/communication-patterns/-7d0": {
     "__comp": "17896441",
-    "content": "d20f64d3"
+    "content": "45efc296"
   },
-  "/docs/ros2/conclusion/-37c": {
+  "/ur/docs/ros2/conclusion/-eea": {
     "__comp": "17896441",
-    "content": "7ae604c2"
+    "content": "27e396b9"
   },
-  "/docs/ros2/core-architecture/-75c": {
+  "/ur/docs/ros2/core-architecture/-a2f": {
     "__comp": "17896441",
-    "content": "5f5a6949"
+    "content": "5aded4f5"
   },
-  "/docs/ros2/introduction/-609": {
+  "/ur/docs/ros2/introduction/-2c6": {
     "__comp": "17896441",
-    "content": "ecce250b"
+    "content": "a7baaef8"
   },
-  "/docs/ros2/python-integration-rclpy/-a07": {
+  "/ur/docs/ros2/python-integration-rclpy/-230": {
     "__comp": "17896441",
-    "content": "a2794fb8"
+    "content": "26623c2f"
   },
-  "/docs/ros2/urdf/-e36": {
+  "/ur/docs/ros2/urdf/-0f9": {
     "__comp": "17896441",
-    "content": "e9eb4218"
+    "content": "6a897fb2"
   },
-  "/docs/simulation/-501": {
+  "/ur/docs/simulation/-458": {
     "__comp": "17896441",
-    "content": "7987babc"
+    "content": "9c2d2a13"
   },
-  "/docs/simulation/conclusion/-ac5": {
+  "/ur/docs/simulation/conclusion/-302": {
     "__comp": "17896441",
-    "content": "d45b29d2"
+    "content": "a07cfc11"
   },
-  "/docs/simulation/introduction/-fdb": {
+  "/ur/docs/simulation/introduction/-7c8": {
     "__comp": "17896441",
-    "content": "edaf1b2f"
+    "content": "1b17b646"
   },
-  "/docs/simulation/platforms/-f95": {
+  "/ur/docs/simulation/platforms/-a0a": {
     "__comp": "17896441",
-    "content": "1a7865d7"
+    "content": "52745f61"
   },
-  "/docs/simulation/sensor-simulation/-88b": {
+  "/ur/docs/simulation/sensor-simulation/-413": {
     "__comp": "17896441",
-    "content": "a1f480c8"
+    "content": "9ac68ffa"
   },
-  "/docs/vla/-02b": {
+  "/ur/docs/vla/-db0": {
     "__comp": "17896441",
-    "content": "71014061"
+    "content": "3157a91b"
   },
-  "/docs/vla/conclusion/-3e9": {
+  "/ur/docs/vla/conclusion/-9cc": {
     "__comp": "17896441",
-    "content": "70eff3b6"
+    "content": "05afece9"
   },
-  "/docs/vla/introduction/-642": {
+  "/ur/docs/vla/introduction/-60d": {
     "__comp": "17896441",
-    "content": "28067c6b"
+    "content": "e667d931"
   },
-  "/docs/vla/llm-role-396": {
+  "/ur/docs/vla/llm-role-7ca": {
     "__comp": "17896441",
-    "content": "79fc0bba"
+    "content": "d93eca61"
   },
-  "/docs/vla/pipeline-931": {
+  "/ur/docs/vla/pipeline-03c": {
     "__comp": "17896441",
-    "content": "14a17483"
+    "content": "3e885b89"
   },
-  "/-e5f": {
+  "/ur/-f17": {
     "__comp": "1df93b7f",
     "__context": {
       "plugin": "a7456010"
