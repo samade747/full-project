@@ -29,7 +29,7 @@ const ModuleList: CourseModule[] = [
     icon: '🧠',
     title: 'The AI-Robot Brain (NVIDIA Isaac)',
     description: 'Advanced perception, training, and sim-to-real transfer techniques',
-    link: '/docs/category/4-nvidia-isaac-platform',
+    link: '/docs/simulation/platforms/',
   },
   {
     icon: '🗣️',
@@ -39,7 +39,7 @@ const ModuleList: CourseModule[] = [
   },
 ];
 
-function ModuleCard({icon, title, description, link}: CourseModule) {
+function ModuleCard({ icon, title, description, link }: CourseModule) {
   return (
     <div className={clsx('col col--6', styles.moduleCol)}>
       <div className={clsx('card', styles.moduleCard)}>
