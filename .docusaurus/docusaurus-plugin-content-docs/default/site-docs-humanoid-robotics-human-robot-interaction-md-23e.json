@@ -5,7 +5,7 @@
   "source": "@site/docs/humanoid-robotics/human-robot-interaction.md",
   "sourceDirName": "humanoid-robotics",
   "slug": "/humanoid-robotics/human-robot-interaction",
-  "permalink": "/docs/humanoid-robotics/human-robot-interaction",
+  "permalink": "/physical-ai-textbook/docs/humanoid-robotics/human-robot-interaction",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/humanoid-robotics/human-robot-interaction.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Manipulation and Grasping",
-    "permalink": "/docs/humanoid-robotics/manipulation-grasping"
+    "permalink": "/physical-ai-textbook/docs/humanoid-robotics/manipulation-grasping"
   },
   "next": {
     "title": "Conclusion",
-    "permalink": "/docs/humanoid-robotics/conclusion/"
+    "permalink": "/physical-ai-textbook/docs/humanoid-robotics/conclusion/"
   }
 }

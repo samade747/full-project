@@ -34,8 +34,8 @@ export default {
       "async": true
     }
   ],
-  "url": "https://your-docusaurus-site.example.com",
-  "baseUrl": "/",
+  "url": "https://panaverse.github.io",
+  "baseUrl": "/physical-ai-textbook/",
   "organizationName": "panaverse",
   "projectName": "physical-ai-textbook",
   "onBrokenLinks": "throw",

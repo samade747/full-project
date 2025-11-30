@@ -5,7 +5,7 @@
   "source": "@site/docs/ros2/core-architecture/index.md",
   "sourceDirName": "ros2/core-architecture",
   "slug": "/ros2/core-architecture/",
-  "permalink": "/docs/ros2/core-architecture/",
+  "permalink": "/physical-ai-textbook/docs/ros2/core-architecture/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ros2/core-architecture/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Introduction to ROS 2",
-    "permalink": "/docs/ros2/introduction/"
+    "permalink": "/physical-ai-textbook/docs/ros2/introduction/"
   },
   "next": {
     "title": "Communication Patterns",
-    "permalink": "/docs/ros2/communication-patterns/"
+    "permalink": "/physical-ai-textbook/docs/ros2/communication-patterns/"
   }
 }

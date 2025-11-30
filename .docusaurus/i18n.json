@@ -14,8 +14,8 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://your-docusaurus-site.example.com",
-      "baseUrl": "/"
+      "url": "https://panaverse.github.io",
+      "baseUrl": "/physical-ai-textbook/"
     },
     "ur": {
       "label": "اردو",
@@ -24,8 +24,8 @@
       "calendar": "gregory",
       "path": "ur",
       "translate": true,
-      "url": "https://your-docusaurus-site.example.com",
-      "baseUrl": "/ur/"
+      "url": "https://panaverse.github.io",
+      "baseUrl": "/physical-ai-textbook/ur/"
     }
   }
 }

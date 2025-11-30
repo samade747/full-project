@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 require('dotenv').config();
@@ -12,7 +12,7 @@ const config: Config = {
   future: {
     v4: true,
   },
-  
+
   scripts: [
     {
       src: "https://cdn.platform.openai.com/deployments/chatkit/chatkit.js",
@@ -20,11 +20,11 @@ const config: Config = {
     },
   ],
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://panaverse.github.io', // Your GitHub Pages URL
+  baseUrl: '/physical-ai-textbook/', // Your repository name
 
-  organizationName: 'panaverse',
-  projectName: 'physical-ai-textbook',
+  organizationName: 'panaverse', // Your GitHub username or org
+  projectName: 'physical-ai-textbook', // Your repository name
 
   onBrokenLinks: 'throw',
 
@@ -53,7 +53,7 @@ const config: Config = {
         blog: false,
         theme: {
           customCss: [
-            require.resolve('./src/css/custom.css'), 
+            require.resolve('./src/css/custom.css'),
             require.resolve('./src/css/sidebar-custom.css')
           ],
         },

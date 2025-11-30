@@ -5,7 +5,7 @@
   "source": "@site/docs/hardware/conclusion/index.md",
   "sourceDirName": "hardware/conclusion",
   "slug": "/hardware/conclusion/",
-  "permalink": "/docs/hardware/conclusion/",
+  "permalink": "/physical-ai-textbook/docs/hardware/conclusion/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/conclusion/index.md",
@@ -17,6 +17,6 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Lab Infrastructure",
-    "permalink": "/docs/hardware/lab-infrastructure"
+    "permalink": "/physical-ai-textbook/docs/hardware/lab-infrastructure"
   }
 }
