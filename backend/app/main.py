@@ -170,4 +170,7 @@ async def chatkit_endpoint(
 
 # ===== INCLUDE API ROUTERS =====
 from app.api import auth
+from app.api import chat
+
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
+app.include_router(chat.router, prefix="/api", tags=["chat"])

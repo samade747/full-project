@@ -6,6 +6,9 @@ from typing import Optional
 from jose import JWTError, jwt
 from pydantic import BaseModel
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class TokenData(BaseModel):
     email: Optional[str] = None
