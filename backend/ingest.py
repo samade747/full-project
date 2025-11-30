@@ -1,71 +1,78 @@
-# Simple ingestion script: read markdown files under ../book/docs, chunk them, embed and upsert to Qdrant
+# ingest.py - chunk docs, get embeddings, and upsert to Qdrant
 import os, glob, json, math
-from dotenv import load_dotenv
-load_dotenv()
-import openai
-from qdrant_client import QdrantClient
+from pathlib import Path
+from typing import List
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 QDRANT_URL = os.getenv('QDRANT_URL')
 QDRANT_API_KEY = os.getenv('QDRANT_API_KEY')
-COLLECTION = os.getenv('QDRANT_COLLECTION_NAME', 'calcu_book')
-CHUNK_SIZE = int(os.getenv('CHUNK_SIZE', '800'))
+COLLECTION = os.getenv('QDRANT_COLLECTION_NAME','calcu_book')
 
-if not OPENAI_API_KEY:
-    raise RuntimeError('OPENAI_API_KEY is required in environment')
+def read_markdown_files(docs_dir='../book/docs'):
+    md_files = glob.glob(os.path.join(docs_dir, '**', '*.md'), recursive=True)
+    contents = []
+    for p in md_files:
+        with open(p, 'r', encoding='utf-8') as f:
+            contents.append({'path': p, 'text': f.read()})
+    return contents
 
-openai.api_key = OPENAI_API_KEY
-client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY, prefer_grpc=False)
+def chunk_text(text, max_tokens=500):
+    # naive splitter by paragraphs - adjust as needed
+    paras = [p.strip() for p in text.split('\n\n') if p.strip()]
+    chunks = []
+    cur = ''
+    for p in paras:
+        if len(cur) + len(p) > 4000:
+            chunks.append(cur)
+            cur = p
+        else:
+            cur = (cur + '\n\n' + p).strip()
+    if cur:
+        chunks.append(cur)
+    return chunks
 
-def chunk_text(text, chunk_size=800, overlap=100):
-    tokens = []
-    start = 0
-    L = len(text)
-    while start < L:
-        end = min(start + chunk_size, L)
-        tokens.append(text[start:end])
-        start = max(0, end - overlap)
-        if end == L:
-            break
-    return tokens
+def embed_texts(texts: List[str]):
+    # use REST OpenAI embeddings
+    import requests
+    if not OPENAI_API_KEY:
+        raise RuntimeError('OPENAI_API_KEY not set')
+    url = 'https://api.openai.com/v1/embeddings'
+    headers = {'Authorization': f'Bearer {OPENAI_API_KEY}', 'Content-Type': 'application/json'}
+    payload = {'model':'text-embedding-3-small','input': texts}
+    r = requests.post(url, headers=headers, json=payload)
+    r.raise_for_status()
+    data = r.json()
+    return [d['embedding'] for d in data['data']]
 
-def embed_texts(texts):
-    response = openai.Embedding.create(input=texts, model='text-embedding-3-small')
-    vectors = [d['embedding'] for d in response['data']]
-    return vectors
+def upsert_to_qdrant(points):
+    import requests
+    if not QDRANT_URL:
+        raise RuntimeError('QDRANT_URL not set')
+    url = QDRANT_URL.rstrip('/') + f"/collections/{COLLECTION}/points?wait=true"
+    headers = {'Content-Type': 'application/json'}
+    if QDRANT_API_KEY:
+        headers['api-key'] = QDRANT_API_KEY
+    payload = {'points': points}
+    r = requests.put(url, headers=headers, json=payload)
+    r.raise_for_status()
+    return r.json()
 
-def upsert_chunks(chunks, vectors, namespace=COLLECTION):
-    points = []
-    for i,(c,v) in enumerate(zip(chunks,vectors)):
-        points.append({
-            "id": f"chunk-{i}",
-            "vector": v,
-            "payload": {"text": c}
-        })
-    # create collection if missing (best-effort)
-    try:
-        client.recreate_collection(collection_name=namespace, vectors_config={"size": len(vectors[0]), "distance": "Cosine"})
-    except Exception:
-        pass
-    client.upsert(collection_name=namespace, points=points)
-
-def ingest_docs(docs_path='../book/docs'):
-    md_files = glob.glob(os.path.join(docs_path, '**', '*.md'), recursive=True)
+def main():
+    docs = read_markdown_files()
     all_chunks = []
-    for f in md_files:
-        with open(f, 'r', encoding='utf-8') as fh:
-            text = fh.read()
-        chunks = chunk_text(text, CHUNK_SIZE)
-        all_chunks.extend(chunks)
-    # embed in batches
-    BATCH = 16
-    vectors = []
-    for i in range(0, len(all_chunks), BATCH):
-        batch = all_chunks[i:i+BATCH]
-        vectors.extend(embed_texts(batch))
-    upsert_chunks(all_chunks, vectors)
+    for doc in docs:
+        chunks = chunk_text(doc['text'])
+        for i,c in enumerate(chunks):
+            all_chunks.append({'id': f"{Path(doc['path']).stem}_{i}", 'text': c, 'meta': {'path': doc['path']}})
+    texts = [c['text'] for c in all_chunks]
+    print('Embedding', len(texts), 'chunks')
+    embeddings = embed_texts(texts)
+    points = []
+    for i,chunk in enumerate(all_chunks):
+        points.append({'id': chunk['id'], 'vector': embeddings[i], 'payload': {'text': chunk['text'], 'meta': chunk['meta']}})
+    print('Upserting to Qdrant...')
+    res = upsert_to_qdrant(points)
+    print('Upsert result:', res)
 
 if __name__ == '__main__':
-    print('Starting ingest...')
-    ingest_docs()
-    print('Done.')
+    main()

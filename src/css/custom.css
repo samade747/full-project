@@ -1,0 +1,187 @@
+/**
+ * Any CSS placed here will be global and applied to the entire site.
+ */
+
+:root {
+  --ifm-color-primary: #cc0000; /* Bright Red for primary actions */
+  --ifm-color-primary-dark: #b30000;
+  --ifm-color-primary-darker: #990000;
+  --ifm-color-primary-darkest: #800000;
+  --ifm-color-primary-light: #e60000;
+  --ifm-color-primary-lighter: #ff1a1a;
+  --ifm-color-primary-lightest: #ff4d4d;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(204, 0, 0, 0.2); /* Faint red for code highlights */
+}
+
+/* Enforce dark theme for both light and dark modes */
+html[data-theme='dark'],
+html[data-theme='light'] {
+  --ifm-background-color: #000000;
+  --ifm-font-color-base: #ffffff;
+  --ifm-color-primary: #ff4d4d; /* Lighter Red for dark mode */
+  --ifm-color-primary-dark: #ff1a1a;
+  --ifm-color-primary-darker: #e60000;
+  --ifm-color-primary-darkest: #b30000;
+  --ifm-color-primary-light: #ff8080;
+  --ifm-color-primary-lighter: #ffb3b3;
+  --ifm-color-primary-lightest: #ffe6e6;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 77, 77, 0.3);
+}
+
+/* Headings should be red */
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6 {
+  color: var(--ifm-color-primary);
+}
+
+
+/* Styling for Auth Components */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: var(--card-background-color);
+  border-radius: var(--ifm-border-radius);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"],
+form select {
+  padding: 10px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 5px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+form button[type="submit"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* AuthButton Styling */
+.navbar-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.AuthButton-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.AuthButton-container a,
+.AuthButton-container button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.AuthButton-container a {
+  background-color: transparent;
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.AuthButton-container a:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.AuthButton-container button {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.AuthButton-container button:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* PersonalizeButton and EditPageButton Styling */
+.ContentWrapper-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ContentWrapper-buttons button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--card-background-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ContentWrapper-buttons button:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* ===== FOOTER - HEADER JAISA DARK COLOR ===== */
+
+/* Light mode footer */
+[data-theme='light'] footer.footer--dark {
+  --ifm-footer-background-color: #ffffff !important;
+  background-color: #ffffff !important;
+  border-top: 1px solid #e5e7eb;
+}
+
+[data-theme='light'] footer.footer--dark .footer__copyright,
+[data-theme='light'] footer.footer--dark .footer__link-item {
+  color: #4b5563 !important;
+}
+
+/* Dark mode footer - Header jaisa exact color */
+[data-theme='dark'] footer.footer--dark {
+  --ifm-footer-background-color: #1b1b1d !important;
+  background-color: #1b1b1d !important;
+  border-top: 1px solid #2d2d30;
+}
+
+[data-theme='dark'] footer.footer--dark .footer__title {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+[data-theme='dark'] footer.footer--dark .footer__copyright,
+[data-theme='dark'] footer.footer--dark .footer__link-item {
+  color: #a0a0a0 !important;
+}
+
+[data-theme='dark'] footer.footer--dark .footer__link-item:hover {
+  color: #dc2626 !important;
+}
+
+/* Footer padding adjustment */
+footer.footer {
+  padding: 2rem 0 !important;
+}
+
+footer.footer .container {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}

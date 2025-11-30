@@ -1,0 +1,835 @@
+/* ============================================
+   HOMEPAGE COMPLETE STYLES - RED/BLACK THEME
+   ============================================ */
+
+/* Main Content */
+.mainContent {
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade In Animation Base */
+.fadeInSection {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   SECTION TITLES - GLOBAL
+   ============================================ */
+
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.titleUnderline {
+  background: linear-gradient(135deg, #ffffff 0%, #fca5a5 50%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+
+.titleUnderline::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+  border-radius: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   OVERVIEW SECTION
+   ============================================ */
+
+.overviewSection {
+  padding: 8rem 2rem;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, rgba(127, 29, 29, 0.05) 50%, #000000 100%);
+}
+
+.overviewSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(220, 38, 38, 0.6), transparent);
+}
+
+.overviewText {
+  font-size: 1.3rem;
+  color: #d1d5db;
+  line-height: 1.9;
+  max-width: 850px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   MODULES SECTION
+   ============================================ */
+
+.modulesSection {
+  padding: 8rem 2rem;
+  position: relative;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(185, 28, 28, 0.06) 0%, transparent 50%),
+    #000000;
+}
+
+.modulesSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 68, 68, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Module Cards */
+.features {
+  position: relative;
+  z-index: 1;
+}
+
+.moduleCol {
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.moduleCol:nth-child(1) { animation-delay: 0.1s; }
+.moduleCol:nth-child(2) { animation-delay: 0.2s; }
+.moduleCol:nth-child(3) { animation-delay: 0.3s; }
+.moduleCol:nth-child(4) { animation-delay: 0.4s; }
+
+.moduleCard {
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(0, 0, 0, 0.9));
+  border: 2px solid rgba(220, 38, 38, 0.4);
+  border-radius: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+}
+
+.moduleCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.2), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.moduleCard:hover {
+  transform: translateY(-15px) scale(1.03);
+  border-color: rgba(220, 38, 38, 0.8);
+  box-shadow: 
+    0 30px 60px rgba(220, 38, 38, 0.4),
+    0 0 100px rgba(220, 38, 38, 0.2),
+    inset 0 0 80px rgba(220, 38, 38, 0.08);
+}
+
+.moduleCard:hover::before {
+  opacity: 1;
+  animation: rotate 20s linear infinite;
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(135deg, #dc2626, #991b1b, #7f1d1d);
+  border-radius: 1.5rem;
+  opacity: 0;
+  filter: blur(25px);
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.moduleCard:hover .cardGlow {
+  opacity: 0.7;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBackground {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.4), rgba(185, 28, 28, 0.3));
+  border: 3px solid rgba(220, 38, 38, 0.6);
+  border-radius: 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 15px 40px rgba(220, 38, 38, 0.3),
+    inset 0 3px 15px rgba(255, 255, 255, 0.1);
+}
+
+.moduleCard:hover .iconBackground {
+  transform: scale(1.15) rotate(10deg);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.6), rgba(185, 28, 28, 0.5));
+  border-color: rgba(220, 38, 38, 0.9);
+  box-shadow: 
+    0 20px 50px rgba(220, 38, 38, 0.5),
+    inset 0 3px 20px rgba(255, 255, 255, 0.15);
+}
+
+.moduleIcon {
+  font-size: 4.5rem;
+  position: relative;
+  z-index: 2;
+  display: block;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+}
+
+.moduleCard:hover .moduleIcon {
+  transform: scale(1.2) rotate(-10deg);
+  filter: drop-shadow(0 10px 20px rgba(220, 38, 38, 0.7));
+}
+
+.orbitParticle {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 12px;
+  height: 12px;
+  background: #dc2626;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 25px #dc2626, 0 0 50px #dc2626;
+  transition: opacity 0.3s ease;
+}
+
+.moduleCard:hover .orbitParticle {
+  opacity: 1;
+  animation: orbit 4s linear infinite;
+}
+
+.moduleTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #ffffff, #fca5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.4s ease;
+}
+
+.moduleCard:hover .moduleTitle {
+  background: linear-gradient(135deg, #ffffff, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateX(8px);
+}
+
+.moduleDescription {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.moduleCard:hover .moduleDescription {
+  color: #e5e7eb;
+}
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(220, 38, 38, 0.25);
+  transition: border-color 0.3s ease;
+}
+
+.moduleCard:hover .cardFooter {
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+.moduleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: rgba(220, 38, 38, 0.2);
+  border: 2px solid rgba(220, 38, 38, 0.5);
+  border-radius: 0.75rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.moduleButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.4), rgba(185, 28, 28, 0.4));
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.moduleButton:hover {
+  background: rgba(220, 38, 38, 0.3);
+  border-color: rgba(220, 38, 38, 0.9);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 30px rgba(220, 38, 38, 0.4),
+    0 0 50px rgba(220, 38, 38, 0.25);
+  color: #ffffff;
+}
+
+.moduleButton:hover::before {
+  transform: translateX(0);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonArrow {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.moduleButton:hover .buttonArrow {
+  transform: translateX(6px);
+}
+
+/* ============================================
+   LEARNING OUTCOMES SECTION
+   ============================================ */
+
+.outcomesSection {
+  padding: 8rem 2rem;
+  background: #000000;
+  position: relative;
+}
+
+.outcomesIntro {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+
+.outcomesList {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.outcomesList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.75rem;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.15), transparent);
+  border-left: 4px solid #dc2626;
+  border-radius: 0 0.75rem 0.75rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.outcomesList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #dc2626, #ef4444);
+  transition: width 0.4s ease;
+}
+
+.outcomesList li:hover {
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.25), transparent);
+  transform: translateX(15px);
+  border-left-width: 6px;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+}
+
+.outcomesList li:hover::before {
+  width: 100%;
+  opacity: 0.1;
+}
+
+.bulletIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(220, 38, 38, 0.25);
+  border-radius: 50%;
+  color: #dc2626;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.outcomesList li:hover .bulletIcon {
+  transform: scale(1.15) rotate(10deg);
+  background: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+}
+
+.outcomesList li span:last-child {
+  color: #e5e7eb;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   QUOTE SECTION
+   ============================================ */
+
+.quoteSection {
+  background: linear-gradient(135deg, rgba(127, 29, 29, 0.4), rgba(0, 0, 0, 0.95));
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  border-radius: 2.5rem;
+  padding: 7rem 2rem;
+  margin: 5rem auto;
+  max-width: 1300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(220, 38, 38, 0.3);
+}
+
+.quoteSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15), transparent 50%);
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.quoteIcon {
+  font-size: 8rem;
+  color: rgba(220, 38, 38, 0.3);
+  font-family: Georgia, serif;
+  line-height: 0.5;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteTitle {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+}
+
+.quoteText {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #e5e7eb;
+  line-height: 1.9;
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+.quoteAuthor {
+  color: #dc2626;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: rgba(220, 38, 38, 0.1);
+  border-radius: 50px;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* ============================================
+   HARDWARE SECTION
+   ============================================ */
+
+.hardwareSection {
+  padding: 8rem 2rem;
+  background: linear-gradient(180deg, #000000 0%, rgba(127, 29, 29, 0.08) 50%, #000000 100%);
+}
+
+.hardwareIntro {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  line-height: 1.7;
+}
+
+.hardwareCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  border-radius: 2rem;
+  padding: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  height: 100%;
+}
+
+.hardwareCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0), rgba(220, 38, 38, 0.2));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hardwareCard:hover {
+  border-color: rgba(220, 38, 38, 0.7);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(220, 38, 38, 0.4);
+}
+
+.hardwareCard:hover::before {
+  opacity: 1;
+}
+
+.hardwareCardInner {
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hardwareIconWrapper {
+  width: 120px;
+  height: 120px;
+  background: rgba(220, 38, 38, 0.25);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(220, 38, 38, 0.4);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+.hardwareCard:hover .hardwareIconWrapper {
+  background: rgba(220, 38, 38, 0.4);
+  transform: scale(1.15) rotate(8deg);
+  border-color: rgba(220, 38, 38, 0.7);
+  box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+}
+
+.hardwareIcon {
+  font-size: 4.5rem;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.hardwareCard:hover .hardwareIcon {
+  transform: scale(1.2) rotate(-8deg);
+  filter: drop-shadow(0 8px 15px rgba(220, 38, 38, 0.6));
+}
+
+.hardwareTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 2rem 0 1.5rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #fca5a5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hardwareDescription {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.hardwareButtonWrapper {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.hardwareButton {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.3rem 2.8rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 15px 40px rgba(220, 38, 38, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hardwareButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translate(-50%, -50%);
+  transition: width 0.7s, height 0.7s;
+}
+
+.hardwareButton:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  box-shadow: 0 20px 60px rgba(220, 38, 38, 0.7);
+  transform: translateY(-4px) scale(1.05);
+  color: #ffffff;
+}
+
+.hardwareButton:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.hardwareButton span:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.buttonArrowHardware {
+  position: relative;
+  z-index: 1;
+  font-size: 1.6rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hardwareButton:hover .buttonArrowHardware {
+  transform: translateX(6px);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(70px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(70px) rotate(-360deg);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media screen and (max-width: 996px) {
+  .sectionTitle {
+    font-size: 2.8rem;
+  }
+
+  .overviewSection,
+  .modulesSection,
+  .outcomesSection,
+  .hardwareSection {
+    padding: 5rem 1.5rem;
+  }
+
+  .overviewText {
+    font-size: 1.15rem;
+  }
+
+  .cardContent {
+    padding: 2rem;
+  }
+
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .moduleIcon {
+    font-size: 3.8rem;
+  }
+
+  .moduleTitle {
+    font-size: 1.5rem;
+  }
+
+  .moduleDescription {
+    font-size: 1rem;
+  }
+
+  .quoteTitle {
+    font-size: 2.5rem;
+  }
+
+  .quoteText {
+    font-size: 1.3rem;
+  }
+
+  .hardwareIconWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hardwareIcon {
+    font-size: 3.8rem;
+  }
+
+  .hardwareTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .col--4,
+  .col--6,
+  .col--8,
+  .col--10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .col--offset-1,
+  .col--offset-2 {
+    margin-left: 0;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .overviewSection,
+  .modulesSection,
+  .outcomesSection,
+  .hardwareSection {
+    padding: 4rem 1rem;
+  }
+
+  .quoteSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .quoteIcon {
+    font-size: 5rem;
+  }
+
+  .quoteTitle {
+    font-size: 2rem;
+  }
+
+  .quoteText {
+    font-size: 1.15rem;
+  }
+
+  .orbitParticle {
+    display: none;
+  }
+
+  .hardwareCardInner {
+    padding: 2rem;
+  }
+}
+

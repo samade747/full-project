@@ -1,7 +1,7 @@
-# Checklist
+# Release Checklist
 
-- [ ] Frontend builds
-- [ ] Backend runs
-- [ ] Ingest completes
-- [ ] ChatKit session returns client_secret
-- [ ] RAG query returns answers
+- [ ] Secrets configured
+- [ ] Qdrant collection created and ingested
+- [ ] Frontend builds locally
+- [ ] Backend passes smoke tests
+- [ ] Deploy workflows set

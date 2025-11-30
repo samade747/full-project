@@ -1,21 +1,41 @@
-# Calcu Project (fixed)
+# Website
 
-This repository contains a minimal Docusaurus frontend (book) and a FastAPI backend that supports:
-- ChatKit session creation (/api/chatkit/session)
-- RAG queries against Qdrant using OpenAI embeddings (/api/query)
-- Ingest script to read markdown docs and index into Qdrant (backend/ingest.py)
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-Quick start:
-1. Copy backend/.env.example -> backend/.env and fill keys.
-2. Start Qdrant (cloud or local) and set QDRANT_URL & QDRANT_API_KEY.
-3. Backend:
-   python -m venv .venv
-   .venv\Scripts\activate  (Windows) or source .venv/bin/activate (mac/linux)
-   pip install -r backend/requirements.txt
-   uvicorn backend.app:app --reload --port 8000
-4. Ingest book docs:
-   python backend/ingest.py
-5. Frontend (book):
-   cd book
-   npm install
-   npm start
+## Installation
+
+```bash
+yarn
+```
+
+## Local Development
+
+```bash
+yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+## Build
+
+```bash
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+Using SSH:
+
+```bash
+USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
