@@ -1,204 +1,204 @@
 {
-  "/full-project/login-e30": {
+  "/full-project/ur/login-a6f": {
     "__comp": "34b338d8",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/full-project/signup-19b": {
+  "/full-project/ur/signup-502": {
     "__comp": "8d9bf57a",
     "__context": {
       "plugin": "a7456010"
     },
     "config": "5e9f5e1a"
   },
-  "/full-project/docs-fad": {
+  "/full-project/ur/docs-ff8": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/full-project/docs-76a": {
+  "/full-project/ur/docs-656": {
     "__comp": "a7bd4aaa",
-    "__props": "94388ab3"
+    "__props": "e3fddc38"
   },
-  "/full-project/docs-19c": {
+  "/full-project/ur/docs-b18": {
     "__comp": "a94703ab"
   },
-  "/full-project/docs/category/2-ros-2-robot-operating-system-695": {
+  "/full-project/ur/docs/category/2-ros-2-robot-operating-system-e4c": {
     "__comp": "14eb3368",
-    "__props": "cc83a288"
+    "__props": "86a9afed"
   },
-  "/full-project/docs/category/3-robot-simulation-100": {
+  "/full-project/ur/docs/category/3-robot-simulation-37d": {
     "__comp": "14eb3368",
-    "__props": "d01b8b48"
+    "__props": "a723281e"
   },
-  "/full-project/docs/category/5-vision-language-action-vla-456": {
+  "/full-project/ur/docs/category/5-vision-language-action-vla-056": {
     "__comp": "14eb3368",
-    "__props": "ccb631c1"
+    "__props": "65bdf99a"
   },
-  "/full-project/docs/category/6-humanoid-robotics-2c4": {
+  "/full-project/ur/docs/category/6-humanoid-robotics-33a": {
     "__comp": "14eb3368",
-    "__props": "8860e125"
+    "__props": "8e953d60"
   },
-  "/full-project/docs/category/7-hardware-setup-62c": {
+  "/full-project/ur/docs/category/7-hardware-setup-f19": {
     "__comp": "14eb3368",
-    "__props": "b6f444e2"
+    "__props": "689ffc29"
   },
-  "/full-project/docs/category/physical-ai-0bd": {
+  "/full-project/ur/docs/category/physical-ai-f87": {
     "__comp": "14eb3368",
-    "__props": "a39a1b08"
+    "__props": "1cbf59aa"
   },
-  "/full-project/docs/hardware/-f93": {
+  "/full-project/ur/docs/hardware/-ef7": {
     "__comp": "17896441",
-    "content": "75439747"
+    "content": "47cf80b9"
   },
-  "/full-project/docs/hardware/conclusion/-83b": {
+  "/full-project/ur/docs/hardware/conclusion/-bff": {
     "__comp": "17896441",
-    "content": "a4357137"
+    "content": "f9ac748f"
   },
-  "/full-project/docs/hardware/edge-computing-jetson-1ac": {
+  "/full-project/ur/docs/hardware/edge-computing-jetson-ae4": {
     "__comp": "17896441",
-    "content": "a7bab118"
+    "content": "00151718"
   },
-  "/full-project/docs/hardware/introduction/-bf6": {
+  "/full-project/ur/docs/hardware/introduction/-5cd": {
     "__comp": "17896441",
-    "content": "2b8c0846"
+    "content": "be63a133"
   },
-  "/full-project/docs/hardware/lab-infrastructure-2f1": {
+  "/full-project/ur/docs/hardware/lab-infrastructure-7fb": {
     "__comp": "17896441",
-    "content": "a3c2f0ff"
+    "content": "ad7a8022"
   },
-  "/full-project/docs/hardware/sensors-actuators-670": {
+  "/full-project/ur/docs/hardware/sensors-actuators-55e": {
     "__comp": "17896441",
-    "content": "fd69d6bd"
+    "content": "56b4e1d0"
   },
-  "/full-project/docs/hardware/workstation-requirements-a5a": {
+  "/full-project/ur/docs/hardware/workstation-requirements-150": {
     "__comp": "17896441",
-    "content": "a11d8b5c"
+    "content": "086b825d"
   },
-  "/full-project/docs/humanoid-robotics/-40b": {
+  "/full-project/ur/docs/humanoid-robotics/-4fa": {
     "__comp": "17896441",
-    "content": "c7cb7f13"
+    "content": "08a9f6c3"
   },
-  "/full-project/docs/humanoid-robotics/bipedal-locomotion-58c": {
+  "/full-project/ur/docs/humanoid-robotics/bipedal-locomotion-3a8": {
     "__comp": "17896441",
-    "content": "a825b51d"
+    "content": "594e350c"
   },
-  "/full-project/docs/humanoid-robotics/conclusion/-3d2": {
+  "/full-project/ur/docs/humanoid-robotics/conclusion/-ec1": {
     "__comp": "17896441",
-    "content": "0954a97b"
+    "content": "91169bf9"
   },
-  "/full-project/docs/humanoid-robotics/human-robot-interaction-f86": {
+  "/full-project/ur/docs/humanoid-robotics/human-robot-interaction-977": {
     "__comp": "17896441",
-    "content": "23e91f2b"
+    "content": "f5791644"
   },
-  "/full-project/docs/humanoid-robotics/introduction/-bcb": {
+  "/full-project/ur/docs/humanoid-robotics/introduction/-ee9": {
     "__comp": "17896441",
-    "content": "8a3f584b"
+    "content": "7fa02d57"
   },
-  "/full-project/docs/humanoid-robotics/kinematics-dynamics-c8e": {
+  "/full-project/ur/docs/humanoid-robotics/kinematics-dynamics-119": {
     "__comp": "17896441",
-    "content": "4e201a90"
+    "content": "e69c10b5"
   },
-  "/full-project/docs/humanoid-robotics/manipulation-grasping-9c7": {
+  "/full-project/ur/docs/humanoid-robotics/manipulation-grasping-a68": {
     "__comp": "17896441",
-    "content": "9ecec0db"
+    "content": "6b0fa37f"
   },
-  "/full-project/docs/intro-12e": {
+  "/full-project/ur/docs/intro-353": {
     "__comp": "17896441",
-    "content": "0e384e19"
+    "content": "9e1a014e"
   },
-  "/full-project/docs/physical-ai/-934": {
+  "/full-project/ur/docs/physical-ai/-5c8": {
     "__comp": "17896441",
-    "content": "6d764133"
+    "content": "9d212eec"
   },
-  "/full-project/docs/physical-ai/conclusion/-6cb": {
+  "/full-project/ur/docs/physical-ai/conclusion/-5ba": {
     "__comp": "17896441",
-    "content": "5e10acaf"
+    "content": "fa4a0ef4"
   },
-  "/full-project/docs/physical-ai/core-principles/-74e": {
+  "/full-project/ur/docs/physical-ai/core-principles/-e47": {
     "__comp": "17896441",
-    "content": "ca5804ce"
+    "content": "731cbbbc"
   },
-  "/full-project/docs/physical-ai/digital-to-physical-transition/-abb": {
+  "/full-project/ur/docs/physical-ai/digital-to-physical-transition/-c55": {
     "__comp": "17896441",
-    "content": "09af73e7"
+    "content": "0310dc13"
   },
-  "/full-project/docs/physical-ai/introduction/-342": {
+  "/full-project/ur/docs/physical-ai/introduction/-68d": {
     "__comp": "17896441",
-    "content": "ec268a43"
+    "content": "8b44f470"
   },
-  "/full-project/docs/ros2/-224": {
+  "/full-project/ur/docs/ros2/-7a8": {
     "__comp": "17896441",
-    "content": "a96b59cb"
+    "content": "65cb2722"
   },
-  "/full-project/docs/ros2/communication-patterns/-017": {
+  "/full-project/ur/docs/ros2/communication-patterns/-353": {
     "__comp": "17896441",
-    "content": "d20f64d3"
+    "content": "45efc296"
   },
-  "/full-project/docs/ros2/conclusion/-c48": {
+  "/full-project/ur/docs/ros2/conclusion/-e93": {
     "__comp": "17896441",
-    "content": "7ae604c2"
+    "content": "27e396b9"
   },
-  "/full-project/docs/ros2/core-architecture/-31b": {
+  "/full-project/ur/docs/ros2/core-architecture/-f90": {
     "__comp": "17896441",
-    "content": "5f5a6949"
+    "content": "5aded4f5"
   },
-  "/full-project/docs/ros2/introduction/-4ee": {
+  "/full-project/ur/docs/ros2/introduction/-0ae": {
     "__comp": "17896441",
-    "content": "ecce250b"
+    "content": "a7baaef8"
   },
-  "/full-project/docs/ros2/python-integration-rclpy/-ae8": {
+  "/full-project/ur/docs/ros2/python-integration-rclpy/-873": {
     "__comp": "17896441",
-    "content": "a2794fb8"
+    "content": "26623c2f"
   },
-  "/full-project/docs/ros2/urdf/-73b": {
+  "/full-project/ur/docs/ros2/urdf/-e61": {
     "__comp": "17896441",
-    "content": "e9eb4218"
+    "content": "6a897fb2"
   },
-  "/full-project/docs/simulation/-f93": {
+  "/full-project/ur/docs/simulation/-9ee": {
     "__comp": "17896441",
-    "content": "7987babc"
+    "content": "9c2d2a13"
   },
-  "/full-project/docs/simulation/conclusion/-4ac": {
+  "/full-project/ur/docs/simulation/conclusion/-e03": {
     "__comp": "17896441",
-    "content": "d45b29d2"
+    "content": "a07cfc11"
   },
-  "/full-project/docs/simulation/introduction/-a81": {
+  "/full-project/ur/docs/simulation/introduction/-8e8": {
     "__comp": "17896441",
-    "content": "edaf1b2f"
+    "content": "1b17b646"
   },
-  "/full-project/docs/simulation/platforms/-cb7": {
+  "/full-project/ur/docs/simulation/platforms/-814": {
     "__comp": "17896441",
-    "content": "1a7865d7"
+    "content": "52745f61"
   },
-  "/full-project/docs/simulation/sensor-simulation/-7a0": {
+  "/full-project/ur/docs/simulation/sensor-simulation/-eea": {
     "__comp": "17896441",
-    "content": "a1f480c8"
+    "content": "9ac68ffa"
   },
-  "/full-project/docs/vla/-2c7": {
+  "/full-project/ur/docs/vla/-9c4": {
     "__comp": "17896441",
-    "content": "71014061"
+    "content": "3157a91b"
   },
-  "/full-project/docs/vla/conclusion/-6a5": {
+  "/full-project/ur/docs/vla/conclusion/-caf": {
     "__comp": "17896441",
-    "content": "70eff3b6"
+    "content": "05afece9"
   },
-  "/full-project/docs/vla/introduction/-75e": {
+  "/full-project/ur/docs/vla/introduction/-58c": {
     "__comp": "17896441",
-    "content": "28067c6b"
+    "content": "e667d931"
   },
-  "/full-project/docs/vla/llm-role-8bc": {
+  "/full-project/ur/docs/vla/llm-role-b6a": {
     "__comp": "17896441",
-    "content": "79fc0bba"
+    "content": "d93eca61"
   },
-  "/full-project/docs/vla/pipeline-1e4": {
+  "/full-project/ur/docs/vla/pipeline-d49": {
     "__comp": "17896441",
-    "content": "14a17483"
+    "content": "3e885b89"
   },
-  "/full-project/-330": {
+  "/full-project/ur/-aef": {
     "__comp": "1df93b7f",
     "__context": {
       "plugin": "a7456010"

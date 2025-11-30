@@ -35,7 +35,7 @@ export default {
     }
   ],
   "url": "https://samade747.github.io",
-  "baseUrl": "/full-project/",
+  "baseUrl": "/full-project/ur/",
   "organizationName": "samade747",
   "projectName": "full-project",
   "onBrokenLinks": "warn",
