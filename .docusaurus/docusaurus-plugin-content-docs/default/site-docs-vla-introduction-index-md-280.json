@@ -5,7 +5,7 @@
   "source": "@site/docs/vla/introduction/index.md",
   "sourceDirName": "vla/introduction",
   "slug": "/vla/introduction/",
-  "permalink": "/physical-ai-textbook/docs/vla/introduction/",
+  "permalink": "/full-project/docs/vla/introduction/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/introduction/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "5. Vision-Language-Action (VLA)",
-    "permalink": "/physical-ai-textbook/docs/category/5-vision-language-action-vla"
+    "permalink": "/full-project/docs/category/5-vision-language-action-vla"
   },
   "next": {
     "title": "The VLA Pipeline",
-    "permalink": "/physical-ai-textbook/docs/vla/pipeline"
+    "permalink": "/full-project/docs/vla/pipeline"
   }
 }

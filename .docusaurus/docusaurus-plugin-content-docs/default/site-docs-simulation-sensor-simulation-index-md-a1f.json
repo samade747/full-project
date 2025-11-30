@@ -5,7 +5,7 @@
   "source": "@site/docs/simulation/sensor-simulation/index.md",
   "sourceDirName": "simulation/sensor-simulation",
   "slug": "/simulation/sensor-simulation/",
-  "permalink": "/physical-ai-textbook/docs/simulation/sensor-simulation/",
+  "permalink": "/full-project/docs/simulation/sensor-simulation/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/simulation/sensor-simulation/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Simulation Platforms: Gazebo vs. Unity",
-    "permalink": "/physical-ai-textbook/docs/simulation/platforms/"
+    "permalink": "/full-project/docs/simulation/platforms/"
   },
   "next": {
     "title": "Conclusion",
-    "permalink": "/physical-ai-textbook/docs/simulation/conclusion/"
+    "permalink": "/full-project/docs/simulation/conclusion/"
   }
 }

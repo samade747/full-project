@@ -1,222 +1,222 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/physical-ai-textbook/docs",
+      "path": "/full-project/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/physical-ai-textbook/docs",
+          "path": "/full-project/docs",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "hardware/conclusion/index",
-              "path": "/physical-ai-textbook/docs/hardware/conclusion/",
+              "path": "/full-project/docs/hardware/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/edge-computing-jetson",
-              "path": "/physical-ai-textbook/docs/hardware/edge-computing-jetson",
+              "path": "/full-project/docs/hardware/edge-computing-jetson",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/index",
-              "path": "/physical-ai-textbook/docs/hardware/"
+              "path": "/full-project/docs/hardware/"
             },
             {
               "id": "hardware/introduction/index",
-              "path": "/physical-ai-textbook/docs/hardware/introduction/",
+              "path": "/full-project/docs/hardware/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/lab-infrastructure",
-              "path": "/physical-ai-textbook/docs/hardware/lab-infrastructure",
+              "path": "/full-project/docs/hardware/lab-infrastructure",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/sensors-actuators",
-              "path": "/physical-ai-textbook/docs/hardware/sensors-actuators",
+              "path": "/full-project/docs/hardware/sensors-actuators",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/workstation-requirements",
-              "path": "/physical-ai-textbook/docs/hardware/workstation-requirements",
+              "path": "/full-project/docs/hardware/workstation-requirements",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/bipedal-locomotion",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/bipedal-locomotion",
+              "path": "/full-project/docs/humanoid-robotics/bipedal-locomotion",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/conclusion/index",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/conclusion/",
+              "path": "/full-project/docs/humanoid-robotics/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/human-robot-interaction",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/human-robot-interaction",
+              "path": "/full-project/docs/humanoid-robotics/human-robot-interaction",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/index",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/"
+              "path": "/full-project/docs/humanoid-robotics/"
             },
             {
               "id": "humanoid-robotics/introduction/index",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/introduction/",
+              "path": "/full-project/docs/humanoid-robotics/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/kinematics-dynamics",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/kinematics-dynamics",
+              "path": "/full-project/docs/humanoid-robotics/kinematics-dynamics",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/manipulation-grasping",
-              "path": "/physical-ai-textbook/docs/humanoid-robotics/manipulation-grasping",
+              "path": "/full-project/docs/humanoid-robotics/manipulation-grasping",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
-              "path": "/physical-ai-textbook/docs/intro",
+              "path": "/full-project/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/conclusion/index",
-              "path": "/physical-ai-textbook/docs/physical-ai/conclusion/",
+              "path": "/full-project/docs/physical-ai/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/core-principles/index",
-              "path": "/physical-ai-textbook/docs/physical-ai/core-principles/",
+              "path": "/full-project/docs/physical-ai/core-principles/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/digital-to-physical-transition/index",
-              "path": "/physical-ai-textbook/docs/physical-ai/digital-to-physical-transition/",
+              "path": "/full-project/docs/physical-ai/digital-to-physical-transition/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/index",
-              "path": "/physical-ai-textbook/docs/physical-ai/"
+              "path": "/full-project/docs/physical-ai/"
             },
             {
               "id": "physical-ai/introduction/index",
-              "path": "/physical-ai-textbook/docs/physical-ai/introduction/",
+              "path": "/full-project/docs/physical-ai/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/communication-patterns/index",
-              "path": "/physical-ai-textbook/docs/ros2/communication-patterns/",
+              "path": "/full-project/docs/ros2/communication-patterns/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/conclusion/index",
-              "path": "/physical-ai-textbook/docs/ros2/conclusion/",
+              "path": "/full-project/docs/ros2/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/core-architecture/index",
-              "path": "/physical-ai-textbook/docs/ros2/core-architecture/",
+              "path": "/full-project/docs/ros2/core-architecture/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/index",
-              "path": "/physical-ai-textbook/docs/ros2/"
+              "path": "/full-project/docs/ros2/"
             },
             {
               "id": "ros2/introduction/index",
-              "path": "/physical-ai-textbook/docs/ros2/introduction/",
+              "path": "/full-project/docs/ros2/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/python-integration-rclpy/index",
-              "path": "/physical-ai-textbook/docs/ros2/python-integration-rclpy/",
+              "path": "/full-project/docs/ros2/python-integration-rclpy/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/urdf/index",
-              "path": "/physical-ai-textbook/docs/ros2/urdf/",
+              "path": "/full-project/docs/ros2/urdf/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/conclusion/index",
-              "path": "/physical-ai-textbook/docs/simulation/conclusion/",
+              "path": "/full-project/docs/simulation/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/index",
-              "path": "/physical-ai-textbook/docs/simulation/"
+              "path": "/full-project/docs/simulation/"
             },
             {
               "id": "simulation/introduction/index",
-              "path": "/physical-ai-textbook/docs/simulation/introduction/",
+              "path": "/full-project/docs/simulation/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/platforms/index",
-              "path": "/physical-ai-textbook/docs/simulation/platforms/",
+              "path": "/full-project/docs/simulation/platforms/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/sensor-simulation/index",
-              "path": "/physical-ai-textbook/docs/simulation/sensor-simulation/",
+              "path": "/full-project/docs/simulation/sensor-simulation/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/conclusion/index",
-              "path": "/physical-ai-textbook/docs/vla/conclusion/",
+              "path": "/full-project/docs/vla/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/index",
-              "path": "/physical-ai-textbook/docs/vla/"
+              "path": "/full-project/docs/vla/"
             },
             {
               "id": "vla/introduction/index",
-              "path": "/physical-ai-textbook/docs/vla/introduction/",
+              "path": "/full-project/docs/vla/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/llm-role",
-              "path": "/physical-ai-textbook/docs/vla/llm-role",
+              "path": "/full-project/docs/vla/llm-role",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/pipeline",
-              "path": "/physical-ai-textbook/docs/vla/pipeline",
+              "path": "/full-project/docs/vla/pipeline",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/physical-ai",
-              "path": "/physical-ai-textbook/docs/category/physical-ai",
+              "path": "/full-project/docs/category/physical-ai",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/2-ros-2-robot-operating-system",
-              "path": "/physical-ai-textbook/docs/category/2-ros-2-robot-operating-system",
+              "path": "/full-project/docs/category/2-ros-2-robot-operating-system",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/3-robot-simulation",
-              "path": "/physical-ai-textbook/docs/category/3-robot-simulation",
+              "path": "/full-project/docs/category/3-robot-simulation",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/5-vision-language-action-vla",
-              "path": "/physical-ai-textbook/docs/category/5-vision-language-action-vla",
+              "path": "/full-project/docs/category/5-vision-language-action-vla",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/6-humanoid-robotics",
-              "path": "/physical-ai-textbook/docs/category/6-humanoid-robotics",
+              "path": "/full-project/docs/category/6-humanoid-robotics",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/7-hardware-setup",
-              "path": "/physical-ai-textbook/docs/category/7-hardware-setup",
+              "path": "/full-project/docs/category/7-hardware-setup",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -224,7 +224,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/physical-ai-textbook/docs/intro",
+                "path": "/full-project/docs/intro",
                 "label": "intro"
               }
             }

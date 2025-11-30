@@ -1,247 +1,247 @@
 {
-  "/physical-ai-textbook/__docusaurus/debug-1b0": {
+  "/full-project/__docusaurus/debug-c6d": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/__docusaurus/debug/config-4ef": {
+  "/full-project/__docusaurus/debug/config-154": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/__docusaurus/debug/content-02c": {
+  "/full-project/__docusaurus/debug/content-a88": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     },
-    "__props": "__props---physical-ai-textbook-docusaurus-debug-contentbe-4-6d3"
+    "__props": "__props---full-project-docusaurus-debug-contentde-6-ade"
   },
-  "/physical-ai-textbook/__docusaurus/debug/globalData-58f": {
+  "/full-project/__docusaurus/debug/globalData-62d": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/__docusaurus/debug/metadata-647": {
+  "/full-project/__docusaurus/debug/metadata-219": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/__docusaurus/debug/registry-125": {
+  "/full-project/__docusaurus/debug/registry-a4b": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/__docusaurus/debug/routes-aa1": {
+  "/full-project/__docusaurus/debug/routes-7ad": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/physical-ai-textbook/login-c2e": {
+  "/full-project/login-e30": {
     "__comp": "__comp---site-src-pages-login-tsx-34-b-c7d",
     "__context": {
       "plugin": "plugin---logina-74-fc3"
     },
     "config": "config---login-5-e-9-d49"
   },
-  "/physical-ai-textbook/signup-1fd": {
+  "/full-project/signup-19b": {
     "__comp": "__comp---site-src-pages-signup-tsx-8-d-9-369",
     "__context": {
       "plugin": "plugin---logina-74-fc3"
     },
     "config": "config---login-5-e-9-d49"
   },
-  "/physical-ai-textbook/docs-168": {
+  "/full-project/docs-fad": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---docsaba-d7c"
     }
   },
-  "/physical-ai-textbook/docs-8cc": {
+  "/full-project/docs-76a": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---physical-ai-textbook-docs-802-02c"
+    "__props": "__props---full-project-docs-943-1a8"
   },
-  "/physical-ai-textbook/docs-ba4": {
+  "/full-project/docs-19c": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/physical-ai-textbook/docs/category/2-ros-2-robot-operating-system-a8a": {
+  "/full-project/docs/category/2-ros-2-robot-operating-system-695": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-2-ros-2-robot-operating-system-31-f-ffc"
+    "__props": "__props---full-project-docs-category-2-ros-2-robot-operating-systemcc-8-f2c"
   },
-  "/physical-ai-textbook/docs/category/3-robot-simulation-629": {
+  "/full-project/docs/category/3-robot-simulation-100": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-3-robot-simulationa-12-9bd"
+    "__props": "__props---full-project-docs-category-3-robot-simulationd-01-f05"
   },
-  "/physical-ai-textbook/docs/category/5-vision-language-action-vla-409": {
+  "/full-project/docs/category/5-vision-language-action-vla-456": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-5-vision-language-action-vlaecb-81c"
+    "__props": "__props---full-project-docs-category-5-vision-language-action-vlaccb-a5d"
   },
-  "/physical-ai-textbook/docs/category/6-humanoid-robotics-93d": {
+  "/full-project/docs/category/6-humanoid-robotics-2c4": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-6-humanoid-roboticse-18-42f"
+    "__props": "__props---full-project-docs-category-6-humanoid-robotics-886-f2c"
   },
-  "/physical-ai-textbook/docs/category/7-hardware-setup-8ef": {
+  "/full-project/docs/category/7-hardware-setup-62c": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-7-hardware-setup-46-c-7b6"
+    "__props": "__props---full-project-docs-category-7-hardware-setupb-6-f-a47"
   },
-  "/physical-ai-textbook/docs/category/physical-ai-4e4": {
+  "/full-project/docs/category/physical-ai-0bd": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---physical-ai-textbook-docs-category-physical-aie-10-685"
+    "__props": "__props---full-project-docs-category-physical-aia-39-7ca"
   },
-  "/physical-ai-textbook/docs/hardware/-d31": {
+  "/full-project/docs/hardware/-f93": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-754-439"
   },
-  "/physical-ai-textbook/docs/hardware/conclusion/-ba8": {
+  "/full-project/docs/hardware/conclusion/-83b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-conclusion-a-43-18b"
   },
-  "/physical-ai-textbook/docs/hardware/edge-computing-jetson-847": {
+  "/full-project/docs/hardware/edge-computing-jetson-1ac": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-edge-computing-jetsona-7-b-249"
   },
-  "/physical-ai-textbook/docs/hardware/introduction/-e82": {
+  "/full-project/docs/hardware/introduction/-bf6": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-introduction-2-b-8-d29"
   },
-  "/physical-ai-textbook/docs/hardware/lab-infrastructure-7a7": {
+  "/full-project/docs/hardware/lab-infrastructure-2f1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-lab-infrastructurea-3-c-48a"
   },
-  "/physical-ai-textbook/docs/hardware/sensors-actuators-e81": {
+  "/full-project/docs/hardware/sensors-actuators-670": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-sensors-actuatorsfd-6-709"
   },
-  "/physical-ai-textbook/docs/hardware/workstation-requirements-7ea": {
+  "/full-project/docs/hardware/workstation-requirements-a5a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-hardware-workstation-requirementsa-11-267"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/-2d2": {
+  "/full-project/docs/humanoid-robotics/-40b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-c-7-c-338"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/bipedal-locomotion-e63": {
+  "/full-project/docs/humanoid-robotics/bipedal-locomotion-58c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-bipedal-locomotiona-82-93b"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/conclusion/-b95": {
+  "/full-project/docs/humanoid-robotics/conclusion/-3d2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-conclusion-095-961"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/human-robot-interaction-4b0": {
+  "/full-project/docs/humanoid-robotics/human-robot-interaction-f86": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-human-robot-interaction-23-e-8c9"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/introduction/-88d": {
+  "/full-project/docs/humanoid-robotics/introduction/-bcb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-introduction-8-a-3-fe4"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/kinematics-dynamics-013": {
+  "/full-project/docs/humanoid-robotics/kinematics-dynamics-c8e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-kinematics-dynamics-4-e-2-843"
   },
-  "/physical-ai-textbook/docs/humanoid-robotics/manipulation-grasping-d24": {
+  "/full-project/docs/humanoid-robotics/manipulation-grasping-9c7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-humanoid-robotics-manipulation-grasping-9-ec-935"
   },
-  "/physical-ai-textbook/docs/intro-14c": {
+  "/full-project/docs/intro-12e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-intro-0-e-3-be1"
   },
-  "/physical-ai-textbook/docs/physical-ai/-6c4": {
+  "/full-project/docs/physical-ai/-934": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-physical-ai-6-d-7-880"
   },
-  "/physical-ai-textbook/docs/physical-ai/conclusion/-4be": {
+  "/full-project/docs/physical-ai/conclusion/-6cb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-physical-ai-conclusion-5-e-1-394"
   },
-  "/physical-ai-textbook/docs/physical-ai/core-principles/-c11": {
+  "/full-project/docs/physical-ai/core-principles/-74e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-physical-ai-core-principles-ca-5-313"
   },
-  "/physical-ai-textbook/docs/physical-ai/digital-to-physical-transition/-f7b": {
+  "/full-project/docs/physical-ai/digital-to-physical-transition/-abb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-physical-ai-digital-to-physical-transition-09-a-74c"
   },
-  "/physical-ai-textbook/docs/physical-ai/introduction/-863": {
+  "/full-project/docs/physical-ai/introduction/-342": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-physical-ai-introduction-ec-2-ecd"
   },
-  "/physical-ai-textbook/docs/ros2/-f18": {
+  "/full-project/docs/ros2/-224": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-a-96-4dc"
   },
-  "/physical-ai-textbook/docs/ros2/communication-patterns/-44e": {
+  "/full-project/docs/ros2/communication-patterns/-017": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-communication-patterns-d-20-cd5"
   },
-  "/physical-ai-textbook/docs/ros2/conclusion/-f88": {
+  "/full-project/docs/ros2/conclusion/-c48": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-conclusion-7-ae-f9b"
   },
-  "/physical-ai-textbook/docs/ros2/core-architecture/-778": {
+  "/full-project/docs/ros2/core-architecture/-31b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-core-architecture-5-f-5-5b2"
   },
-  "/physical-ai-textbook/docs/ros2/introduction/-0d3": {
+  "/full-project/docs/ros2/introduction/-4ee": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-introduction-ecc-eef"
   },
-  "/physical-ai-textbook/docs/ros2/python-integration-rclpy/-7fc": {
+  "/full-project/docs/ros2/python-integration-rclpy/-ae8": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-python-integration-rclpy-a-27-58b"
   },
-  "/physical-ai-textbook/docs/ros2/urdf/-1ee": {
+  "/full-project/docs/ros2/urdf/-73b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-ros-2-urdf-e-9-e-b30"
   },
-  "/physical-ai-textbook/docs/simulation/-741": {
+  "/full-project/docs/simulation/-f93": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-simulation-798-e49"
   },
-  "/physical-ai-textbook/docs/simulation/conclusion/-960": {
+  "/full-project/docs/simulation/conclusion/-4ac": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-simulation-conclusion-d-45-d73"
   },
-  "/physical-ai-textbook/docs/simulation/introduction/-df7": {
+  "/full-project/docs/simulation/introduction/-a81": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-simulation-introduction-eda-c77"
   },
-  "/physical-ai-textbook/docs/simulation/platforms/-3fc": {
+  "/full-project/docs/simulation/platforms/-cb7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-simulation-platforms-1-a-7-455"
   },
-  "/physical-ai-textbook/docs/simulation/sensor-simulation/-d58": {
+  "/full-project/docs/simulation/sensor-simulation/-7a0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-simulation-sensor-simulation-a-1-f-308"
   },
-  "/physical-ai-textbook/docs/vla/-fb1": {
+  "/full-project/docs/vla/-2c7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-vla-710-9ae"
   },
-  "/physical-ai-textbook/docs/vla/conclusion/-440": {
+  "/full-project/docs/vla/conclusion/-6a5": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-vla-conclusion-70-e-a58"
   },
-  "/physical-ai-textbook/docs/vla/introduction/-61a": {
+  "/full-project/docs/vla/introduction/-75e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-vla-introduction-280-0b8"
   },
-  "/physical-ai-textbook/docs/vla/llm-role-c69": {
+  "/full-project/docs/vla/llm-role-8bc": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-vla-llm-role-79-f-edc"
   },
-  "/physical-ai-textbook/docs/vla/pipeline-5e3": {
+  "/full-project/docs/vla/pipeline-1e4": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-vla-pipeline-14-a-676"
   },
-  "/physical-ai-textbook/-94f": {
+  "/full-project/-330": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
     "__context": {
       "plugin": "plugin---logina-74-fc3"

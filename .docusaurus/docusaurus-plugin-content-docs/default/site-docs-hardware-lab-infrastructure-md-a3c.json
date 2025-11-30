@@ -5,7 +5,7 @@
   "source": "@site/docs/hardware/lab-infrastructure.md",
   "sourceDirName": "hardware",
   "slug": "/hardware/lab-infrastructure",
-  "permalink": "/physical-ai-textbook/docs/hardware/lab-infrastructure",
+  "permalink": "/full-project/docs/hardware/lab-infrastructure",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/hardware/lab-infrastructure.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Sensors and Actuators",
-    "permalink": "/physical-ai-textbook/docs/hardware/sensors-actuators"
+    "permalink": "/full-project/docs/hardware/sensors-actuators"
   },
   "next": {
     "title": "Conclusion",
-    "permalink": "/physical-ai-textbook/docs/hardware/conclusion/"
+    "permalink": "/full-project/docs/hardware/conclusion/"
   }
 }

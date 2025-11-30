@@ -5,7 +5,7 @@
   "source": "@site/docs/vla/llm-role.md",
   "sourceDirName": "vla",
   "slug": "/vla/llm-role",
-  "permalink": "/physical-ai-textbook/docs/vla/llm-role",
+  "permalink": "/full-project/docs/vla/llm-role",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/llm-role.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "The VLA Pipeline",
-    "permalink": "/physical-ai-textbook/docs/vla/pipeline"
+    "permalink": "/full-project/docs/vla/pipeline"
   },
   "next": {
     "title": "Conclusion",
-    "permalink": "/physical-ai-textbook/docs/vla/conclusion/"
+    "permalink": "/full-project/docs/vla/conclusion/"
   }
 }

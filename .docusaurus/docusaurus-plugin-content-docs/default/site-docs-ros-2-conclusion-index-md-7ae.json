@@ -5,7 +5,7 @@
   "source": "@site/docs/ros2/conclusion/index.md",
   "sourceDirName": "ros2/conclusion",
   "slug": "/ros2/conclusion/",
-  "permalink": "/physical-ai-textbook/docs/ros2/conclusion/",
+  "permalink": "/full-project/docs/ros2/conclusion/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/ros2/conclusion/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "URDF (Unified Robot Description Format)",
-    "permalink": "/physical-ai-textbook/docs/ros2/urdf/"
+    "permalink": "/full-project/docs/ros2/urdf/"
   },
   "next": {
     "title": "3. Robot Simulation",
-    "permalink": "/physical-ai-textbook/docs/category/3-robot-simulation"
+    "permalink": "/full-project/docs/category/3-robot-simulation"
   }
 }

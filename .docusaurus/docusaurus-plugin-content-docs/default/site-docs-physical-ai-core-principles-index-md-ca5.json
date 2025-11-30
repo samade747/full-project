@@ -5,7 +5,7 @@
   "source": "@site/docs/physical-ai/core-principles/index.md",
   "sourceDirName": "physical-ai/core-principles",
   "slug": "/physical-ai/core-principles/",
-  "permalink": "/physical-ai-textbook/docs/physical-ai/core-principles/",
+  "permalink": "/full-project/docs/physical-ai/core-principles/",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/physical-ai/core-principles/index.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Introduction to Physical AI",
-    "permalink": "/physical-ai-textbook/docs/physical-ai/introduction/"
+    "permalink": "/full-project/docs/physical-ai/introduction/"
   },
   "next": {
     "title": "The Digital-to-Physical Transition",
-    "permalink": "/physical-ai-textbook/docs/physical-ai/digital-to-physical-transition/"
+    "permalink": "/full-project/docs/physical-ai/digital-to-physical-transition/"
   }
 }

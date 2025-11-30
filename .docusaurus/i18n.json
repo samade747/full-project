@@ -14,8 +14,8 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://panaverse.github.io",
-      "baseUrl": "/physical-ai-textbook/"
+      "url": "https://samade747.github.io",
+      "baseUrl": "/full-project/"
     },
     "ur": {
       "label": "اردو",
@@ -24,8 +24,8 @@
       "calendar": "gregory",
       "path": "ur",
       "translate": true,
-      "url": "https://panaverse.github.io",
-      "baseUrl": "/physical-ai-textbook/ur/"
+      "url": "https://samade747.github.io",
+      "baseUrl": "/full-project/ur/"
     }
   }
 }

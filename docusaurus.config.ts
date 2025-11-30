@@ -20,11 +20,11 @@ const config: Config = {
     },
   ],
 
-  url: 'https://panaverse.github.io', // Your GitHub Pages URL
-  baseUrl: '/physical-ai-textbook/', // Your repository name
+  url: 'https://samade747.github.io', // Your GitHub Pages URL
+  baseUrl: '/full-project/', // Your repository name
 
-  organizationName: 'panaverse', // Your GitHub username or org
-  projectName: 'physical-ai-textbook', // Your repository name
+  organizationName: 'samade747', // Your GitHub username
+  projectName: 'full-project', // Your repository name
 
   onBrokenLinks: 'throw',
 

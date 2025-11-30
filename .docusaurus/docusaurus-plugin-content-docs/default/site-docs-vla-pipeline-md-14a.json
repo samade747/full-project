@@ -5,7 +5,7 @@
   "source": "@site/docs/vla/pipeline.md",
   "sourceDirName": "vla",
   "slug": "/vla/pipeline",
-  "permalink": "/physical-ai-textbook/docs/vla/pipeline",
+  "permalink": "/full-project/docs/vla/pipeline",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/vla/pipeline.md",
@@ -17,10 +17,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "The Convergence of Perception, Language, and Action",
-    "permalink": "/physical-ai-textbook/docs/vla/introduction/"
+    "permalink": "/full-project/docs/vla/introduction/"
   },
   "next": {
     "title": "The Role of Large Language Models in Robotics",
-    "permalink": "/physical-ai-textbook/docs/vla/llm-role"
+    "permalink": "/full-project/docs/vla/llm-role"
   }
 }

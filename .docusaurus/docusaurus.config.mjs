@@ -34,10 +34,10 @@ export default {
       "async": true
     }
   ],
-  "url": "https://panaverse.github.io",
-  "baseUrl": "/physical-ai-textbook/",
-  "organizationName": "panaverse",
-  "projectName": "physical-ai-textbook",
+  "url": "https://samade747.github.io",
+  "baseUrl": "/full-project/",
+  "organizationName": "samade747",
+  "projectName": "full-project",
   "onBrokenLinks": "throw",
   "i18n": {
     "defaultLocale": "en",
