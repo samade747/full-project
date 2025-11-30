@@ -2,7 +2,8 @@
 import axios from 'axios';
 import { SignupData, LoginData, User, AuthSuccessResponse, ErrorResponse } from '../types/user';
 
-const API_URL = process.env.BACKEND_API_URL || 'http://localhost:8000';
+// Get backend URL from window config or use default
+const API_URL = (typeof window !== 'undefined' && (window as any).BACKEND_API_URL) || 'http://localhost:8000';
 
 const AUTH_API_ENDPOINT = `${API_URL}/api/auth`;
 
