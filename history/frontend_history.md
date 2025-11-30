@@ -1,2 +1,0 @@
-# Frontend history
-scaffold created

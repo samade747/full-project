@@ -1,2 +1,0 @@
-# Backend history
-scaffold created
