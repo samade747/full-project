@@ -52,8 +52,14 @@ const getToken = (): string | null => {
 
 const getUser = (): User | null => {
   if (typeof window === 'undefined') return null;
-  const user = localStorage.getItem('user');
-  return user ? JSON.parse(user) : null;
+  try {
+    const user = localStorage.getItem('user');
+    if (user === 'undefined' || user === 'null') return null;
+    return user ? JSON.parse(user) : null;
+  } catch (error) {
+    console.error("Error parsing user from localStorage:", error);
+    return null;
+  }
 };
 
 const signup = async (data: SignupData): Promise<AuthSuccessResponse> => {
