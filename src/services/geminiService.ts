@@ -5,9 +5,7 @@ import { UserPreferences } from '../types/user';
 // Get API key from window (injected by Root component)
 const getGeminiApiKey = (): string => {
   if (typeof window !== 'undefined') {
-    return (window as any).GEMINI_API_KEY || 'AIzaSyDXfR1FIptDxpncSz3mddxiGtRCQPR0k6g';
-  }
-  return 'AIzaSyDXfR1FIptDxpncSz3mddxiGtRCQPR0k6g';
+    return (window as any).GEMINI_API_KEY;
 };
 
 export const getPersonalizedContent = async (

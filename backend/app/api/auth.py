@@ -3,9 +3,9 @@
 from datetime import timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from auth import create_access_token, hash_password, verify_token, verify_password
-from models.user import SignupData, User, UserInDB, LoginData, AuthResponse  # AuthResponse add karo
-from services.user_service import create_user, get_user_by_email
+from ..auth import create_access_token, hash_password, verify_token, verify_password
+from ..models.user import SignupData, User, UserInDB, LoginData, AuthResponse
+from ..services.user_service import create_user, get_user_by_email
 import os
 
 router = APIRouter()

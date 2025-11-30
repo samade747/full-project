@@ -4,15 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 
 # Import app package routers (existing app folder)
-try:
-    from app.api.auth import router as auth_router
-except Exception:
-    auth_router = None
-
-try:
-    from app.api.chat import router as chat_router
-except Exception:
-    chat_router = None
+from app.api.auth import router as auth_router
+from app.api.chat import router as chat_router
 
 app = FastAPI(title="Calcu Backend", version="1.0.0")
 
