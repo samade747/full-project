@@ -1,5 +1,6 @@
+# Standard dependencies (install via pip)
 fastapi
-uvicorn
+uvicorn[standard]
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
@@ -8,3 +9,13 @@ openai
 requests
 qdrant-client
 python-dotenv
+pydantic>=2.0
+pydantic-settings
+
+# NOTE: The following custom packages are also required but not in PyPI:
+# - agents (OpenAI ChatKit agents framework)
+# - chatkit (OpenAI ChatKit server framework)
+# These must be installed separately from source or wheel files.
+# If you don't have these packages, you may need to:
+# 1. Contact the package provider for installation instructions
+# 2. Or simplify the chatbot to use standard OpenAI SDK instead

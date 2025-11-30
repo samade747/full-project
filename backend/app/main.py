@@ -38,7 +38,7 @@ from openai.types.responses import (
 )
 from pydantic import ValidationError
 
-from src.database.db import init_db
+from app.database.db import init_db
 from .memory_store import MemoryStore
 from .support_agent import support_agent
 from .thread_item_converter import CustomerSupportThreadItemConverter
@@ -169,5 +169,5 @@ async def chatkit_endpoint(
 
 
 # ===== INCLUDE API ROUTERS =====
-from src.api import auth
+from app.api import auth
 app.include_router(auth.router, prefix="/api/auth", tags=["auth"])

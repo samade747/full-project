@@ -6,6 +6,8 @@ import { UserPreferences } from '../types/user';
 const getGeminiApiKey = (): string => {
   if (typeof window !== 'undefined') {
     return (window as any).GEMINI_API_KEY;
+  }
+  return '';
 };
 
 export const getPersonalizedContent = async (
@@ -14,7 +16,7 @@ export const getPersonalizedContent = async (
   pageTitle: string
 ): Promise<string> => {
   const GEMINI_API_KEY = getGeminiApiKey();
-  
+
   if (!GEMINI_API_KEY) {
     throw new Error("Gemini API Key is not configured. Please add GEMINI_API_KEY to your .env file.");
   }
@@ -37,7 +39,7 @@ export const getPersonalizedContent = async (
 
   // Level-specific instructions
   let levelInstructions = '';
-  switch(userPreferences.level) {
+  switch (userPreferences.level) {
     case 'beginner':
       levelInstructions = `
 - Use very simple, everyday language
@@ -90,31 +92,31 @@ Rewritten HTML:`;
     const result = await model.generateContent(prompt);
     const response = result.response;
     let text = response.text();
-    
+
     // Clean up the response
     text = text
       .replace(/```html\n?/gi, '')
       .replace(/```\n?/g, '')
       .replace(/^#+\s+.*$/gm, '') // Remove markdown headers
       .trim();
-    
+
     // Ensure we have actual content
     if (!text || text.length < 100) {
       throw new Error("Generated content is too short or empty.");
     }
-    
+
     return text;
   } catch (error: any) {
     console.error("Error calling Gemini API:", error);
-    
+
     if (error.message?.includes('API_KEY_INVALID') || error.message?.includes('API key')) {
       throw new Error("Invalid Gemini API Key. Please check your .env file.");
     }
-    
+
     if (error.message?.includes('not found')) {
       throw new Error("Gemini model not available. Using 'gemini-pro' model.");
     }
-    
+
     throw new Error(`Personalization failed: ${error.message}`);
   }
 };

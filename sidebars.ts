@@ -54,23 +54,7 @@ const sidebars: SidebarsConfig = {
       collapsible: true,
       collapsed: true,
     },
-    {
-      type: 'category',
-      label: '4. NVIDIA Isaac Platform',
-      link: {
-        type: 'generated-index',
-        title: 'NVIDIA Isaac Platform'
-      },
-      items: [
-        'isaac-platform/introduction/index',
-        'isaac-platform/isaac-sim/index',
-        'isaac-platform/isaac-ros/index',
-        'isaac-platform/sim-to-real-transfer/index',
-        'isaac-platform/conclusion/index'
-      ],
-      collapsible: true,
-      collapsed: true,
-    },
+    
     {
       type: 'category',
       label: '5. Vision-Language-Action (VLA)',

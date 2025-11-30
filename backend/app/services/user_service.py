@@ -2,8 +2,8 @@
 
 from typing import Optional
 from uuid import UUID, uuid4
-from models.user import UserInDB
-from database.db import get_db_connection
+from app.models.user import UserInDB
+from app.database.db import get_db_connection
 
 def get_user_by_email(email: str) -> Optional[UserInDB]:
     """Get user from database by email"""
@@ -24,7 +24,7 @@ def get_user_by_email(email: str) -> Optional[UserInDB]:
         return None
     
     # Convert database row to UserInDB model
-    from src.models.user import UserPreferences
+    from app.models.user import UserPreferences
     
     user = UserInDB(
         userId=row['user_id'],
@@ -99,7 +99,7 @@ def get_user_by_id(user_id: UUID) -> Optional[UserInDB]:
     if not row:
         return None
     
-    from src.models.user import UserPreferences
+    from app.models.user import UserPreferences
     
     return UserInDB(
         userId=row['user_id'],
