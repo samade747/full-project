@@ -3,33 +3,37 @@
  */
 
 :root {
-  --ifm-color-primary: #cc0000; /* Bright Red for primary actions */
-  --ifm-color-primary-dark: #b30000;
-  --ifm-color-primary-darker: #990000;
-  --ifm-color-primary-darkest: #800000;
-  --ifm-color-primary-light: #e60000;
-  --ifm-color-primary-lighter: #ff1a1a;
-  --ifm-color-primary-lightest: #ff4d4d;
+  --ifm-color-primary: #6366f1;
+  /* Vibrant Indigo for primary actions */
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(204, 0, 0, 0.2); /* Faint red for code highlights */
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.2);
+  /* Faint indigo for code highlights */
 }
 
-/* Enforce dark theme for both light and dark modes */
+/* Modern dark theme with deep blue-purple background */
 html[data-theme='dark'],
 html[data-theme='light'] {
-  --ifm-background-color: #000000;
-  --ifm-font-color-base: #ffffff;
-  --ifm-color-primary: #ff4d4d; /* Lighter Red for dark mode */
-  --ifm-color-primary-dark: #ff1a1a;
-  --ifm-color-primary-darker: #e60000;
-  --ifm-color-primary-darkest: #b30000;
-  --ifm-color-primary-light: #ff8080;
-  --ifm-color-primary-lighter: #ffb3b3;
-  --ifm-color-primary-lightest: #ffe6e6;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 77, 77, 0.3);
+  --ifm-background-color: #0f172a;
+  /* Deep slate blue */
+  --ifm-font-color-base: #f1f5f9;
+  --ifm-color-primary: #818cf8;
+  /* Lighter indigo for dark mode */
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.3);
 }
 
-/* Headings should be red */
+/* Headings styled with theme color */
 .theme-doc-markdown h1,
 .theme-doc-markdown h2,
 .theme-doc-markdown h3,
@@ -141,39 +145,39 @@ form button[type="submit"]:hover {
   background-color: var(--ifm-color-emphasis-200);
 }
 
-/* ===== FOOTER - HEADER JAISA DARK COLOR ===== */
+/* ===== FOOTER - Modern Blue Theme ===== */
 
 /* Light mode footer */
 [data-theme='light'] footer.footer--dark {
-  --ifm-footer-background-color: #ffffff !important;
-  background-color: #ffffff !important;
-  border-top: 1px solid #e5e7eb;
+  --ifm-footer-background-color: #f8fafc !important;
+  background-color: #f8fafc !important;
+  border-top: 1px solid #e2e8f0;
 }
 
 [data-theme='light'] footer.footer--dark .footer__copyright,
 [data-theme='light'] footer.footer--dark .footer__link-item {
-  color: #4b5563 !important;
+  color: #475569 !important;
 }
 
-/* Dark mode footer - Header jaisa exact color */
+/* Dark mode footer - Deep blue matching theme */
 [data-theme='dark'] footer.footer--dark {
-  --ifm-footer-background-color: #1b1b1d !important;
-  background-color: #1b1b1d !important;
-  border-top: 1px solid #2d2d30;
+  --ifm-footer-background-color: #1e293b !important;
+  background-color: #1e293b !important;
+  border-top: 1px solid #334155;
 }
 
 [data-theme='dark'] footer.footer--dark .footer__title {
-  color: #ffffff !important;
+  color: #f1f5f9 !important;
   font-weight: 600;
 }
 
 [data-theme='dark'] footer.footer--dark .footer__copyright,
 [data-theme='dark'] footer.footer--dark .footer__link-item {
-  color: #a0a0a0 !important;
+  color: #94a3b8 !important;
 }
 
 [data-theme='dark'] footer.footer--dark .footer__link-item:hover {
-  color: #dc2626 !important;
+  color: #818cf8 !important;
 }
 
 /* Footer padding adjustment */
