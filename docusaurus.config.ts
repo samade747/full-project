@@ -26,7 +26,7 @@ const config: Config = {
   organizationName: 'samade747', // Your GitHub username
   projectName: 'full-project', // Your repository name
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',

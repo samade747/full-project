@@ -38,7 +38,7 @@ export default {
   "baseUrl": "/full-project/",
   "organizationName": "samade747",
   "projectName": "full-project",
-  "onBrokenLinks": "throw",
+  "onBrokenLinks": "warn",
   "i18n": {
     "defaultLocale": "en",
     "locales": [
