@@ -13,7 +13,7 @@ interface ContentWrapperProps {
 }
 
 const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState<User | null>(authService.getUser());
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [isPersonalizing, setIsPersonalizing] = useState(false);
   const [personalizeError, setPersonalizeError] = useState<string | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -24,8 +24,15 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
 
   const pageId = location.pathname;
 
+  // Initialize user on client side only
+  useEffect(() => {
+    setCurrentUser(authService.getUser());
+  }, []);
+
   // Update current user on auth status change
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleStorageChange = () => {
       setCurrentUser(authService.getUser());
     };
@@ -74,10 +81,10 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
 
     setIsPersonalizing(true);
     setPersonalizeError(null);
-    
+
     try {
       const contentToPersonalize = contentRef.current.innerHTML;
-      
+
       if (!contentToPersonalize || contentToPersonalize.length < 50) {
         throw new Error("Content is too short to personalize.");
       }
@@ -87,7 +94,7 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
         currentUser.preferences,
         document.title
       );
-      
+
       setPersonalizedContent(personalizedHtml);
       saveEditedContent(currentUser.userId, pageId, personalizedHtml);
     } catch (err: any) {
@@ -134,16 +141,16 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
   }, [currentUser, pageId]);
 
   return (
-    <div className="container" style={{ 
+    <div className="container" style={{
       maxWidth: '1200px',
       margin: '0 auto',
       padding: '0'
     }}>
       {/* Action Buttons */}
       {currentUser && (
-        <div style={{ 
-          display: 'flex', 
-          gap: '12px', 
+        <div style={{
+          display: 'flex',
+          gap: '12px',
           marginBottom: '24px',
           marginTop: '24px',
           padding: '16px',
@@ -168,7 +175,7 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
           />
         </div>
       )}
-      
+
       {/* Content Area with proper Docusaurus styling */}
       <article className="markdown">
         {personalizedContent ? (
@@ -176,7 +183,7 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
             ref={contentRef}
             className="theme-doc-markdown"
             dangerouslySetInnerHTML={{ __html: personalizedContent }}
-            style={{ 
+            style={{
               outline: isEditing ? '2px solid var(--ifm-color-primary)' : 'none',
               padding: isEditing ? '16px' : '0',
               borderRadius: isEditing ? '8px' : '0',
@@ -188,7 +195,7 @@ const ContentWrapper: React.FC<ContentWrapperProps> = ({ children }) => {
           <div
             ref={contentRef}
             className="theme-doc-markdown"
-            style={{ 
+            style={{
               outline: isEditing ? '2px solid var(--ifm-color-primary)' : 'none',
               padding: isEditing ? '16px' : '0',
               borderRadius: isEditing ? '8px' : '0',
