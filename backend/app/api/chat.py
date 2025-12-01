@@ -115,4 +115,5 @@ async def query_endpoint(body: QueryRequest):
             }
         else:
             raise HTTPException(status_code=500, detail=str(e))
+    except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
