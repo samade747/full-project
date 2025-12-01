@@ -12,18 +12,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS configuration
-origins = [
-    "http://localhost:3000",
-    "http://localhost:8000",
-]
-
+# CORS configuration - Allow all for development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Allow all origins for development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 # ===== STARTUP EVENT =====
