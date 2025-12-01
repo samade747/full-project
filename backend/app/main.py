@@ -26,8 +26,8 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_event():
     from app.database.db import init_db
-    init_db()
-    print("Database initialized successfully!")
+    # init_db()
+    print("Database initialized successfully! (Skipped)")
 
 # ===== ROUTES =====
 @app.get("/")
