@@ -2,16 +2,18 @@
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 import os
-import requests
+import google.generativeai as genai
 from typing import Optional
 
 router = APIRouter()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-QDRANT_URL = os.getenv("QDRANT_URL")
-QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION_NAME", "calcu_book")
-MODEL_NAME = os.getenv("MODEL_NAME", "gpt-4o-mini")
+# Google Gemini Configuration
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+MODEL_NAME = os.getenv("MODEL_NAME", "gemini-1.5-flash")
+
+# Configure Gemini
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 class QueryRequest(BaseModel):
     query: str
@@ -20,100 +22,91 @@ class QueryRequest(BaseModel):
 
 @router.post("/chatkit/session")
 async def chatkit_session():
-    """Return a short-lived session token for frontend Chat widget.
-    This implementation attempts to call OpenAI ChatKit Sessions API if configured.
-    Otherwise it returns a simple placeholder session object.
-    """
-    if not OPENAI_API_KEY:
-        # Return placeholder (frontend can still call /api/query directly)
-        return {"session": "LOCAL_SESSION", "expires_in": 3600}
-    # Example: call OpenAI session-creation endpoint (pseudo)
-    try:
-        headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-        # Replace with the real ChatKit Sessions URL when available
-        resp = requests.post("https://api.openai.com/v1/chat/sessions", headers=headers, json={})
-        resp.raise_for_status()
-        return resp.json()
-    except Exception as e:
-        return {"session": "LOCAL_SESSION", "error": str(e)}
+    """Return a session placeholder for frontend Chat widget."""
+    return {"session": "GEMINI_SESSION", "expires_in": 3600}
 
 @router.post("/query")
 async def query_endpoint(body: QueryRequest):
-    """RAG query endpoint. If `selected_text` is provided, answers must be derived only from it.
-    Otherwise, does a vector search against Qdrant and asks the LLM.
+    """Chat query endpoint using Google Gemini AI.
+    If `selected_text` is provided, answers must be derived only from it.
+    Otherwise, answers general questions about Physical AI & Humanoid Robotics.
     """
-    # Fallback response when API is not configured
-    if not OPENAI_API_KEY or OPENAI_API_KEY == "sk-your-key-here" or OPENAI_API_KEY == "your-openai-key":
+    # Check if Gemini API key is configured
+    if not GEMINI_API_KEY or GEMINI_API_KEY == "your-gemini-api-key-here":
         return {
             "choices": [{
                 "message": {
-                    "content": f"I received your question: '{body.query}'\n\nHowever, the OpenAI API key is not configured or is invalid. To get AI-powered responses, please:\n1. Get a valid API key from https://platform.openai.com/api-keys\n2. Add it to backend/.env as OPENAI_API_KEY\n3. Restart the backend server\n\nFor now, I'm running in demo mode without AI capabilities."
+                    "content": f"I received your question: '{body.query}'\n\n⚙️ The Gemini API key is not configured. To get AI-powered responses, please:\n1. Get a free API key from https://aistudio.google.com/app/apikey\n2. Add it to backend/.env as GEMINI_API_KEY\n3. Restart the backend server\n\n💡 Gemini has a generous free tier perfect for development!"
                 }
             }]
         }
     
     try:
-        # If selected_text provided, use that as the only context
+        # Initialize Gemini model
+        model = genai.GenerativeModel(MODEL_NAME)
+        
+        # Build the prompt
         if body.selected_text:
-            prompt = f"Answer based ONLY on the following text:\n\n{body.selected_text}\n\nQuestion: {body.query}\nAnswer:"
-            # Call LLM via OpenAI completion
-            from requests import post
-            headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-            payload = {"model": MODEL_NAME, "messages": [{"role":"user","content": prompt}]}
-            resp = post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-            resp.raise_for_status()
-            return resp.json()
+            prompt = f"""You are an AI assistant specialized in Physical AI and Humanoid Robotics.
 
-        # Otherwise, perform vector search in Qdrant
-        if not QDRANT_URL:
-            raise HTTPException(status_code=500, detail="QDRANT_URL not configured")
-        # compute embedding for query
-        try:
-            from openai import OpenAI
-            client = OpenAI(api_key=OPENAI_API_KEY)
-            emb_resp = client.embeddings.create(model="text-embedding-3-small", input=body.query)
-            query_vector = emb_resp.data[0].embedding
-        except Exception as e:
-            # fallback: call REST embedding
-            import requests
-            headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-            r = requests.post("https://api.openai.com/v1/embeddings", headers=headers, json={"model":"text-embedding-3-small","input": body.query})
-            r.raise_for_status()
-            query_vector = r.json()["data"][0]["embedding"]
+Answer the following question based ONLY on the provided text context. Do not use external knowledge.
 
-        # Query Qdrant
-        qdrant_search_url = QDRANT_URL.rstrip('/') + f"/collections/{QDRANT_COLLECTION}/points/search"
-        headers = {"api-key": QDRANT_API_KEY, "Content-Type": "application/json"} if QDRANT_API_KEY else {"Content-Type": "application/json"}
-        payload = {"vector": query_vector, "top": body.top_k}
-        r = requests.post(qdrant_search_url, headers=headers, json=payload)
-        r.raise_for_status()
-        hits = r.json().get("result") or r.json().get("hits") or r.json()
-        # assemble context
-        contexts = []
-        for h in hits[: body.top_k]:
-            # Qdrant may return payload or payload['payload'] depending on version
-            txt = h.get('payload') or h.get('payload', {})
-            if isinstance(txt, dict):
-                txt = txt.get('text') or str(txt)
-            contexts.append(str(txt))
-        context_text = "\n\n".join(contexts)
-        prompt = f"Use the following context to answer the question:\n\n{context_text}\n\nQuestion: {body.query}\nAnswer:"
-        headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-        payload = {"model": MODEL_NAME, "messages": [{"role":"user","content": prompt}]}
-        resp = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-        resp.raise_for_status()
-        return resp.json()
-    except requests.exceptions.HTTPError as e:
-        # Check if it's a 401 Unauthorized error
-        if e.response.status_code == 401:
+Context:
+{body.selected_text}
+
+Question: {body.query}
+
+Answer:"""
+        else:
+            prompt = f"""You are an AI assistant specialized in Physical AI and Humanoid Robotics. You help users understand concepts related to robotics, artificial intelligence, autonomous systems, humanoid robots, and related technologies.
+
+Be helpful, concise, and technically accurate. If you don't know something, say so.
+
+Question: {body.query}
+
+Answer:"""
+        
+        # Generate response
+        response = model.generate_content(prompt)
+        
+        # Extract the text from Gemini's response
+        ai_content = response.text if hasattr(response, 'text') else "I couldn't generate a response."
+        
+        # Return in OpenAI-compatible format for frontend compatibility
+        return {
+            "choices": [{
+                "message": {
+                    "content": ai_content
+                }
+            }]
+        }
+        
+    except Exception as e:
+        error_msg = str(e)
+        
+        # Handle specific Gemini API errors
+        if "quota" in error_msg.lower() or "429" in error_msg:
             return {
                 "choices": [{
                     "message": {
-                        "content": f"I received your question: '{body.query}'\n\nThe OpenAI API key appears to be invalid or expired (401 Unauthorized). Please check:\n1. Is your API key correct?\n2. Does your OpenAI account have credits?\n3. Is the key active at https://platform.openai.com/api-keys\n\nError: {str(e)}"
+                        "content": f"⚠️ API quota exceeded. Please try again in a moment.\n\nYour question: '{body.query}'\n\nError: {error_msg}"
+                    }
+                }]
+            }
+        elif "api_key" in error_msg.lower() or "401" in error_msg or "403" in error_msg:
+            return {
+                "choices": [{
+                    "message": {
+                        "content": f"🔑 API key issue detected.\n\nPlease check:\n1. Is your Gemini API key correct in backend/.env?\n2. Is the key active at https://aistudio.google.com/app/apikey?\n\nError: {error_msg}"
                     }
                 }]
             }
         else:
-            raise HTTPException(status_code=500, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+            # Generic error handling
+            return {
+                "choices": [{
+                    "message": {
+                        "content": f"❌ An error occurred while processing your request.\n\nQuestion: '{body.query}'\n\nError: {error_msg}\n\nPlease try again or contact support if the issue persists."
+                    }
+                }]
+            }
