@@ -14,20 +14,37 @@ const AuthButton: React.FC = () => {
   useEffect(() => {
     const checkAuthStatus = async () => {
       setIsLoading(true);
-      const user = authService.getUser();
-      if (user) {
-        try {
-          const verifiedUser = await authService.getMe();
+
+      // Add a timeout to prevent infinite loading
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Auth check timed out")), 5000)
+      );
+
+      try {
+        const user = authService.getUser();
+        if (user) {
+          // Race between the API call and the timeout
+          const verifiedUser = await Promise.race([
+            authService.getMe(),
+            timeoutPromise
+          ]) as User;
+
           setCurrentUser(verifiedUser);
-        } catch (error) {
-          console.error("Token verification failed:", error);
-          authService.logout();
+        } else {
           setCurrentUser(null);
         }
-      } else {
+      } catch (error) {
+        console.error("Auth check failed:", error);
+        // If it was a timeout or error, we might want to clear the session or just show login
+        if (error instanceof Error && error.message === "Auth check timed out") {
+          console.warn("Backend not responding fast enough, showing login buttons");
+        } else {
+          authService.logout();
+        }
         setCurrentUser(null);
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
     };
 
     checkAuthStatus();
@@ -50,7 +67,7 @@ const AuthButton: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="navbar__item" style={{ 
+      <div className="navbar__item" style={{
         padding: '6px 12px',
         color: 'var(--ifm-color-emphasis-600)'
       }}>
@@ -62,7 +79,7 @@ const AuthButton: React.FC = () => {
   return (
     <>
       {currentUser ? (
-        <div style={{ 
+        <div style={{
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
@@ -109,9 +126,9 @@ const AuthButton: React.FC = () => {
             }}>
               {currentUser.name.charAt(0).toUpperCase()}
             </div>
-            
+
             {/* Username */}
-            <span style={{ 
+            <span style={{
               fontSize: '14px',
               maxWidth: '120px',
               overflow: 'hidden',
@@ -120,9 +137,9 @@ const AuthButton: React.FC = () => {
             }}>
               {currentUser.name}
             </span>
-            
+
             {/* Dropdown Arrow */}
-            <span style={{ 
+            <span style={{
               fontSize: '10px',
               transition: 'transform 0.2s ease',
               transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)'
@@ -151,22 +168,22 @@ const AuthButton: React.FC = () => {
                 padding: '12px 16px',
                 borderBottom: '1px solid var(--ifm-color-emphasis-200)'
               }}>
-                <div style={{ 
-                  fontSize: '14px', 
+                <div style={{
+                  fontSize: '14px',
                   fontWeight: 'bold',
                   color: 'var(--ifm-font-color-base)',
                   marginBottom: '4px'
                 }}>
                   {currentUser.name}
                 </div>
-                <div style={{ 
-                  fontSize: '12px', 
+                <div style={{
+                  fontSize: '12px',
                   color: 'var(--ifm-color-emphasis-600)'
                 }}>
                   {currentUser.email}
                 </div>
-                <div style={{ 
-                  fontSize: '11px', 
+                <div style={{
+                  fontSize: '11px',
                   color: 'var(--ifm-color-primary)',
                   marginTop: '6px',
                   padding: '4px 8px',
@@ -225,13 +242,13 @@ const AuthButton: React.FC = () => {
           )}
         </div>
       ) : (
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '8px' 
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
         }}>
-          <Link 
-            className="button button--primary" 
+          <Link
+            className="button button--primary"
             to="/login"
             style={{
               padding: '6px 16px',
@@ -243,8 +260,8 @@ const AuthButton: React.FC = () => {
           >
             Login
           </Link>
-          <Link 
-            className="button button--secondary" 
+          <Link
+            className="button button--secondary"
             to="/signup"
             style={{
               padding: '6px 16px',
