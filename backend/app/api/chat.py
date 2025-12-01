@@ -42,38 +42,46 @@ async def query_endpoint(body: QueryRequest):
     """RAG query endpoint. If `selected_text` is provided, answers must be derived only from it.
     Otherwise, does a vector search against Qdrant and asks the LLM.
     """
-    # If selected_text provided, use that as the only context
-    if body.selected_text:
-        prompt = f"Answer based ONLY on the following text:\n\n{body.selected_text}\n\nQuestion: {body.query}\nAnswer:"
-        # Call LLM via OpenAI completion
-        if not OPENAI_API_KEY:
-            raise HTTPException(status_code=500, detail="OPENAI_API_KEY not configured")
-        from requests import post
-        headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-        payload = {"model": MODEL_NAME, "messages": [{"role":"user","content": prompt}]}
-        resp = post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-        resp.raise_for_status()
-        return resp.json()
-
-    # Otherwise, perform vector search in Qdrant
-    if not QDRANT_URL:
-        raise HTTPException(status_code=500, detail="QDRANT_URL not configured")
-    # compute embedding for query
+    # Fallback response when API is not configured
+    if not OPENAI_API_KEY or OPENAI_API_KEY == "sk-your-key-here" or OPENAI_API_KEY == "your-openai-key":
+        return {
+            "choices": [{
+                "message": {
+                    "content": f"I received your question: '{body.query}'\n\nHowever, the OpenAI API key is not configured or is invalid. To get AI-powered responses, please:\n1. Get a valid API key from https://platform.openai.com/api-keys\n2. Add it to backend/.env as OPENAI_API_KEY\n3. Restart the backend server\n\nFor now, I'm running in demo mode without AI capabilities."
+                }
+            }]
+        }
+    
     try:
-        from openai import OpenAI
-        client = OpenAI(api_key=OPENAI_API_KEY)
-        emb_resp = client.embeddings.create(model="text-embedding-3-small", input=body.query)
-        query_vector = emb_resp.data[0].embedding
-    except Exception as e:
-        # fallback: call REST embedding
-        import requests
-        headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
-        r = requests.post("https://api.openai.com/v1/embeddings", headers=headers, json={"model":"text-embedding-3-small","input": body.query})
-        r.raise_for_status()
-        query_vector = r.json()["data"][0]["embedding"]
+        # If selected_text provided, use that as the only context
+        if body.selected_text:
+            prompt = f"Answer based ONLY on the following text:\n\n{body.selected_text}\n\nQuestion: {body.query}\nAnswer:"
+            # Call LLM via OpenAI completion
+            from requests import post
+            headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
+            payload = {"model": MODEL_NAME, "messages": [{"role":"user","content": prompt}]}
+            resp = post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+            resp.raise_for_status()
+            return resp.json()
 
-    # Query Qdrant
-    try:
+        # Otherwise, perform vector search in Qdrant
+        if not QDRANT_URL:
+            raise HTTPException(status_code=500, detail="QDRANT_URL not configured")
+        # compute embedding for query
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=OPENAI_API_KEY)
+            emb_resp = client.embeddings.create(model="text-embedding-3-small", input=body.query)
+            query_vector = emb_resp.data[0].embedding
+        except Exception as e:
+            # fallback: call REST embedding
+            import requests
+            headers = {"Authorization": f"Bearer {OPENAI_API_KEY}", "Content-Type": "application/json"}
+            r = requests.post("https://api.openai.com/v1/embeddings", headers=headers, json={"model":"text-embedding-3-small","input": body.query})
+            r.raise_for_status()
+            query_vector = r.json()["data"][0]["embedding"]
+
+        # Query Qdrant
         qdrant_search_url = QDRANT_URL.rstrip('/') + f"/collections/{QDRANT_COLLECTION}/points/search"
         headers = {"api-key": QDRANT_API_KEY, "Content-Type": "application/json"} if QDRANT_API_KEY else {"Content-Type": "application/json"}
         payload = {"vector": query_vector, "top": body.top_k}
@@ -95,5 +103,18 @@ async def query_endpoint(body: QueryRequest):
         resp = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
         resp.raise_for_status()
         return resp.json()
+    except requests.exceptions.HTTPError as e:
+        # Check if it's a 401 Unauthorized error
+        if e.response.status_code == 401:
+            return {
+                "choices": [{
+                    "message": {
+                        "content": f"I received your question: '{body.query}'\n\nThe OpenAI API key appears to be invalid or expired (401 Unauthorized). Please check:\n1. Is your API key correct?\n2. Does your OpenAI account have credits?\n3. Is the key active at https://platform.openai.com/api-keys\n\nError: {str(e)}"
+                    }
+                }]
+            }
+        else:
+            raise HTTPException(status_code=500, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+```
