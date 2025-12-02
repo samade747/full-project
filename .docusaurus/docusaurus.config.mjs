@@ -30,6 +30,10 @@ export default {
   },
   "scripts": [
     {
+      "src": "/config.js",
+      "async": false
+    },
+    {
       "src": "https://cdn.platform.openai.com/deployments/chatkit/chatkit.js",
       "async": true
     }
@@ -52,7 +56,8 @@ export default {
     "D:\\github\\full-project\\src\\components\\Root.tsx"
   ],
   "customFields": {
-    "geminiApiKey": "AIzaSyBppTVB6o9AI7buzuOCg0Rqzbb7gr6ioAA"
+    "geminiApiKey": "AIzaSyBppTVB6o9AI7buzuOCg0Rqzbb7gr6ioAA",
+    "backendApiUrl": "http://localhost:8000"
   },
   "presets": [
     [

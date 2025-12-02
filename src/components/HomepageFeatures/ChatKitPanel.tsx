@@ -15,11 +15,13 @@ type Message = {
   timestamp: number;
 };
 
-// Get backend URL from environment or use default
+// Get backend URL from window config or use default
 const getApiUrl = () => {
   if (typeof window === 'undefined') return 'http://localhost:8000';
-  const envUrl = process.env.BACKEND_API_URL || (window as any).BACKEND_API_URL;
-  return envUrl || 'http://localhost:8000';
+  if ((window as any).BACKEND_API_URL) {
+    return (window as any).BACKEND_API_URL;
+  }
+  return 'http://localhost:8000';
 };
 
 const API_URL = getApiUrl();

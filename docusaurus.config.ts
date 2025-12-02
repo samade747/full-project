@@ -15,6 +15,10 @@ const config: Config = {
 
   scripts: [
     {
+      src: "/config.js",
+      async: false,
+    },
+    {
       src: "https://cdn.platform.openai.com/deployments/chatkit/chatkit.js",
       async: true,
     },
@@ -39,6 +43,7 @@ const config: Config = {
 
   customFields: {
     geminiApiKey: process.env.GEMINI_API_KEY,
+    backendApiUrl: process.env.BACKEND_API_URL || 'http://localhost:8000',
   },
 
   presets: [

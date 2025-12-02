@@ -2,16 +2,18 @@
 import axios from 'axios';
 import { SignupData, LoginData, User, AuthSuccessResponse, ErrorResponse } from '../types/user';
 
-// Get backend URL from environment or use default
+// Get backend URL from window config or use default
 const getApiUrl = () => {
-  // Check if running in browser
+  // Server-side rendering fallback
   if (typeof window === 'undefined') return 'http://localhost:8000';
 
-  // In production (Vercel), use environment variable
-  const envUrl = process.env.BACKEND_API_URL || (window as any).BACKEND_API_URL;
+  // Check for runtime config (set by Vercel or custom script)
+  if ((window as any).BACKEND_API_URL) {
+    return (window as any).BACKEND_API_URL;
+  }
 
   // Fallback to localhost for development
-  return envUrl || 'http://localhost:8000';
+  return 'http://localhost:8000';
 };
 
 const API_URL = getApiUrl();
