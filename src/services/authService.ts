@@ -2,10 +2,21 @@
 import axios from 'axios';
 import { SignupData, LoginData, User, AuthSuccessResponse, ErrorResponse } from '../types/user';
 
-// Get backend URL from window config or use default
-const API_URL = (typeof window !== 'undefined' && (window as any).BACKEND_API_URL) || 'http://localhost:8000';
+// Get backend URL from environment or use default
+const getApiUrl = () => {
+  // Check if running in browser
+  if (typeof window === 'undefined') return 'http://localhost:8000';
 
+  // In production (Vercel), use environment variable
+  const envUrl = process.env.BACKEND_API_URL || (window as any).BACKEND_API_URL;
+
+  // Fallback to localhost for development
+  return envUrl || 'http://localhost:8000';
+};
+
+const API_URL = getApiUrl();
 const AUTH_API_ENDPOINT = `${API_URL}/api/auth`;
+
 
 // Create an Axios instance for the auth API
 const authApi = axios.create({

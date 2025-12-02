@@ -15,7 +15,15 @@ type Message = {
   timestamp: number;
 };
 
-const API_URL = (typeof window !== 'undefined' && (window as any).BACKEND_API_URL) || 'http://localhost:8000';
+// Get backend URL from environment or use default
+const getApiUrl = () => {
+  if (typeof window === 'undefined') return 'http://localhost:8000';
+  const envUrl = process.env.BACKEND_API_URL || (window as any).BACKEND_API_URL;
+  return envUrl || 'http://localhost:8000';
+};
+
+const API_URL = getApiUrl();
+
 
 export default function ChatKitPanel({ selectedText, onThreadChange, onResponseCompleted }: Props) {
   const [messages, setMessages] = useState<Message[]>([
