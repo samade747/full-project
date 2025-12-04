@@ -259,10 +259,26 @@
   height: 32px;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   transition: transform 0.3s ease;
+  animation: icon-blink 2s infinite ease-in-out;
+}
+
+@keyframes icon-blink {
+
+  0%,
+  90%,
+  100% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 0.3;
+  }
 }
 
 .chatkit-toggle-button:hover .chatkit-fab-icon {
   transform: rotate(15deg);
+  animation: none;
+  /* Stop blinking on hover */
 }
 
 /* ============================================
