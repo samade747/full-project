@@ -39,7 +39,7 @@ export default {
     }
   ],
   "url": "https://full-project-kappa.vercel.app",
-  "baseUrl": "/ur/",
+  "baseUrl": "/",
   "organizationName": "samade747",
   "projectName": "full-project",
   "onBrokenLinks": "warn",
@@ -57,7 +57,7 @@ export default {
   ],
   "customFields": {
     "geminiApiKey": "AIzaSyBppTVB6o9AI7buzuOCg0Rqzbb7gr6ioAA",
-    "backendApiUrl": "http://localhost:8000"
+    "backendApiUrl": "https://full-project-production.up.railway.app"
   },
   "presets": [
     [

@@ -1,222 +1,222 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/ur/docs",
+      "path": "/docs",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/ur/docs",
+          "path": "/docs",
           "mainDocId": "intro",
           "docs": [
             {
               "id": "hardware/conclusion/index",
-              "path": "/ur/docs/hardware/conclusion/",
+              "path": "/docs/hardware/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/edge-computing-jetson",
-              "path": "/ur/docs/hardware/edge-computing-jetson",
+              "path": "/docs/hardware/edge-computing-jetson",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/index",
-              "path": "/ur/docs/hardware/"
+              "path": "/docs/hardware/"
             },
             {
               "id": "hardware/introduction/index",
-              "path": "/ur/docs/hardware/introduction/",
+              "path": "/docs/hardware/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/lab-infrastructure",
-              "path": "/ur/docs/hardware/lab-infrastructure",
+              "path": "/docs/hardware/lab-infrastructure",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/sensors-actuators",
-              "path": "/ur/docs/hardware/sensors-actuators",
+              "path": "/docs/hardware/sensors-actuators",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "hardware/workstation-requirements",
-              "path": "/ur/docs/hardware/workstation-requirements",
+              "path": "/docs/hardware/workstation-requirements",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/bipedal-locomotion",
-              "path": "/ur/docs/humanoid-robotics/bipedal-locomotion",
+              "path": "/docs/humanoid-robotics/bipedal-locomotion",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/conclusion/index",
-              "path": "/ur/docs/humanoid-robotics/conclusion/",
+              "path": "/docs/humanoid-robotics/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/human-robot-interaction",
-              "path": "/ur/docs/humanoid-robotics/human-robot-interaction",
+              "path": "/docs/humanoid-robotics/human-robot-interaction",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/index",
-              "path": "/ur/docs/humanoid-robotics/"
+              "path": "/docs/humanoid-robotics/"
             },
             {
               "id": "humanoid-robotics/introduction/index",
-              "path": "/ur/docs/humanoid-robotics/introduction/",
+              "path": "/docs/humanoid-robotics/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/kinematics-dynamics",
-              "path": "/ur/docs/humanoid-robotics/kinematics-dynamics",
+              "path": "/docs/humanoid-robotics/kinematics-dynamics",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "humanoid-robotics/manipulation-grasping",
-              "path": "/ur/docs/humanoid-robotics/manipulation-grasping",
+              "path": "/docs/humanoid-robotics/manipulation-grasping",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
-              "path": "/ur/docs/intro",
+              "path": "/docs/intro",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/conclusion/index",
-              "path": "/ur/docs/physical-ai/conclusion/",
+              "path": "/docs/physical-ai/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/core-principles/index",
-              "path": "/ur/docs/physical-ai/core-principles/",
+              "path": "/docs/physical-ai/core-principles/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/digital-to-physical-transition/index",
-              "path": "/ur/docs/physical-ai/digital-to-physical-transition/",
+              "path": "/docs/physical-ai/digital-to-physical-transition/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "physical-ai/index",
-              "path": "/ur/docs/physical-ai/"
+              "path": "/docs/physical-ai/"
             },
             {
               "id": "physical-ai/introduction/index",
-              "path": "/ur/docs/physical-ai/introduction/",
+              "path": "/docs/physical-ai/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/communication-patterns/index",
-              "path": "/ur/docs/ros2/communication-patterns/",
+              "path": "/docs/ros2/communication-patterns/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/conclusion/index",
-              "path": "/ur/docs/ros2/conclusion/",
+              "path": "/docs/ros2/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/core-architecture/index",
-              "path": "/ur/docs/ros2/core-architecture/",
+              "path": "/docs/ros2/core-architecture/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/index",
-              "path": "/ur/docs/ros2/"
+              "path": "/docs/ros2/"
             },
             {
               "id": "ros2/introduction/index",
-              "path": "/ur/docs/ros2/introduction/",
+              "path": "/docs/ros2/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/python-integration-rclpy/index",
-              "path": "/ur/docs/ros2/python-integration-rclpy/",
+              "path": "/docs/ros2/python-integration-rclpy/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "ros2/urdf/index",
-              "path": "/ur/docs/ros2/urdf/",
+              "path": "/docs/ros2/urdf/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/conclusion/index",
-              "path": "/ur/docs/simulation/conclusion/",
+              "path": "/docs/simulation/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/index",
-              "path": "/ur/docs/simulation/"
+              "path": "/docs/simulation/"
             },
             {
               "id": "simulation/introduction/index",
-              "path": "/ur/docs/simulation/introduction/",
+              "path": "/docs/simulation/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/platforms/index",
-              "path": "/ur/docs/simulation/platforms/",
+              "path": "/docs/simulation/platforms/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "simulation/sensor-simulation/index",
-              "path": "/ur/docs/simulation/sensor-simulation/",
+              "path": "/docs/simulation/sensor-simulation/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/conclusion/index",
-              "path": "/ur/docs/vla/conclusion/",
+              "path": "/docs/vla/conclusion/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/index",
-              "path": "/ur/docs/vla/"
+              "path": "/docs/vla/"
             },
             {
               "id": "vla/introduction/index",
-              "path": "/ur/docs/vla/introduction/",
+              "path": "/docs/vla/introduction/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/llm-role",
-              "path": "/ur/docs/vla/llm-role",
+              "path": "/docs/vla/llm-role",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "vla/pipeline",
-              "path": "/ur/docs/vla/pipeline",
+              "path": "/docs/vla/pipeline",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/physical-ai",
-              "path": "/ur/docs/category/physical-ai",
+              "path": "/docs/category/physical-ai",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/2-ros-2-robot-operating-system",
-              "path": "/ur/docs/category/2-ros-2-robot-operating-system",
+              "path": "/docs/category/2-ros-2-robot-operating-system",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/3-robot-simulation",
-              "path": "/ur/docs/category/3-robot-simulation",
+              "path": "/docs/category/3-robot-simulation",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/5-vision-language-action-vla",
-              "path": "/ur/docs/category/5-vision-language-action-vla",
+              "path": "/docs/category/5-vision-language-action-vla",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/6-humanoid-robotics",
-              "path": "/ur/docs/category/6-humanoid-robotics",
+              "path": "/docs/category/6-humanoid-robotics",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "/category/7-hardware-setup",
-              "path": "/ur/docs/category/7-hardware-setup",
+              "path": "/docs/category/7-hardware-setup",
               "sidebar": "tutorialSidebar"
             }
           ],
@@ -224,7 +224,7 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/ur/docs/intro",
+                "path": "/docs/intro",
                 "label": "intro"
               }
             }

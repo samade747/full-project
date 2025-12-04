@@ -6,6 +6,7 @@ passlib[bcrypt]
 python-multipart
 psycopg2-binary
 openai
+anthropic
 requests
 qdrant-client
 python-dotenv
