@@ -1,12 +1,17 @@
-/* Custom Animated Cursor Styles */
+/* Custom Animated Cursor Styles - Unique Difference Mode */
 
 /* Hide default cursor on desktop */
 @media (hover: hover) and (pointer: fine) {
   body {
     cursor: none !important;
   }
-  
-  a, button, [role="button"], input, select, textarea {
+
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
     cursor: none !important;
   }
 }
@@ -16,16 +21,30 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(124, 58, 237, 0.9);
+  border: 2px dashed #ffffff;
+  /* White for difference mode */
   border-radius: 50%;
   pointer-events: none;
   z-index: 99999;
   transform: translate(-50%, -50%);
   transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
   background: transparent;
+  mix-blend-mode: difference;
+  /* The key effect */
+  animation: rotateRing 10s linear infinite;
 }
 
-/* Glow effect inside the ring */
+@keyframes rotateRing {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Glow effect inside the ring - subtle */
 .cursorGlow {
   position: absolute;
   top: 50%;
@@ -34,59 +53,66 @@
   height: 100%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
   animation: cursorPulse 2s ease-in-out infinite;
 }
 
 @keyframes cursorPulse {
-  0%, 100% {
-    opacity: 0.5;
-    transform: translate(-50%, -50%) scale(1);
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.8);
   }
+
   50% {
-    opacity: 0.8;
-    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
 /* Center dot - follows immediately */
 .cursorDot {
   position: fixed;
-  width: 10px;
-  height: 10px;
-  background: linear-gradient(135deg, #7c3aed, #db2777);
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 100000;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
-  box-shadow:
-    0 0 10px rgba(124, 58, 237, 0.9),
-    0 0 20px rgba(124, 58, 237, 0.6),
-    0 0 40px rgba(124, 58, 237, 0.4);
+  transition: width 0.2s ease, height 0.2s ease;
+  mix-blend-mode: difference;
 }
 
 /* Hover state - when over links/buttons */
 .cursorRing.hovering {
   width: 60px;
   height: 60px;
-  border-color: rgba(219, 39, 119, 0.9);
-  background: rgba(219, 39, 119, 0.15);
+  border-style: solid;
+  /* Solid when hovering */
+  border-width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: none;
+  /* Stop rotation on hover for stability */
 }
 
 .cursorRing.hovering .cursorGlow {
-  background: radial-gradient(circle, rgba(219, 39, 119, 0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
   animation: hoverPulse 1s ease-in-out infinite;
 }
 
 @keyframes hoverPulse {
-  0%, 100% {
-    opacity: 0.6;
+
+  0%,
+  100% {
+    opacity: 0.4;
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.2);
   }
 }
 
@@ -94,22 +120,17 @@
 .cursorRing.clicking {
   width: 30px;
   height: 30px;
-  border-color: #db2777;
-  background: rgba(219, 39, 119, 0.35);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .cursorDot.clicking {
-  width: 14px;
-  height: 14px;
-  background: linear-gradient(135deg, #db2777, #f472b6);
-  box-shadow:
-    0 0 15px rgba(219, 39, 119, 1),
-    0 0 30px rgba(219, 39, 119, 0.8),
-    0 0 50px rgba(219, 39, 119, 0.6);
+  width: 12px;
+  height: 12px;
 }
 
 /* Hide on mobile */
 @media (hover: none) or (pointer: coarse) {
+
   .cursorRing,
   .cursorDot {
     display: none !important;
