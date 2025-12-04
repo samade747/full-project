@@ -12,14 +12,24 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS configuration - Allow all for development
+# CORS configuration - Allow specific origins + all for dev
+allowed_origins = [
+    "https://full-project-kappa.vercel.app",
+    "https://full-project.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:3000",
+    "*"  # Fallback for dev
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for development
+    allow_origins=allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allow_headers=["*"],
     expose_headers=["*"],
+    max_age=86400,  # Cache preflight for 24 hours
 )
 
 # ===== STARTUP EVENT =====
