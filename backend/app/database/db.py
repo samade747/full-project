@@ -1,4 +1,4 @@
-# backend/src/database/db.py
+# backend/app/database/db.py
 
 import psycopg2
 from psycopg2.extras import RealDictCursor
@@ -10,17 +10,24 @@ load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
 
 def get_db_connection():
-    """Get database connection"""
+    """Get database connection - returns None if not configured or connection fails"""
+    if not DATABASE_URL:
+        print("WARNING: DATABASE_URL not set - database features disabled")
+        return None
     try:
         conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
         return conn
     except Exception as e:
         print(f"Database connection error: {e}")
-        raise
+        return None
 
 def init_db():
     """Initialize database with users table"""
     conn = get_db_connection()
+    if not conn:
+        print("Skipping database initialization - no connection available")
+        return
+    
     cursor = conn.cursor()
     
     # Create users table
