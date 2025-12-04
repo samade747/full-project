@@ -2,7 +2,15 @@
 title: Physical AI Fundamentals
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # Physical AI Fundamentals
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="Physical AI represents a paradigm shift creating intelligent systems that perceive, reason, and act in the physical world. This chapter covers embodiment, sensory perception, motor action, learning from interaction, and the digital-to-physical transition challenges." />
+  <TranslateButton chapterContent="Physical AI represents a paradigm shift creating intelligent systems that perceive, reason, and act in the physical world. This chapter covers embodiment, sensory perception, motor action, learning from interaction, and the digital-to-physical transition challenges." />
+</div>
 
 ## Introduction to Physical AI
 

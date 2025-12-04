@@ -2,7 +2,15 @@
 title: Robot Simulation
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # Robot Simulation
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="Robot simulation provides virtual environments for testing, training, and debugging robots safely. This chapter covers Gazebo vs Unity platforms, sensor simulation including LiDAR, depth cameras, and IMUs." />
+  <TranslateButton chapterContent="Robot simulation provides virtual environments for testing, training, and debugging robots safely. This chapter covers Gazebo vs Unity platforms, sensor simulation including LiDAR, depth cameras, and IMUs." />
+</div>
 
 ## The Importance of Simulation in Robotics
 

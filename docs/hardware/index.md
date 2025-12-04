@@ -2,7 +2,15 @@
 title: Hardware Setup
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # Hardware Setup
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="Setting up your robotics lab requires the right hardware foundation. This chapter covers workstation requirements, edge computing with NVIDIA Jetson, sensors (cameras, LiDAR, IMUs), actuators (motors), and lab infrastructure." />
+  <TranslateButton chapterContent="Setting up your robotics lab requires the right hardware foundation. This chapter covers workstation requirements, edge computing with NVIDIA Jetson, sensors (cameras, LiDAR, IMUs), actuators (motors), and lab infrastructure." />
+</div>
 
 ## Building Your Robotics Lab
 

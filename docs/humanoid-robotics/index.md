@@ -2,7 +2,15 @@
 title: Humanoid Robotics
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # Humanoid Robotics
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="Humanoid robots with human-like form and capabilities represent a grand challenge of robotics. This chapter covers kinematics and dynamics, bipedal locomotion with ZMP, manipulation and grasping, and human-robot interaction." />
+  <TranslateButton chapterContent="Humanoid robots with human-like form and capabilities represent a grand challenge of robotics. This chapter covers kinematics and dynamics, bipedal locomotion with ZMP, manipulation and grasping, and human-robot interaction." />
+</div>
 
 ## The Grand Challenge of Humanoid Robotics
 

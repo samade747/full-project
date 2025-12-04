@@ -2,7 +2,15 @@
 title: Vision-Language-Action (VLA)
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # Vision-Language-Action (VLA)
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="Vision-Language-Action (VLA) models combine perception, language understanding, and physical action. This chapter covers the VLA pipeline: vision perception, language understanding with LLMs, and action execution with tool use." />
+  <TranslateButton chapterContent="Vision-Language-Action (VLA) models combine perception, language understanding, and physical action. This chapter covers the VLA pipeline: vision perception, language understanding with LLMs, and action execution with tool use." />
+</div>
 
 ## The Convergence of Perception, Language, and Action
 
