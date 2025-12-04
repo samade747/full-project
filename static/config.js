@@ -1,4 +1,3 @@
-```javascript
 // Inject runtime configuration for backend API URL
 // This script runs before the app loads and sets window.BACKEND_API_URL
 (function () {
@@ -15,4 +14,3 @@
 
     console.log('Backend API URL configured:', window.BACKEND_API_URL);
 })();
-```
