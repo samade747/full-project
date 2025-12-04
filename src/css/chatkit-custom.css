@@ -690,6 +690,92 @@
   border-radius: 4px;
 }
 
-.chatkit-body::-webkit-scrollbar-thumb:hover {
-  background: #818cf8;
+/* ============================================
+   LIGHT MODE SUPPORT
+   ============================================ */
+
+html[data-theme='light'] .chatkit-container {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+html[data-theme='light'] .chatkit-header {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .chatkit-header span {
+  color: white;
+  text-shadow: none;
+}
+
+html[data-theme='light'] .chatkit-body {
+  background: transparent;
+}
+
+html[data-theme='light'] .chatkit-popup-message {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e293b;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .chatkit-popup-close-button {
+  color: #64748b;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .chatkit-popup-close-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+html[data-theme='light'] .chatkit-close-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+html[data-theme='light'] .chatkit-close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+html[data-theme='light'] .chatkit-selected-text-preview {
+  background: rgba(139, 92, 246, 0.05);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+html[data-theme='light'] .chatkit-selected-text-content {
+  color: #334155;
+}
+
+html[data-theme='light'] .chatkit-selected-text-close-button {
+  color: #64748b;
+}
+
+html[data-theme='light'] .chatkit-selected-text-close-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+}
+
+html[data-theme='light'] .chatkit-loading-fallback,
+html[data-theme='light'] .chatkit-error-fallback {
+  color: #64748b;
+}
+
+html[data-theme='light'] .chatkit-error-title {
+  color: #1e293b;
+}
+
+html[data-theme='light'] .chatkit-error-message {
+  color: #64748b;
+}
+
+html[data-theme='light'] .chatkit-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
 }
