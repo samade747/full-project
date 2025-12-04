@@ -2,7 +2,15 @@
 title: ROS 2 (Robot Operating System)
 ---
 
+import PersonalizeButton from '@site/src/components/ChapterTools/PersonalizeButton';
+import TranslateButton from '@site/src/components/ChapterTools/TranslateButton';
+
 # ROS 2 (Robot Operating System)
+
+<div style={{display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem'}}>
+  <PersonalizeButton chapterContent="ROS 2 is a flexible framework for writing robot software. It includes tools, libraries, and conventions for creating complex robot behavior. This chapter covers the core architecture, communication patterns (Topics, Services, Actions), Python integration with rclpy, and URDF robot descriptions." />
+  <TranslateButton chapterContent="ROS 2 is a flexible framework for writing robot software. It includes tools, libraries, and conventions for creating complex robot behavior. This chapter covers the core architecture, communication patterns (Topics, Services, Actions), Python integration with rclpy, and URDF robot descriptions." />
+</div>
 
 ## Introduction to ROS 2
 
