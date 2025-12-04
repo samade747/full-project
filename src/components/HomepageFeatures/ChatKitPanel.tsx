@@ -149,6 +149,7 @@ export default function ChatKitPanel({ selectedText, onThreadChange, onResponseC
             disabled={isLoading}
             className={styles.inputField}
           />
+          <div className={styles.statusDot} title="System Online" />
         </div>
         <button
           type="submit"
