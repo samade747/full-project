@@ -302,23 +302,93 @@
   }
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - HERO SECTION
+   ============================================ */
+
+/* Large Desktop (1200px - 1439px) */
+@media screen and (max-width: 1439px) {
+  .heroTitle {
+    font-size: 5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.4rem;
+    max-width: 750px;
+  }
+}
+
+/* Desktop (997px - 1199px) */
+@media screen and (max-width: 1199px) {
+  .heroBanner {
+    padding: 5rem 0;
+    min-height: 95vh;
+  }
+
+  .heroTitle {
+    font-size: 4.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .floatingOrb1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .floatingOrb2 {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Tablet Landscape (768px - 996px) */
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 4rem 1.5rem;
     min-height: 90vh;
   }
 
+  .heroContent {
+    padding: 0 1.5rem;
+  }
+
+  .badge {
+    padding: 0.6rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge span {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+
   .heroTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .heroSubtitle {
     font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
   }
 
   .buttons {
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
   .primaryButton,
@@ -326,5 +396,323 @@
     width: 100%;
     justify-content: center;
     padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 14px;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  .floatingOrb1 {
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    left: 0;
+  }
+
+  .floatingOrb2 {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    right: 0;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media screen and (max-width: 767px) {
+  .heroBanner {
+    padding: 3rem 1rem;
+    min-height: 85vh;
+  }
+
+  .heroContent {
+    padding: 0 1rem;
+  }
+
+  .badge {
+    padding: 0.5rem 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge span {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+  }
+
+  .heroTitle {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .buttons {
+    max-width: 100%;
+    gap: 0.875rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 1.1rem 1.75rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .primaryButton {
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+  }
+
+  .arrow {
+    font-size: 1.1rem;
+  }
+
+  .floatingOrb1,
+  .floatingOrb2 {
+    filter: blur(60px);
+    opacity: 0.4;
+  }
+
+  .floatingOrb1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .floatingOrb2 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .heroGrid {
+    background-size: 40px 40px;
+    opacity: 0.3;
+  }
+}
+
+/* Mobile Large (480px - 575px) */
+@media screen and (max-width: 575px) {
+  .heroBanner {
+    padding: 2.5rem 0.75rem;
+    min-height: 80vh;
+  }
+
+  .heroContent {
+    padding: 0 0.75rem;
+  }
+
+  .badge {
+    padding: 0.45rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .badge span {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .heroTitle {
+    font-size: 2.3rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .buttons {
+    gap: 0.75rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+
+  .arrow {
+    font-size: 1rem;
+  }
+
+  .floatingOrb1 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .floatingOrb2 {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Mobile Small (320px - 479px) */
+@media screen and (max-width: 479px) {
+  .heroBanner {
+    padding: 2rem 0.5rem;
+    min-height: 75vh;
+  }
+
+  .heroContent {
+    padding: 0 0.5rem;
+  }
+
+  .badge {
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+  }
+
+  .badge span {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  .heroTitle {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin-bottom: 0.875rem;
+    word-wrap: break-word;
+  }
+
+  .heroSubtitle {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons {
+    gap: 0.625rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.9rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .primaryButton {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.35);
+  }
+
+  .secondaryButton {
+    border-width: 1.5px;
+  }
+
+  .arrow {
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+  }
+
+  .floatingOrb1 {
+    width: 80px;
+    height: 80px;
+    filter: blur(50px);
+  }
+
+  .floatingOrb2 {
+    width: 100px;
+    height: 100px;
+    filter: blur(60px);
+  }
+
+  .heroGrid {
+    background-size: 30px 30px;
+    opacity: 0.2;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media screen and (max-width: 319px) {
+  .heroBanner {
+    padding: 1.5rem 0.25rem;
+    min-height: 70vh;
+  }
+
+  .badge {
+    padding: 0.35rem 0.75rem;
+  }
+
+  .badge span {
+    font-size: 0.6rem;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .arrow {
+    font-size: 0.8rem;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .heroBanner {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: none;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .floatingOrb1,
+  .floatingOrb2 {
+    display: none;
+  }
+}
+
+/* Touch devices - larger tap targets */
+@media (hover: none) and (pointer: coarse) {
+
+  .primaryButton,
+  .secondaryButton {
+    min-height: 48px;
+  }
+
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: none;
   }
 }
