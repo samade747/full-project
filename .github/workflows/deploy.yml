@@ -31,6 +31,9 @@ jobs:
 
       - name: Build website
         run: npm run build
+        env:
+          URL: https://samade747.github.io
+          BASE_URL: /full-project/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

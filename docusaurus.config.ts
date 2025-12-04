@@ -24,8 +24,8 @@ const config: Config = {
     },
   ],
 
-  url: 'https://full-project-kappa.vercel.app', // Your Vercel URL
-  baseUrl: '/', // Base URL for Vercel (root)
+  url: process.env.URL || 'https://full-project-kappa.vercel.app', // Dynamic URL with Vercel fallback
+  baseUrl: process.env.BASE_URL || '/', // Dynamic Base URL with root fallback
 
   organizationName: 'samade747', // Your GitHub username
   projectName: 'full-project', // Your repository name
