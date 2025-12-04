@@ -11,6 +11,9 @@ router = APIRouter()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-exp")
 
 # Configure Gemini
@@ -30,7 +33,7 @@ async def chatkit_session():
 @router.post("/query")
 async def query_endpoint(body: QueryRequest):
     """Chat query endpoint with multi-provider fallback.
-    Tries providers in order: Gemini → OpenAI → Anthropic
+    Tries providers in order: Gemini → OpenAI → Anthropic → Groq → Qwen → OpenRouter
     """
     query = body.query
     selected_text = body.selected_text
@@ -42,20 +45,32 @@ async def query_endpoint(body: QueryRequest):
     if GEMINI_API_KEY and GEMINI_API_KEY != "your-gemini-api-key-here":
         providers.append(("Gemini", "gemini"))
     
-    # 2. OpenAI (fallback)
+    # 2. OpenAI (fallback 1)
     if OPENAI_API_KEY and not OPENAI_API_KEY.startswith("your-") and not OPENAI_API_KEY.startswith("sk-proj-your"):
         providers.append(("OpenAI", "openai"))
     
-    # 3. Anthropic Claude (secondary fallback)
+    # 3. Anthropic Claude (fallback 2)
     if ANTHROPIC_API_KEY and not ANTHROPIC_API_KEY.startswith("your-"):
         providers.append(("Anthropic", "anthropic"))
+    
+    # 4. Groq (fallback 3 - fast inference, free tier)
+    if GROQ_API_KEY and not GROQ_API_KEY.startswith("your-"):
+        providers.append(("Groq", "groq"))
+    
+    # 5. Qwen via DashScope (fallback 4)
+    if DASHSCOPE_API_KEY and not DASHSCOPE_API_KEY.startswith("your-"):
+        providers.append(("Qwen", "qwen"))
+    
+    # 6. OpenRouter (fallback 5 - multi-model aggregator)
+    if OPENROUTER_API_KEY and not OPENROUTER_API_KEY.startswith("your-"):
+        providers.append(("OpenRouter", "openrouter"))
     
     # If no providers configured
     if not providers:
         return {
             "choices": [{
                 "message": {
-                    "content": f"⚙️ **No AI providers configured.**\\n\\nTo enable the chatbot, add at least one API key to `backend/.env`:\\n\\n**Option 1: Gemini (Free Tier Available)**\\n1. Get key from https://aistudio.google.com/app/apikey\\n2. Add: `GEMINI_API_KEY=your-key`\\n\\n**Option 2: OpenAI**\\n1. Get key from https://platform.openai.com/api-keys\\n2. Add: `OPENAI_API_KEY=your-key`\\n\\n**Option 3: Anthropic Claude**\\n1. Get key from https://console.anthropic.com/\\n2. Add: `ANTHROPIC_API_KEY=your-key`\\n\\nThen restart the backend server."
+                    "content": f"⚙️ **No AI providers configured.**\\n\\nTo enable the chatbot, add at least one API key to `backend/.env`:\\n\\n**Option 1: Gemini (Free Tier)**\\n- Get key: https://aistudio.google.com/app/apikey\\n\\n**Option 2: OpenAI**\\n- Get key: https://platform.openai.com/api-keys\\n\\n**Option 3: Anthropic Claude**\\n- Get key: https://console.anthropic.com/\\n\\n**Option 4: Groq (Free Tier)**\\n- Get key: https://console.groq.com/keys\\n\\n**Option 5: Qwen (DashScope)**\\n- Get key: https://dashscope.console.aliyun.com/\\n\\n**Option 6: OpenRouter (Free Models)**\\n- Get key: https://openrouter.ai/keys\\n\\nThen restart the backend server."
                 }
             }]
         }
@@ -111,6 +126,49 @@ Answer:"""
                     messages=[{"role": "user", "content": prompt}]
                 )
                 ai_content = response.content[0].text
+            
+            elif provider_type == "groq":
+                # Groq - Fast inference with free tier
+                from groq import Groq
+                client = Groq(api_key=GROQ_API_KEY)
+                response = client.chat.completions.create(
+                    model="llama-3.1-8b-instant",
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=500
+                )
+                ai_content = response.choices[0].message.content
+            
+            elif provider_type == "qwen":
+                # Qwen via DashScope (OpenAI-compatible API)
+                import openai
+                client = openai.OpenAI(
+                    api_key=DASHSCOPE_API_KEY,
+                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+                )
+                response = client.chat.completions.create(
+                    model="qwen-turbo",
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=500
+                )
+                ai_content = response.choices[0].message.content
+            
+            elif provider_type == "openrouter":
+                # OpenRouter - Multi-model aggregator (OpenAI-compatible API)
+                import openai
+                client = openai.OpenAI(
+                    api_key=OPENROUTER_API_KEY,
+                    base_url="https://openrouter.ai/api/v1",
+                    default_headers={
+                        "HTTP-Referer": "https://physical-ai-book.pages.dev",
+                        "X-Title": "Physical AI Chatbot"
+                    }
+                )
+                response = client.chat.completions.create(
+                    model="meta-llama/llama-3.1-8b-instruct:free",
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=500
+                )
+                ai_content = response.choices[0].message.content
             
             # Success! Return response with provider info
             return {
