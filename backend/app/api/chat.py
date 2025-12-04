@@ -2,6 +2,7 @@
 from fastapi import APIRouter, Request, HTTPException
 from pydantic import BaseModel
 import os
+import requests
 import google.generativeai as genai
 from typing import Optional
 
@@ -16,9 +17,90 @@ DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL_NAME = os.getenv("MODEL_NAME", "gemini-2.0-flash-exp")
 
+# Qdrant Configuration for RAG
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION_NAME", "sddhackathon4")
+
 # Configure Gemini
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
+
+
+def search_qdrant_rag(query: str, top_k: int = 4) -> str:
+    """
+    Semantic search in Qdrant using OpenAI embeddings.
+    Returns formatted context from the book's knowledge base.
+    """
+    if not QDRANT_URL or not OPENAI_API_KEY:
+        print("⚠️ RAG disabled: QDRANT_URL or OPENAI_API_KEY not configured")
+        return None
+    
+    try:
+        import openai
+        client = openai.OpenAI(api_key=OPENAI_API_KEY)
+        
+        # Step 1: Generate embedding for the query
+        embedding_response = client.embeddings.create(
+            model="text-embedding-3-small",
+            input=query
+        )
+        query_vector = embedding_response.data[0].embedding
+        print(f"✅ Generated query embedding (dim: {len(query_vector)})")
+        
+        # Step 2: Search Qdrant
+        headers = {
+            "Content-Type": "application/json"
+        }
+        if QDRANT_API_KEY:
+            headers["api-key"] = QDRANT_API_KEY
+        
+        search_response = requests.post(
+            f"{QDRANT_URL}/collections/{QDRANT_COLLECTION}/points/search",
+            headers=headers,
+            json={
+                "vector": query_vector,
+                "limit": top_k,
+                "with_payload": True,
+                "with_vector": False
+            },
+            timeout=10
+        )
+        
+        if search_response.status_code != 200:
+            print(f"❌ Qdrant search failed: {search_response.text}")
+            return None
+        
+        data = search_response.json()
+        results = data.get('result', [])
+        
+        if not results:
+            print("⚠️ No results found in knowledge base")
+            return None
+        
+        # Filter by similarity score (>30%)
+        good_results = [r for r in results if r.get('score', 0) > 0.3]
+        
+        if not good_results:
+            print("⚠️ No results with sufficient similarity")
+            return None
+        
+        print(f"✅ Found {len(good_results)} relevant results (best score: {good_results[0].get('score', 0):.2%})")
+        
+        # Format context
+        context_parts = []
+        for i, res in enumerate(good_results, 1):
+            payload = res.get('payload', {})
+            text = payload.get('text', '')
+            source = payload.get('source', 'Unknown')
+            if text:
+                context_parts.append(f"[Source: {source}]\n{text}")
+        
+        return "\n\n---\n\n".join(context_parts)
+        
+    except Exception as e:
+        print(f"❌ RAG search error: {str(e)}")
+        return None
 
 class QueryRequest(BaseModel):
     query: str
@@ -75,19 +157,35 @@ async def query_endpoint(body: QueryRequest):
             }]
         }
     
-    # Build the prompt
+    # Build the prompt with RAG
+    context = None
+    rag_used = False
+    
     if selected_text:
+        # User provided selected text - use it as context
+        context = selected_text
+        print(f"📝 Using user-provided selected text ({len(selected_text)} chars)")
+    else:
+        # No selected text - search knowledge base (RAG)
+        print(f"🔍 Searching knowledge base for: {query[:50]}...")
+        context = search_qdrant_rag(query, top_k=body.top_k or 4)
+        if context:
+            rag_used = True
+            print(f"✅ RAG context retrieved ({len(context)} chars)")
+    
+    if context:
         prompt = f"""You are an AI assistant specialized in Physical AI and Humanoid Robotics.
 
-Answer the following question based ONLY on the provided text context. Do not use external knowledge.
+Answer the following question based ONLY on the provided context from the book. Be accurate and cite specific concepts from the context.
 
-Context:
-{selected_text}
+Context from Knowledge Base:
+{context}
 
 Question: {query}
 
-Answer:"""
+Answer (based on the context above):"""
     else:
+        # No context available - general response
         prompt = f"""You are an AI assistant specialized in Physical AI and Humanoid Robotics. You help users understand concepts related to robotics, artificial intelligence, autonomous systems, humanoid robots, and related technologies.
 
 Be helpful, concise, and technically accurate. If you don't know something, say so.
@@ -175,7 +273,8 @@ Answer:"""
                 "choices": [{
                     "message": {
                         "content": ai_content,
-                        "provider": provider_name
+                        "provider": provider_name,
+                        "rag_used": rag_used
                     }
                 }]
             }
