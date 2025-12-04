@@ -1,6 +1,7 @@
-// frontend/src/pages/signup.tsx
 import React, { useState } from 'react';
 import { useHistory } from '@docusaurus/router';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import SignupForm from '../components/Auth/SignupForm';
 import { authService } from '../services/authService';
@@ -10,13 +11,14 @@ const SignupPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const history = useHistory();
+  const homeUrl = useBaseUrl('/');
 
   const handleSubmit = async (data: SignupData) => {
     setIsLoading(true);
     setError(null);
     try {
       await authService.signup(data);
-      history.push('/');
+      history.push(homeUrl);
     } catch (err: any) {
       setError(err.message || 'An unexpected error occurred during signup.');
       console.error("Signup error:", err);
@@ -101,8 +103,8 @@ const SignupPage: React.FC = () => {
               fontSize: '14px'
             }}>
               Already have an account?{' '}
-              <a
-                href="/login"
+              <Link
+                to="/login"
                 style={{
                   color: '#dc2626',
                   fontWeight: '600',
@@ -113,7 +115,7 @@ const SignupPage: React.FC = () => {
                 onMouseLeave={(e) => e.currentTarget.style.color = '#dc2626'}
               >
                 Sign In
-              </a>
+              </Link>
             </p>
           </div>
         </div>

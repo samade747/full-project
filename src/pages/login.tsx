@@ -1,5 +1,8 @@
 // frontend/src/pages/login.tsx
 import React, { useState } from 'react';
+import { useHistory } from '@docusaurus/router';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { LoginData } from '../types/user';
 import Layout from '@theme/Layout';
 import { authService } from '../services/authService';
@@ -13,6 +16,8 @@ const LoginPage: React.FC = () => {
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const history = useHistory();
+  const homeUrl = useBaseUrl('/');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,7 +26,7 @@ const LoginPage: React.FC = () => {
       setError(null);
       await authService.login(formData);
       // Redirect to home page after successful login
-      window.location.href = '/';
+      history.push(homeUrl);
     } catch (err: any) {
       setError(err.message || 'Login failed. Please check your credentials.');
     } finally {
@@ -281,8 +286,8 @@ const LoginPage: React.FC = () => {
             fontSize: '14px'
           }}>
             Don't have an account?{' '}
-            <a
-              href="/signup"
+            <Link
+              to="/signup"
               style={{
                 color: '#dc2626',
                 textDecoration: 'none',
@@ -293,7 +298,7 @@ const LoginPage: React.FC = () => {
               onMouseLeave={(e) => e.currentTarget.style.color = '#dc2626'}
             >
               Sign Up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
