@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import HeroSection from '@site/src/components/HeroSection';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -35,7 +35,7 @@ export default function Home(): ReactNode {
       <main className={styles.mainContent}>
         {/* Hero Section */}
         <HeroSection />
-        
+
         {/* Overview Section */}
         <FadeInSection className={clsx('container padding-vert--xl', styles.overviewSection)}>
           <div className="row">
@@ -49,7 +49,7 @@ export default function Home(): ReactNode {
             </div>
           </div>
         </FadeInSection>
-        
+
         {/* Modules Section */}
         <FadeInSection className={clsx('container padding-vert--xl text--center', styles.modulesSection)}>
           <h2 className={clsx('margin-bottom--lg', styles.sectionTitle)}>
@@ -57,7 +57,7 @@ export default function Home(): ReactNode {
           </h2>
           <HomepageFeatures />
         </FadeInSection>
-        
+
         {/* Learning Outcomes Section */}
         <FadeInSection className={clsx('container padding-vert--xl', styles.outcomesSection)}>
           <div className="row">
@@ -113,7 +113,66 @@ export default function Home(): ReactNode {
             </div>
           </div>
         </FadeInSection>
-        
+
+        {/* Community & Support Section */}
+        <FadeInSection className={clsx('container padding-vert--xl', styles.communitySection)}>
+          <div className="row">
+            <div className="col col--6">
+              <h2 className={clsx('margin-bottom--md', styles.sectionTitle)}>
+                <span className={styles.titleUnderline}>Join the Community</span>
+              </h2>
+              <p className={clsx('hero__subtitle margin-bottom--lg', styles.communityText)}>
+                Connect with fellow learners, robotics enthusiasts, and industry experts. Share your projects, ask questions, and collaborate on the future of physical AI.
+              </p>
+              <div className={styles.communityButtons}>
+                <Link
+                  className={clsx('button button--primary button--lg', styles.communityButton)}
+                  to="https://discord.gg/example">
+                  <span>Join Discord Server</span>
+                </Link>
+                <Link
+                  className={clsx('button button--secondary button--lg', styles.communityButton)}
+                  to="https://github.com/example/project">
+                  <span>Star on GitHub</span>
+                </Link>
+              </div>
+            </div>
+            <div className="col col--6">
+              <div className={styles.communityImageWrapper}>
+                {/* Placeholder for community image or illustration */}
+                <div className={styles.communityPlaceholder}>
+                  <span className={styles.communityIcon}>🤝</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
+        {/* FAQ Section */}
+        <FadeInSection className={clsx('container padding-vert--xl', styles.faqSection)}>
+          <div className="row">
+            <div className="col col--8 col--offset-2">
+              <h2 className={clsx('text--center margin-bottom--lg', styles.sectionTitle)}>
+                <span className={styles.titleUnderline}>Frequently Asked Questions</span>
+              </h2>
+              <div className={styles.faqList}>
+                <div className={styles.faqItem}>
+                  <h3 className={styles.faqQuestion}>Do I need a robot to take this course?</h3>
+                  <p className={styles.faqAnswer}>No! We provide high-fidelity simulation environments (Gazebo, Unity) so you can learn and test everything virtually before deploying to real hardware.</p>
+                </div>
+                <div className={styles.faqItem}>
+                  <h3 className={styles.faqQuestion}>What programming languages are used?</h3>
+                  <p className={styles.faqAnswer}>The course primarily uses Python for AI/ML and C++ for performance-critical robotics tasks. Familiarity with Python is recommended.</p>
+                </div>
+                <div className={styles.faqItem}>
+                  <h3 className={styles.faqQuestion}>Is this course suitable for beginners?</h3>
+                  <p className={styles.faqAnswer}>We cover the basics, but some prior programming experience is helpful. We take you from zero to hero in ROS 2 and Physical AI.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+
         {/* Why Physical AI Matters Section */}
         <FadeInSection className={clsx('hero hero--primary margin-bottom--xl', styles.quoteSection)}>
           <div className="container">
@@ -129,7 +188,7 @@ export default function Home(): ReactNode {
             </div>
           </div>
         </FadeInSection>
-        
+
         {/* Hardware Requirements Section */}
         <FadeInSection className={clsx('container padding-vert--xl text--center', styles.hardwareSection)}>
           <h2 className={clsx('margin-bottom--lg', styles.sectionTitle)}>
