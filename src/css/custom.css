@@ -1075,7 +1075,18 @@ footer.footer--dark .footer__copyright {
 [class*="hero"] {
   position: relative !important;
   z-index: 1 !important;
-  /* Remove any transform that creates stacking context issues */
+}
+
+/* CRITICAL: Remove overflow:hidden on mobile to prevent clipping fixed sidebar */
+@media screen and (max-width: 996px) {
+
+  .hero,
+  [class*="heroBanner"],
+  [class*="Hero"],
+  main,
+  .main-wrapper {
+    overflow: visible !important;
+  }
 }
 
 /* Doc sidebar container */
