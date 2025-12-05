@@ -1043,10 +1043,14 @@ article,
     /* Use clip instead of hidden - doesn't create stacking context */
   }
 
-  /* Force hero to not trap fixed elements */
+  /* CRITICAL: Force hero AND mainContent to not trap/clip fixed elements */
   .hero,
   [class*="heroBanner"],
-  [class*="Hero"] {
+  [class*="Hero"],
+  [class*="mainContent"],
+  [class*="Main"],
+  main,
+  .main-wrapper {
     overflow: visible !important;
     contain: none !important;
   }
