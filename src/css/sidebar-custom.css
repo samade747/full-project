@@ -203,6 +203,21 @@
   margin-right: 0.5rem;
 }
 
+/* Ensure main content doesn't interfere with sidebar z-index */
+@media screen and (max-width: 996px) {
+  .main-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Hero section should not block sidebar */
+  .hero,
+  .heroBanner,
+  [class*="heroBanner"] {
+    z-index: 1 !important;
+  }
+}
+
 /* Medium Screens - Tablet (768px - 996px) */
 @media screen and (max-width: 996px) {
 

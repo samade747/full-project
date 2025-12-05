@@ -12,6 +12,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  z-index: 1;
+  /* Low z-index so sidebar can appear above */
 }
 
 .heroBackground {
