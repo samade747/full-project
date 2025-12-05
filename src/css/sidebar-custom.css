@@ -215,7 +215,8 @@
     width: 80%;
     max-width: 300px;
     height: calc(100vh - 60px);
-    z-index: 100;
+    z-index: 9999;
+    /* Very high z-index to be above hero */
     overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -319,6 +320,9 @@
 /* Navbar Sidebar (Docusaurus Mobile Menu) */
 .navbar-sidebar {
   background: var(--ifm-background-color);
+  z-index: 10000 !important;
+  /* Above everything including hero */
+  position: fixed !important;
 }
 
 .navbar-sidebar__brand {
@@ -355,4 +359,11 @@
 /* Backdrop overlay when sidebar is open */
 .navbar-sidebar__backdrop {
   background: rgba(0, 0, 0, 0.5);
+  z-index: 9998 !important;
+  /* Just below sidebar */
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
