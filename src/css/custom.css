@@ -1016,32 +1016,12 @@ article,
 
 /* STEP 2: Force navbar-sidebar to be on top with MAXIMUM z-index */
 .navbar-sidebar {
-  position: fixed !important;
   z-index: 9999999 !important;
-  /* Maximum possible z-index */
-  background: #ffffff !important;
-  top: 0 !important;
-  left: 0 !important;
-  bottom: 0 !important;
-  width: 280px !important;
-  /* Let Docusaurus handle the transform/toggle */
-}
-
-/* Ensure sidebar is visible when shown */
-.navbar-sidebar--show {
-  display: flex !important;
-  flex-direction: column !important;
+  /* Only override z-index - let Docusaurus handle everything else */
 }
 
 .navbar-sidebar__backdrop {
-  position: fixed !important;
   z-index: 9999998 !important;
-  background: rgba(0, 0, 0, 0.6) !important;
-  inset: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
 }
 
 /* STEP 3: Navbar must also be high but below sidebar */
@@ -1099,12 +1079,6 @@ article,
     overflow-y: visible !important;
     contain: none !important;
     z-index: auto !important;
-  }
-
-  /* Ensure sidebar appears above everything */
-  .navbar-sidebar {
-    z-index: 9999999 !important;
-    isolation: isolate !important;
   }
 }
 
