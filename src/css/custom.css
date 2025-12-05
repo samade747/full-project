@@ -986,111 +986,199 @@ footer.footer--dark .footer__copyright {
   }
 }
 
-/* ========== MOBILE SIDEBAR FIX ========== */
-/* Ensures sidebar appears above ALL content including hero section */
+/* ========== MOBILE NAVBAR/SIDEBAR FIX ========== */
+/* 
+ * WHY THIS HAPPENS:
+ * The main content (hero section, doc pages) uses CSS transforms, 
+ * filters, or position:relative which creates new stacking contexts.
+ * Even with high z-index on navbar-sidebar, it can't escape its
+ * parent's stacking context.
+ *
+ * THE FIX:
+ * 1. Use "isolation: isolate" on main content to contain its stacking
+ * 2. Ensure navbar-sidebar is at the root level stacking context
+ * 3. Force all content areas to stay in their own stacking context
+ */
 
+/* Docusaurus root - ensure proper stacking context at root */
+#__docusaurus {
+  position: relative;
+  z-index: 0;
+}
+
+/* Navbar stays on top at all times */
+.navbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000 !important;
+  isolation: isolate;
+}
+
+/* Mobile Sidebar - must be siblings with main content, not inside it */
+.navbar-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 75vw !important;
+  max-width: 350px !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  /* Dynamic viewport height for mobile */
+  z-index: 9999 !important;
+  background: #ffffff !important;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
+  overflow-y: auto !important;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease !important;
+}
+
+/* When sidebar is shown */
+.navbar-sidebar--show {
+  transform: translateX(0) !important;
+}
+
+/* Backdrop covering everything */
+.navbar-sidebar__backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 9998 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* CRITICAL: Isolate all main content to its own stacking context */
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  /* Creates new stacking context, cannot break out */
+}
+
+/* Ensure doc page layout stays contained */
+.docPage,
+.docsWrapper,
+.docMainContainer,
+.docRoot {
+  position: relative;
+  z-index: auto;
+  isolation: isolate;
+}
+
+/* Hero sections must stay in their container */
+.hero,
+[class*="heroBanner"],
+[class*="hero"] {
+  position: relative !important;
+  z-index: 1 !important;
+  /* Remove any transform that creates stacking context issues */
+}
+
+/* Doc sidebar container */
+.theme-doc-sidebar-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== SIDEBAR STYLING ========== */
+.navbar-sidebar__brand {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-sidebar__brand .navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-sidebar__brand .navbar__title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.navbar-sidebar__items {
+  padding: 0.5rem 0;
+}
+
+.navbar-sidebar .menu {
+  padding: 0.5rem 1rem;
+}
+
+.navbar-sidebar .menu__list {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-sidebar .menu__list-item {
+  margin: 0;
+}
+
+.navbar-sidebar .menu__link {
+  display: block;
+  padding: 12px 16px;
+  color: #374151;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.navbar-sidebar .menu__link:hover {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7c3aed;
+}
+
+.navbar-sidebar .menu__link--active {
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Close button styling */
+.navbar-sidebar__back,
+.navbar-sidebar__close {
+  padding: 8px 16px;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar-sidebar__back:hover,
+.navbar-sidebar__close:hover {
+  color: #374151;
+}
+
+/* Hamburger menu button */
+.navbar__toggle {
+  color: #ffffff;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+/* Tablet and below */
 @media screen and (max-width: 996px) {
-
-  /* Force navbar to be on top */
-  .navbar {
-    z-index: 10001 !important;
-    position: sticky !important;
-  }
-
-  /* Mobile sidebar container - highest z-index */
   .navbar-sidebar {
-    z-index: 10000 !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    width: 100% !important;
-    height: 100vh !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    overflow-y: auto !important;
+    display: flex;
+    flex-direction: column;
   }
+}
 
-  /* Backdrop overlay */
-  .navbar-sidebar__backdrop {
-    z-index: 9999 !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-  }
-
-  /* Ensure all main content stays below */
-  .main-wrapper,
-  main,
-  .docMainContainer,
-  .container {
-    position: relative;
-    z-index: 1 !important;
-  }
-
-  /* Force hero sections to stay below sidebar */
-  .hero,
-  .heroBanner,
-  [class*="heroBanner"],
-  [class*="hero"] {
-    z-index: 1 !important;
-    position: relative !important;
-  }
-
-  /* Doc sidebar on doc pages */
-  .theme-doc-sidebar-container {
-    z-index: 9998 !important;
-  }
-
-  /* Sidebar items styling */
-  .navbar-sidebar .menu {
-    padding: 1rem;
-    background: transparent;
-  }
-
-  .navbar-sidebar .menu__list {
-    padding: 0;
+/* Mobile */
+@media screen and (max-width: 576px) {
+  .navbar-sidebar {
+    width: 85vw !important;
+    max-width: 300px !important;
   }
 
   .navbar-sidebar .menu__link {
-    display: block;
-    padding: 12px 16px;
-    color: #4c1d95;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-  }
-
-  .navbar-sidebar .menu__link:hover {
-    background: rgba(139, 92, 246, 0.1);
-    color: #5b21b6;
-  }
-
-  .navbar-sidebar .menu__link--active {
-    background: linear-gradient(135deg, #7c3aed, #8b5cf6) !important;
-    color: white !important;
-    font-weight: 600;
-  }
-
-  /* Brand section in sidebar */
-  .navbar-sidebar__brand {
-    padding: 1rem;
-    background: linear-gradient(135deg, #7c3aed, #8b5cf6);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .navbar-sidebar__brand .navbar__title {
-    color: white !important;
-  }
-
-  /* Close button */
-  .navbar-sidebar__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
+    padding: 10px 14px;
+    font-size: 0.95rem;
   }
 }
