@@ -987,88 +987,69 @@ footer.footer--dark .footer__copyright {
 }
 
 /* ========== MOBILE NAVBAR/SIDEBAR FIX ========== */
-/* 
- * WHY THIS HAPPENS:
- * The main content (hero section, doc pages) uses CSS transforms, 
- * filters, or position:relative which creates new stacking contexts.
- * Even with high z-index on navbar-sidebar, it can't escape its
- * parent's stacking context.
- *
- * THE FIX:
- * 1. Use "isolation: isolate" on main content to contain its stacking
- * 2. Ensure navbar-sidebar is at the root level stacking context
- * 3. Force all content areas to stay in their own stacking context
+/*
+ * PROBLEM: Sidebar appears behind hero/content because they create stacking contexts.
+ * SOLUTION: Break all stacking contexts in content, only sidebar gets z-index.
  */
 
-/* Docusaurus root - ensure proper stacking context at root */
-#__docusaurus {
-  position: relative;
-  z-index: 0;
-}
-
-/* Navbar stays on top at all times */
-.navbar {
-  position: sticky !important;
-  top: 0;
-  z-index: 1000 !important;
-  isolation: isolate;
-}
-
-/* Mobile Sidebar - high z-index to appear above content */
-.navbar-sidebar {
-  z-index: 9999 !important;
-  background: #ffffff !important;
-  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* Backdrop covering everything */
-.navbar-sidebar__backdrop {
-  z-index: 9998 !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* CRITICAL: Isolate all main content to its own stacking context */
-.main-wrapper {
-  position: relative;
-  z-index: 1;
-  isolation: isolate;
-  /* Creates new stacking context, cannot break out */
-}
-
-/* Ensure doc page layout stays contained */
+/* STEP 1: Remove z-index from ALL content elements */
+#__docusaurus,
+.main-wrapper,
 .docPage,
 .docsWrapper,
 .docMainContainer,
-.docRoot {
-  position: relative;
-  z-index: auto;
-  isolation: isolate;
-}
-
-/* Hero sections must stay in their container */
+.docRoot,
+.container,
+main,
+article,
 .hero,
 [class*="heroBanner"],
-[class*="hero"] {
-  position: relative !important;
-  z-index: 1 !important;
+[class*="hero"],
+[class*="Hero"],
+.theme-doc-sidebar-container {
+  z-index: auto !important;
 }
 
-/* CRITICAL: Remove overflow:hidden on mobile to prevent clipping fixed sidebar */
+/* STEP 2: Force navbar-sidebar to be on top with position context */
+.navbar-sidebar {
+  position: fixed !important;
+  z-index: 999999 !important;
+  /* Extremely high */
+  background: #ffffff !important;
+}
+
+.navbar-sidebar__backdrop {
+  position: fixed !important;
+  z-index: 999998 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  inset: 0 !important;
+}
+
+/* STEP 3: Navbar must also be high */
+.navbar {
+  position: sticky !important;
+  z-index: 1000 !important;
+}
+
+/* STEP 4: Remove overflow:hidden that clips fixed elements */
 @media screen and (max-width: 996px) {
 
+  body,
+  html,
+  #__docusaurus,
+  .main-wrapper,
+  main {
+    overflow-x: clip !important;
+    /* Use clip instead of hidden - doesn't create stacking context */
+  }
+
+  /* Force hero to not trap fixed elements */
   .hero,
   [class*="heroBanner"],
-  [class*="Hero"],
-  main,
-  .main-wrapper {
+  [class*="Hero"] {
     overflow: visible !important;
+    contain: none !important;
   }
-}
-
-/* Doc sidebar container */
-.theme-doc-sidebar-container {
-  position: relative;
-  z-index: 1;
 }
 
 /* ========== SIDEBAR STYLING ========== */
