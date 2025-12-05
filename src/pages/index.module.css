@@ -984,7 +984,9 @@
     font-size: 1.1rem;
   }
 }
+
 @media screen and (max-width: 996px) {
+
   .communitySection,
   .faqSection {
     padding: 5rem 1.5rem;
@@ -992,6 +994,7 @@
 }
 
 @media screen and (max-width: 768px) {
+
   .communitySection,
   .faqSection {
     padding: 4rem 1rem;
@@ -1009,5 +1012,26 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+/* ========== MOBILE SIDEBAR FIX ========== */
+/* Prevent stacking contexts from blocking mobile navbar */
+@media screen and (max-width: 996px) {
+
+  /* Remove z-index from animated elements to prevent stacking context issues */
+  .fadeIn,
+  .overviewIcon,
+  .featureImage,
+  .ctaButton,
+  .statsNumber,
+  .outcomeCard,
+  .communityCard,
+  .faqItem,
+  [class*="icon"],
+  [class*="card"],
+  [class*="feature"],
+  [class*="section"] {
+    z-index: auto !important;
   }
 }

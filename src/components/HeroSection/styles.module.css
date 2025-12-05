@@ -717,3 +717,14 @@
     transform: none;
   }
 }
+
+/* ========== MOBILE SIDEBAR FIX ========== */
+/* Allow mobile navbar to render above hero section */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    overflow: visible !important;
+    /* Allow fixed sidebar to appear above */
+    z-index: auto !important;
+    /* Don't create stacking context */
+  }
+}
