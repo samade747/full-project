@@ -1014,39 +1014,15 @@ footer.footer--dark .footer__copyright {
   isolation: isolate;
 }
 
-/* Mobile Sidebar - must be siblings with main content, not inside it */
+/* Mobile Sidebar - high z-index to appear above content */
 .navbar-sidebar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 75vw !important;
-  max-width: 350px !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  /* Dynamic viewport height for mobile */
   z-index: 9999 !important;
   background: #ffffff !important;
   box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15) !important;
-  overflow-y: auto !important;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease !important;
-}
-
-/* When sidebar is shown */
-.navbar-sidebar--show {
-  transform: translateX(0) !important;
 }
 
 /* Backdrop covering everything */
 .navbar-sidebar__backdrop {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
   z-index: 9998 !important;
   background: rgba(0, 0, 0, 0.5) !important;
 }
