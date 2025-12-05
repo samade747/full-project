@@ -1024,12 +1024,13 @@ article,
   left: 0 !important;
   bottom: 0 !important;
   width: 280px !important;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  /* Let Docusaurus handle the transform/toggle */
 }
 
+/* Ensure sidebar is visible when shown */
 .navbar-sidebar--show {
-  transform: translateX(0) !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .navbar-sidebar__backdrop {
