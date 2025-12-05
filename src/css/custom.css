@@ -992,7 +992,7 @@ footer.footer--dark .footer__copyright {
  * SOLUTION: Break all stacking contexts in content, only sidebar gets z-index.
  */
 
-/* STEP 1: Remove z-index from ALL content elements */
+/* STEP 1: Remove z-index from ALL content elements - INCLUDING DOCS PAGES */
 #__docusaurus,
 .main-wrapper,
 .docPage,
@@ -1006,7 +1006,11 @@ article,
 [class*="heroBanner"],
 [class*="hero"],
 [class*="Hero"],
-.theme-doc-sidebar-container {
+.theme-doc-sidebar-container,
+.theme-doc-markdown,
+[class*="doc"],
+[class*="Doc"],
+[class*="theme-doc"] {
   z-index: auto !important;
 }
 
@@ -1048,22 +1052,28 @@ article,
 /* STEP 4: Remove overflow:hidden that clips fixed elements */
 @media screen and (max-width: 996px) {
 
-  /* Force ALL parent containers to allow sidebar */
+  /* Force ALL parent containers to allow sidebar - INCLUDING DOCS */
   body,
   html,
   #__docusaurus,
   .main-wrapper,
   main,
+  .docPage,
+  .docsWrapper,
+  .docMainContainer,
+  .docRoot,
   [class*="wrapper"],
   [class*="container"],
-  [class*="layout"] {
+  [class*="layout"],
+  [class*="doc"],
+  [class*="Doc"] {
     overflow-x: clip !important;
     overflow-y: auto !important;
     /* Use clip for horizontal - doesn't create stacking context */
     z-index: auto !important;
   }
 
-  /* CRITICAL: Force ALL content sections to not trap/clip fixed elements */
+  /* CRITICAL: Force ALL content sections to not trap/clip fixed elements - INCLUDING DOCS */
   .hero,
   .heroBanner,
   [class*="heroBanner"],
@@ -1074,6 +1084,11 @@ article,
   [class*="content"],
   [class*="section"],
   [class*="Section"],
+  .theme-doc-sidebar-container,
+  .theme-doc-markdown,
+  [class*="theme-doc"],
+  [class*="doc"],
+  [class*="Doc"],
   main,
   .main-wrapper,
   article,
