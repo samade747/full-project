@@ -718,13 +718,11 @@
   }
 }
 
-/* ========== MOBILE SIDEBAR FIX ========== */
-/* Allow mobile navbar to render above hero section */
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    overflow: visible !important;
-    /* Allow fixed sidebar to appear above */
-    z-index: auto !important;
-    /* Don't create stacking context */
-  }
+/* ========== SIDEBAR FIX - ALL SCREEN SIZES ========== */
+/* Allow navbar sidebar to render above hero section on all screen sizes */
+.heroBanner {
+  overflow: visible !important;
+  /* Allow fixed sidebar to appear above */
+  z-index: auto !important;
+  /* Don't create stacking context */
 }

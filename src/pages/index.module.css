@@ -1015,23 +1015,20 @@
   }
 }
 
-/* ========== MOBILE SIDEBAR FIX ========== */
-/* Prevent stacking contexts from blocking mobile navbar */
-@media screen and (max-width: 996px) {
-
-  /* Remove z-index from animated elements to prevent stacking context issues */
-  .fadeIn,
-  .overviewIcon,
-  .featureImage,
-  .ctaButton,
-  .statsNumber,
-  .outcomeCard,
-  .communityCard,
-  .faqItem,
-  [class*="icon"],
-  [class*="card"],
-  [class*="feature"],
-  [class*="section"] {
-    z-index: auto !important;
-  }
+/* ========== SIDEBAR FIX - ALL SCREEN SIZES ========== */
+/* Prevent stacking contexts from blocking navbar sidebar on all screen sizes */
+/* Remove z-index from animated elements to prevent stacking context issues */
+.fadeIn,
+.overviewIcon,
+.featureImage,
+.ctaButton,
+.statsNumber,
+.outcomeCard,
+.communityCard,
+.faqItem,
+[class*="icon"],
+[class*="card"],
+[class*="feature"],
+[class*="section"] {
+  z-index: auto !important;
 }

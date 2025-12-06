@@ -131,8 +131,72 @@ The development server is running at: **http://localhost:3001**
 
 ## Files Changed
 - `src/css/custom.css` (Modified lines 1035-1191)
+- `src/components/HeroSection/styles.module.css` (Modified lines 721-730)
+- `src/pages/index.module.css` (Modified lines 1018-1037)
+
+### Additional Fixes Applied
+
+#### Hero Section Fix (`HeroSection/styles.module.css`)
+**Issue**: The hero section had a media query that only allowed the sidebar to appear above it on screens ≤996px.
+
+**Fix**: Removed the media query restriction:
+```css
+/* Before - Only worked on mobile */
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+}
+
+/* After - Works on all screen sizes */
+.heroBanner {
+  overflow: visible !important;
+  z-index: auto !important;
+}
+```
+
+#### Homepage Content Fix (`pages/index.module.css`)
+**Issue**: Homepage elements (cards, icons, sections) had z-index values that created stacking contexts only removed on screens ≤996px.
+
+**Fix**: Removed the media query restriction:
+```css
+/* Before - Only removed z-index on mobile */
+@media screen and (max-width: 996px) {
+  .fadeIn,
+  [class*="icon"],
+  [class*="card"],
+  /* ... other selectors ... */ {
+    z-index: auto !important;
+  }
+}
+
+/* After - Removes z-index on all screen sizes */
+.fadeIn,
+[class*="icon"],
+[class*="card"],
+/* ... other selectors ... */ {
+  z-index: auto !important;
+}
+```
 
 ---
 
 **Status**: ✅ Complete and ready for testing
 **Server**: Running on http://localhost:3001
+
+## What Was Fixed
+
+The issue was that previous fixes for mobile sidebar visibility were **only applied to small/medium screens** (≤996px). This meant:
+
+- ❌ **Large screens (>996px)**: Sidebar appeared correctly because no stacking contexts blocked it
+- ❌ **Small/Medium screens (≤996px)**: Hero section and homepage content **created stacking contexts** that blocked the sidebar
+
+### Solution
+Removed all media query restrictions from sidebar fixes so they apply to **ALL screen sizes**:
+
+1. ✅ Navbar sidebar z-index and overflow fixes now global
+2. ✅ Hero section allows sidebar overlay on all screens
+3. ✅ Homepage content elements don't create blocking stacking contexts on any screen size
+
+Now the sidebar will appear in front of all content on **every screen size**!
