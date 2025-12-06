@@ -1032,56 +1032,53 @@ article,
   z-index: 1000 !important;
 }
 
-/* STEP 4: Remove overflow:hidden that clips fixed elements */
-@media screen and (max-width: 996px) {
+/* STEP 4: Remove overflow:hidden that clips fixed elements - ALL SCREEN SIZES */
+/* Force ALL parent containers to allow sidebar - INCLUDING DOCS */
+body,
+html,
+#__docusaurus,
+.main-wrapper,
+main,
+.docPage,
+.docsWrapper,
+.docMainContainer,
+.docRoot,
+[class*="wrapper"],
+[class*="container"],
+[class*="layout"],
+[class*="doc"],
+[class*="Doc"] {
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+  /* Use clip for horizontal - doesn't create stacking context */
+  z-index: auto !important;
+}
 
-  /* Force ALL parent containers to allow sidebar - INCLUDING DOCS */
-  body,
-  html,
-  #__docusaurus,
-  .main-wrapper,
-  main,
-  .docPage,
-  .docsWrapper,
-  .docMainContainer,
-  .docRoot,
-  [class*="wrapper"],
-  [class*="container"],
-  [class*="layout"],
-  [class*="doc"],
-  [class*="Doc"] {
-    overflow-x: clip !important;
-    overflow-y: auto !important;
-    /* Use clip for horizontal - doesn't create stacking context */
-    z-index: auto !important;
-  }
-
-  /* CRITICAL: Force ALL content sections to not trap/clip fixed elements - INCLUDING DOCS */
-  .hero,
-  .heroBanner,
-  [class*="heroBanner"],
-  [class*="Hero"],
-  .mainContent,
-  [class*="mainContent"],
-  [class*="Main"],
-  [class*="content"],
-  [class*="section"],
-  [class*="Section"],
-  .theme-doc-sidebar-container,
-  .theme-doc-markdown,
-  [class*="theme-doc"],
-  [class*="doc"],
-  [class*="Doc"],
-  main,
-  .main-wrapper,
-  article,
-  section {
-    overflow: visible !important;
-    overflow-x: visible !important;
-    overflow-y: visible !important;
-    contain: none !important;
-    z-index: auto !important;
-  }
+/* CRITICAL: Force ALL content sections to not trap/clip fixed elements - INCLUDING DOCS */
+.hero,
+.heroBanner,
+[class*="heroBanner"],
+[class*="Hero"],
+.mainContent,
+[class*="mainContent"],
+[class*="Main"],
+[class*="content"],
+[class*="section"],
+[class*="Section"],
+.theme-doc-sidebar-container,
+.theme-doc-markdown,
+[class*="theme-doc"],
+[class*="doc"],
+[class*="Doc"],
+main,
+.main-wrapper,
+article,
+section {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  contain: none !important;
+  z-index: auto !important;
 }
 
 /* ========== SIDEBAR STYLING ========== */
@@ -1162,11 +1159,27 @@ article,
 }
 
 /* ========== RESPONSIVE BREAKPOINTS ========== */
-/* Tablet and below */
-@media screen and (max-width: 996px) {
+/* ALL SCREEN SIZES - Sidebar should work everywhere */
+.navbar-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desktop - wider sidebar */
+@media screen and (min-width: 997px) {
   .navbar-sidebar {
-    display: flex;
-    flex-direction: column;
+    width: 350px !important;
+    max-width: 350px !important;
+    z-index: 9999999 !important;
+  }
+}
+
+/* Tablet (577px - 996px) */
+@media screen and (max-width: 996px) and (min-width: 577px) {
+  .navbar-sidebar {
+    width: 300px !important;
+    max-width: 300px !important;
+    z-index: 9999999 !important;
   }
 }
 
@@ -1182,4 +1195,11 @@ article,
     padding: 10px 14px;
     font-size: 0.95rem;
   }
+}
+
+/* Hamburger menu button - VISIBLE ON ALL SCREEN SIZES */
+.navbar__toggle {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
