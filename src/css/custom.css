@@ -1016,11 +1016,13 @@ article,
 
 /* STEP 2: Force navbar-sidebar to be on top with MAXIMUM z-index */
 .navbar-sidebar {
+  position: fixed !important;
   z-index: 9999999 !important;
-  /* Only override z-index - let Docusaurus handle everything else */
+  /* Create new stacking context on top of everything */
 }
 
 .navbar-sidebar__backdrop {
+  position: fixed !important;
   z-index: 9999998 !important;
 }
 
